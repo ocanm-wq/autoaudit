@@ -1,17 +1,9 @@
--- =====================================================
 -- AutoAudit - 06: Seguridad
--- PostgreSQL 18
---
--- PARTE A (Alt+X, una sola vez): secciones 1 a 5
--- PARTE B (una sentencia a la vez, Ctrl+Enter): sección 6 (pruebas)
--- =====================================================
 
--- -----------------------------------------------------
 -- 1. Roles
 -- aud_admin    : puede configurar la auditoría y consultar el historial
 -- aud_consulta : solo puede consultar el historial
--- (los roles son del servidor PostgreSQL, no solo de esta base)
--- -----------------------------------------------------
+
 DO $$
 BEGIN
     IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'aud_admin') THEN
@@ -28,19 +20,13 @@ $$;
 
 GRANT aud_consulta TO aud_admin;
 
--- -----------------------------------------------------
 -- 2. Quitar todos los permisos por defecto (PUBLIC) del esquema auditoria
--- -----------------------------------------------------
 REVOKE ALL ON SCHEMA auditoria FROM PUBLIC;
 REVOKE ALL ON ALL TABLES    IN SCHEMA auditoria FROM PUBLIC;
 REVOKE ALL ON ALL SEQUENCES IN SCHEMA auditoria FROM PUBLIC;
 REVOKE ALL ON ALL FUNCTIONS IN SCHEMA auditoria FROM PUBLIC;
 
--- -----------------------------------------------------
 -- 3. Permisos de aud_admin (configuración) y aud_consulta (lectura)
--- La bitácora NO recibe permisos de escritura para nadie:
--- solo la escriben las funciones de los triggers (SECURITY DEFINER).
--- -----------------------------------------------------
 GRANT USAGE ON SCHEMA auditoria TO aud_admin, aud_consulta;
 
 -- Configuración: solo aud_admin
@@ -48,9 +34,9 @@ GRANT SELECT, INSERT, UPDATE ON auditoria.aud_tabla,
                                 auditoria.aud_columna,
                                 auditoria.aud_configuracion TO aud_admin;
 GRANT SELECT ON auditoria.aud_evento TO aud_admin;
-GRANT USAGE, SELECT ON auditoria.aud_tabla_id_tabla_seq,
-                       auditoria.aud_columna_id_columna_seq,
-                       auditoria.aud_configuracion_id_configuracion_seq TO aud_admin;
+GRANT USAGE, SELECT ON  auditoria.aud_tabla_id_tabla_seq,
+                        auditoria.aud_columna_id_columna_seq,
+                        auditoria.aud_configuracion_id_configuracion_seq TO aud_admin;
 
 -- Generar y eliminar triggers: solo aud_admin
 -- (se ejecutan con los permisos del dueño, así el admin no necesita
@@ -60,8 +46,8 @@ ALTER FUNCTION auditoria.generar_trigger(INT)
 ALTER FUNCTION auditoria.eliminar_trigger(INT)
     SECURITY DEFINER SET search_path = auditoria, pg_temp;
 
-GRANT EXECUTE ON FUNCTION auditoria.generar_trigger(INT),
-                          auditoria.eliminar_trigger(INT) TO aud_admin;
+GRANT EXECUTE ON FUNCTION   auditoria.generar_trigger(INT),
+                            auditoria.eliminar_trigger(INT) TO aud_admin;
 
 -- Consulta de historial: aud_consulta (y aud_admin, que la hereda)
 -- La vista se ejecuta con los permisos de su dueño, por eso
@@ -73,10 +59,8 @@ GRANT EXECUTE ON FUNCTION
     auditoria.historial_por_registro(TEXT, TEXT, TEXT)
 TO aud_consulta;
 
--- -----------------------------------------------------
 -- 4. Bitácora de solo escritura: nadie puede modificarla ni borrarla
 -- (ni siquiera el dueño, mientras estos triggers estén activos)
--- -----------------------------------------------------
 CREATE OR REPLACE FUNCTION auditoria.bloquear_modificacion_bitacora()
 RETURNS trigger
 LANGUAGE plpgsql
@@ -96,19 +80,9 @@ CREATE TRIGGER trg_bitacora_sin_truncate
     BEFORE TRUNCATE ON auditoria.aud_bitacora
     FOR EACH STATEMENT EXECUTE FUNCTION auditoria.bloquear_modificacion_bitacora();
 
--- -----------------------------------------------------
--- 5. Privacidad de la IP de origen
--- La IP solo se ve a través de v_historial y de las funciones de historial,
--- a las que solo acceden aud_admin y aud_consulta.
--- -----------------------------------------------------
-
--- =====================================================
--- 6. PRUEBAS (PARTE B): ejecutar UNA sentencia a la vez con Ctrl+Enter
--- Después de cada SET ROLE, ejecutar RESET ROLE.
--- =====================================================
-
+-- 6. PRUEBAS
 -- Prueba 1: un usuario sin permisos NO puede escribir en la bitácora
---   Esperado: ERROR permission denied for schema auditoria
+-- Esperado: ERROR permission denied for schema auditoria
 -- SET ROLE usuario_prueba;
 -- INSERT INTO auditoria.aud_bitacora (id_configuracion, id_usuario, id_estacion, id_registro)
 -- VALUES (1, 1, 1, 'x');

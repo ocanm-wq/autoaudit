@@ -1,8 +1,5 @@
--- =====================================================
 -- AutoAudit - 01: Estructura de tablas del sistema
 -- PostgreSQL 18
--- =====================================================
-
 CREATE SCHEMA IF NOT EXISTS auditoria;
 SET search_path TO auditoria;
 
@@ -62,15 +59,15 @@ CREATE TABLE aud_estacion (
 -- conservan aunque el registro fuente sea eliminado.
 -- Las configuraciones no se borran, solo se desactivan (activa = FALSE).
 CREATE TABLE aud_bitacora (
-    id_bitacora      BIGSERIAL    PRIMARY KEY,
-    id_configuracion INT          NOT NULL REFERENCES aud_configuracion (id_configuracion)
-                                  ON DELETE RESTRICT,
-    id_usuario       INT          NOT NULL REFERENCES aud_usuario (id_usuario),
-    id_estacion      INT          NOT NULL REFERENCES aud_estacion (id_estacion),
-    fecha_hora       TIMESTAMPTZ  NOT NULL DEFAULT now(),
-    id_registro      TEXT         NOT NULL,  -- llave primaria del registro afectado
-    valor_anterior   TEXT,                   -- NULL en INSERT
-    valor_nuevo      TEXT                    -- NULL en DELETE
+    id_bitacora      BIGSERIAL      PRIMARY KEY,
+    id_configuracion INT            NOT NULL REFERENCES aud_configuracion (id_configuracion)
+                                    ON DELETE RESTRICT,
+    id_usuario       INT            NOT NULL REFERENCES aud_usuario (id_usuario),
+    id_estacion      INT            NOT NULL REFERENCES aud_estacion (id_estacion),
+    fecha_hora       TIMESTAMPTZ    NOT NULL DEFAULT now(),
+    id_registro      TEXT           NOT NULL,  -- llave primaria del registro afectado
+    valor_anterior   TEXT,                     -- NULL en INSERT
+    valor_nuevo      TEXT                      -- NULL en DELETE
 );
 
 -- Índices para consultas históricas
@@ -78,9 +75,7 @@ CREATE INDEX idx_bitacora_usuario  ON aud_bitacora (id_usuario, fecha_hora);
 CREATE INDEX idx_bitacora_config   ON aud_bitacora (id_configuracion, fecha_hora);
 CREATE INDEX idx_bitacora_fecha    ON aud_bitacora (fecha_hora);
 
--- =====================================================
 -- Tabla de prueba para auditar (esquema public)
--- =====================================================
 CREATE TABLE IF NOT EXISTS public.cliente (
     id_cliente  SERIAL       PRIMARY KEY,
     nombre      VARCHAR(100) NOT NULL,

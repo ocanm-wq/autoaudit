@@ -1,9 +1,4 @@
--- =====================================================
 -- AutoAudit - 04: Prueba del generador de triggers
--- Ejecutar paso por paso en la base autoaudit.
--- Tabla de prueba: public.cliente
--- Se auditan las columnas nombre y correo (telefono NO se audita).
--- =====================================================
 
 -- 1. Registrar la tabla y sus columnas
 INSERT INTO auditoria.aud_tabla (esquema, nombre_tabla)
@@ -43,18 +38,15 @@ WHERE nombre = 'Ana';
 
 -- 5. Ver la bitácora
 -- Resultado esperado: 5 filas
---   INSERT: nombre y correo (2)
---   UPDATE: solo correo, porque nombre no cambió (1)
---   DELETE: nombre y correo (2)
-SELECT b.id_bitacora,
-       ev.nombre         AS evento,
-       col.nombre_columna AS columna,
-       b.id_registro,
-       b.valor_anterior,
-       b.valor_nuevo,
-       u.nombre_usuario  AS usuario,
-       es.ip_origen,
-       b.fecha_hora
+SELECT  b.id_bitacora,
+        ev.nombre         AS evento,
+        col.nombre_columna AS columna,
+        b.id_registro,
+        b.valor_anterior,
+        b.valor_nuevo,
+        u.nombre_usuario  AS usuario,
+        es.ip_origen,
+        b.fecha_hora
 FROM auditoria.aud_bitacora b
 JOIN auditoria.aud_configuracion cf ON cf.id_configuracion = b.id_configuracion
 JOIN auditoria.aud_columna col      ON col.id_columna      = cf.id_columna
