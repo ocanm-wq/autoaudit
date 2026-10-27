@@ -1,0 +1,193 @@
+diff --git a/README.md b/README.md
+index fbe1168..9aa6bf0 100644
+--- a/README.md
++++ b/README.md
+@@ -2,6 +2,8 @@
+ 
+ Sistema de auditoría automatizado para bases de datos PostgreSQL. Permite elegir qué tablas y columnas auditar y qué eventos registrar (INSERT, UPDATE, DELETE); el sistema genera automáticamente los triggers que guardan cada cambio en una bitácora centralizada.
+ 
++**Estado de esta copia:** `sql/03_generador_triggers.sql` sigue vacío. La captura automática y las mediciones con auditoría dependen de su entrega. Las pruebas disponibles no lo simulan. Para ejecutar y revisar resultados actuales, empezar por [tests/README.md](tests/README.md) y [PRUEBAS_Y_RESULTADOS.md](docs/PRUEBAS_Y_RESULTADOS.md).
++
+ ## Características
+ 
+ - Configuración de auditoría por tabla, columna y evento.
+@@ -18,7 +20,7 @@ Sistema de auditoría automatizado para bases de datos PostgreSQL. Permite elegi
+ - Ubuntu 26.04 LTS (requisito del proyecto)
+ - Un cliente SQL: DBeaver o `psql`
+ 
+-Entorno donde se probó: _(completar: sistema operativo y versión de PostgreSQL)_
++Entorno y versiones realmente comprobados: [VALIDACION_ENTORNO.md](docs/VALIDACION_ENTORNO.md). Las limitaciones y dependencias pendientes se documentan con los resultados.
+ 
+ ## Estructura del repositorio
+ 
+@@ -46,7 +48,7 @@ Entorno donde se probó: _(completar: sistema operativo y versión de PostgreSQL
+    CREATE SCHEMA IF NOT EXISTS public;
+    ```
+ 
+-3. Ejecutar los scripts **en orden**, del `01` al `07`, siempre conectado a `autoaudit`.
++3. Para pruebas, usar una base `autoaudit_test` de un clúster dedicado y seguir `tests/README.md`. La estructura se instala con `01`, las consultas con `05`, los controles disponibles con `06` y la definición de medición con `07`. `02` son consultas de diccionario; `03` se instalará cuando se entregue; `04` requiere ese generador y no debe ejecutarse todavía. Al recibir `03`, instalarlo y volver a ejecutar `06` para proteger sus funciones.
+    - En DBeaver: abrir el archivo en un editor SQL de `autoaudit` y ejecutarlo con **Alt+X**.
+    - En `psql`:
+ 
+@@ -57,11 +59,14 @@ Entorno donde se probó: _(completar: sistema operativo y versión de PostgreSQL
+ Notas:
+ 
+ - `02` usa parámetros de DBeaver (`:esquema`, `:tabla`); en `psql` hay que reemplazarlos por valores.
+-- `04` y `07` incluyen pruebas; ejecutar `04` por bloques, en orden.
+-- `07` deja la función creada; las pruebas se ejecutan después, una por una.
++- `04` es una prueba manual dependiente del generador; no ejecutarla mientras `03` esté vacío.
++- `07` deja la función creada; sus ejemplos están comentados para impedir cargas automáticas. El wrapper ejecuta 100, 1.000 y 10.000 cuando existe el generador. 100.000 requiere habilitación explícita.
++- `06` revoca el EXECUTE público por defecto para funciones futuras del creador actual en todos los esquemas de esta base. Usar un propietario dedicado y revisar ese alcance; no afecta automáticamente a otros creadores.
+ 
+ ## Uso
+ 
++El ejemplo siguiente requiere que el compañero entregue e instale `03`; queda como referencia y no acredita captura automática en esta copia.
++
+ Ejemplo con la tabla `public.cliente`: auditar `nombre` y `correo` en INSERT, UPDATE y DELETE.
+ 
+ ```sql
+@@ -104,13 +109,13 @@ Los resultados se pueden exportar desde DBeaver (clic derecho en los resultados,
+ 
+ - `aud_admin`: configura la auditoría y consulta el historial.
+ - `aud_consulta`: solo consulta el historial.
+-- Ningún rol tiene permiso de escritura directa en la bitácora; solo la escriben los triggers.
++- `aud_admin` y `aud_consulta` no tienen permiso de escritura directa en la bitácora. El dueño y los superusuarios conservan capacidades administrativas; no es una protección inviolable frente a ellos.
+ - Triggers que bloquean `UPDATE`, `DELETE` y `TRUNCATE` sobre la bitácora.
+-- La IP de origen solo es visible mediante la vista y las funciones de historial.
++- Los dos roles pueden consultar la IP mediante la vista y las funciones de historial. El dueño, superusuarios y otros roles con permisos directos también pueden acceder; la captura automática queda pendiente de `03`.
+ 
+ ## Pruebas de rendimiento
+ 
+-Tiempos medidos en el equipo de desarrollo, con la función `auditoria.medir_rendimiento(N)` (columnas `nombre` y `correo` auditadas):
++La siguiente tabla se conserva del README original. No se verificó su entorno ni procedencia; no constituye una medición nueva ni evidencia del estado actual. Los resultados verificables de esta contribución están en `docs/PRUEBAS_Y_RESULTADOS.md`.
+ 
+ | Filas | Operación | Sin auditoría (ms) | Con auditoría (ms) |
+ |---|---|---|---|
+@@ -124,7 +129,7 @@ Tiempos medidos en el equipo de desarrollo, con la función `auditoria.medir_ren
+ | 100.000 | UPDATE | 1.213,4 | 20.156,7 |
+ | 100.000 | DELETE | 79,1 | 30.407,9 |
+ 
+-Conclusiones:
++Conclusiones heredadas de esa copia, no validadas en esta revisión:
+ 
+ - El costo crece de forma lineal con el volumen: unos 0,2 a 0,3 ms por fila auditada, sin degradarse al crecer la bitácora.
+ - En operaciones normales (una o pocas filas) el impacto es pequeño.
+@@ -134,9 +139,10 @@ Conclusiones:
+ 
+ - [x] Modelo entidad-relación y estructura de tablas
+ - [x] Consultas al diccionario de datos
+-- [x] Generador dinámico de triggers
++- [ ] Generador dinámico de triggers (pendiente del compañero)
+ - [x] Consultas de historial
+ - [x] Seguridad
+-- [x] Pruebas funcionales y de rendimiento
++- [x] Suites automatizadas de estructura, consultas y seguridad disponibles
++- [ ] Ejecución de DML y rendimiento con el generador real
+ - [ ] Interfaz de configuración y consulta
+-- [ ] Documentación técnica en PDF
+\ No newline at end of file
++- [x] Archivo PDF técnico existente; resultados de esta revisión en los documentos Markdown de `docs/`
+diff --git a/sql/05_consultas_historial.sql b/sql/05_consultas_historial.sql
+index 2b79c08..040ef06 100644
+--- a/sql/05_consultas_historial.sql
++++ b/sql/05_consultas_historial.sql
+@@ -48,7 +48,6 @@ CREATE OR REPLACE FUNCTION auditoria.historial_por_columna(
+     p_desde   TIMESTAMPTZ DEFAULT NULL,
+     p_hasta   TIMESTAMPTZ DEFAULT NULL
+ )
+-q   
+ RETURNS SETOF auditoria.v_historial
+ LANGUAGE sql
+     STABLE
+@@ -91,4 +90,4 @@ SELECT * FROM auditoria.historial_por_usuario('postgres', now() - interval '1 da
+ -- Por columna
+ SELECT * FROM auditoria.historial_por_columna('public', 'cliente', 'correo');
+ -- Historial del registro con id 1
+-SELECT * FROM auditoria.historial_por_registro('public', 'cliente', '1');
+\ No newline at end of file
++SELECT * FROM auditoria.historial_por_registro('public', 'cliente', '1');
+diff --git a/sql/06_seguridad.sql b/sql/06_seguridad.sql
+index 35bd8af..69007e0 100644
+--- a/sql/06_seguridad.sql
++++ b/sql/06_seguridad.sql
+@@ -25,6 +25,10 @@ REVOKE ALL ON SCHEMA auditoria FROM PUBLIC;
+ REVOKE ALL ON ALL TABLES    IN SCHEMA auditoria FROM PUBLIC;
+ REVOKE ALL ON ALL SEQUENCES IN SCHEMA auditoria FROM PUBLIC;
+ REVOKE ALL ON ALL FUNCTIONS IN SCHEMA auditoria FROM PUBLIC;
++-- Funciones futuras del creador actual, en todos los esquemas de ESTA base.
++-- No usar IN SCHEMA: no revoca el EXECUTE global que PostgreSQL da por defecto.
++-- Repetir para cada propietario autorizado que cree funciones del proyecto.
++ALTER DEFAULT PRIVILEGES REVOKE EXECUTE ON FUNCTIONS FROM PUBLIC;
+ 
+ -- 3. Permisos de aud_admin (configuración) y aud_consulta (lectura)
+ GRANT USAGE ON SCHEMA auditoria TO aud_admin, aud_consulta;
+@@ -41,13 +45,22 @@ GRANT USAGE, SELECT ON  auditoria.aud_tabla_id_tabla_seq,
+ -- Generar y eliminar triggers: solo aud_admin
+ -- (se ejecutan con los permisos del dueño, así el admin no necesita
+ --  ser dueño de las tablas auditadas)
+-ALTER FUNCTION auditoria.generar_trigger(INT)
+-    SECURITY DEFINER SET search_path = auditoria, pg_temp;
+-ALTER FUNCTION auditoria.eliminar_trigger(INT)
+-    SECURITY DEFINER SET search_path = auditoria, pg_temp;
+-
+-GRANT EXECUTE ON FUNCTION   auditoria.generar_trigger(INT),
+-                            auditoria.eliminar_trigger(INT) TO aud_admin;
++-- Permite instalar los controles independientes mientras se entrega 03.
++-- Reejecutar 06 después de instalar el generador; no se crean sustitutos.
++DO $$
++DECLARE firma TEXT;
++BEGIN
++    FOREACH firma IN ARRAY ARRAY['auditoria.generar_trigger(integer)',
++                                 'auditoria.eliminar_trigger(integer)'] LOOP
++        IF to_regprocedure(firma) IS NULL THEN
++            RAISE NOTICE 'PENDIENTE: falta %. Instalar 03 y volver a ejecutar 06.', firma;
++        ELSE
++            EXECUTE format('ALTER FUNCTION %s SECURITY DEFINER SET search_path = auditoria, pg_temp', firma);
++            EXECUTE format('GRANT EXECUTE ON FUNCTION %s TO aud_admin', firma);
++        END IF;
++    END LOOP;
++END
++$$;
+ 
+ -- Consulta de historial: aud_consulta (y aud_admin, que la hereda)
+ -- La vista se ejecuta con los permisos de su dueño, por eso
+@@ -69,6 +82,7 @@ BEGIN
+     RAISE EXCEPTION 'La bitácora es de solo escritura: no se permite % sobre aud_bitacora', TG_OP;
+ END;
+ $$;
++REVOKE ALL ON FUNCTION auditoria.bloquear_modificacion_bitacora() FROM PUBLIC;
+ 
+ DROP TRIGGER IF EXISTS trg_bitacora_inmutable ON auditoria.aud_bitacora;
+ CREATE TRIGGER trg_bitacora_inmutable
+@@ -114,4 +128,4 @@ CREATE TRIGGER trg_bitacora_sin_truncate
+ 
+ -- Prueba 6: nadie puede borrar la bitácora, ni siquiera el dueño
+ --   Esperado: ERROR La bitácora es de solo escritura: no se permite DELETE...
+--- DELETE FROM auditoria.aud_bitacora WHERE id_bitacora = 1;
+\ No newline at end of file
++-- DELETE FROM auditoria.aud_bitacora WHERE id_bitacora = 1;
+diff --git a/sql/07_pruebas_rendimiento.sql b/sql/07_pruebas_rendimiento.sql
+index 4e8485e..0786e59 100644
+--- a/sql/07_pruebas_rendimiento.sql
++++ b/sql/07_pruebas_rendimiento.sql
+@@ -140,13 +140,15 @@ REVOKE ALL ON FUNCTION auditoria.medir_rendimiento(INT) FROM PUBLIC;
+ -- -----------------------------------------------------
+ 
+ -- 1,000 filas (segundos)
+-SELECT * FROM auditoria.medir_rendimiento(1000);
++-- SELECT * FROM auditoria.medir_rendimiento(1000);
+ 
+ -- 10,000 filas (decenas de segundos como máximo)
+-SELECT * FROM auditoria.medir_rendimiento(10000);
++-- SELECT * FROM auditoria.medir_rendimiento(10000);
+ 
+ -- 100,000 filas (puede tardar de uno a varios minutos)
+-SELECT * FROM auditoria.medir_rendimiento(100000);
++-- OPCIONAL: descomentar y ejecutar manualmente, nunca en una instalación automática.
++-- SELECT * FROM auditoria.medir_rendimiento(100000);
+ 
+--- Comprobar que no quedó nada: debe seguir igual que antes de las pruebas (5 filas)
+-SELECT count(*) FROM auditoria.aud_bitacora;
++-- El wrapper tests/performance/30_rendimiento.sql compara antes/después por tabla;
++-- no se presupone un conteo fijo de bitácora.
++-- SELECT count(*) FROM auditoria.aud_bitacora;

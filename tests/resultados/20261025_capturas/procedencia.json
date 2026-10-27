@@ -1,0 +1,12 @@
+{
+  "fecha_utc": "2026-10-26T05:30:16.541319+00:00",
+  "contenedor": "autoaudit-capturas-20261025",
+  "base": "autoaudit_test_capturas",
+  "publicacion": "127.0.0.1:55425",
+  "cliente": "Adminer temporal, no es la interfaz PHP del proyecto",
+  "descarga_cliente": "https://release-assets.githubusercontent.com/github-production-release-asset/627735/f95b514d-d383-4350-bdf5-d591130b0708?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-10-26T06%3A25%3A11Z&rscd=attachment%3B+filename%3Dadminer-6.2.0.php&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-10-26T05%3A24%3A14Z&ske=2026-10-26T06%3A25%3A11Z&sks=b&skv=2018-11-09&sig=SeUphYJwzCl%2Brn0PPpNmelxg8CXKryWcdy5qYmIMBwM%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5Mjk5MjgwNywibmJmIjoxNzkyOTkyNTA3LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.Y_tg6dssVsnIwgUQW1jY11bmohGKK1YVIDiBa7aKYKE&response-content-disposition=attachment%3B%20filename%3Dadminer-6.2.0.php&response-content-type=application%2Foctet-stream",
+  "sha256_cliente": "9047c00dfc8258c6046c6720d7d201eaa0ca016fa0fc554bf0c4c137306e1c16",
+  "fuente_03_08_commit": "431451fede1b42e8ae56a3695878ab5f8a7f68ac",
+  "datos": "Demostración del script 08, partes A y B, sin parte C",
+  "roles_login": "Solo en este clúster desechable; credenciales temporales excluidas de la entrega"
+}

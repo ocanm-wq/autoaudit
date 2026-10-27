@@ -1,0 +1,10 @@
+BEGIN
+DO
+CREATE FUNCTION
+REVOKE
+                 case                 
+--------------------------------------
+ AA_EXTRA|07_completo_sin_cargas|PASS
+(1 row)
+
+ROLLBACK

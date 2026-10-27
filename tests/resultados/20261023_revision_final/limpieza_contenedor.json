@@ -1,0 +1,9 @@
+{
+  "contenedor_verificado": "/autoaudit-test-20261023 postgres:18-alpine none",
+  "stop_exit": 0,
+  "rm_exit": 0,
+  "comprobacion_exit": 0,
+  "contenedores_con_ese_nombre": [],
+  "retirado": true,
+  "datos": "tmpfs descartado; sin volumen persistente ni puerto publicado"
+}

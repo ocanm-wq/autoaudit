@@ -1,0 +1,8 @@
+{
+  "rama": "main",
+  "head": "561de0e77231ee4215decceab60457182216856b",
+  "archivos_preexistentes_modificados": [],
+  "staging": [],
+  "sin_commits_nuevos": true,
+  "politica": "Sin comandos add commit push merge rebase ni publicación remota"
+}

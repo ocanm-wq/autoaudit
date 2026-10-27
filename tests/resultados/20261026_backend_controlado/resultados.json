@@ -1,0 +1,1566 @@
+{
+  "resumen": {
+    "PASS": 240,
+    "FAIL": 0,
+    "BLOCKED": 0
+  },
+  "contexto": {
+    "fecha_utc": "2026-10-26T18:44:46.157321+00:00",
+    "sistema_ejecutor": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "cpu_ejecutor": 12,
+    "database": "autoaudit_test_20261026c",
+    "docker_container": "autoaudit-backend-20261026c",
+    "usa_fuentes_locales_sin_transformar": true,
+    "incluir_100000": false,
+    "sha256_sql": {
+      "sql/01_estructura_autoaudit.sql": "38ac857f8a02dbec3d7eaeb2e4603106c1c81b68240f4882dd1104bb2a2332a4",
+      "sql/02_consultas_diccionario.sql": "608c9a23dac2272732085bb8ca8d9735c6a62b6a1105e44eff3e2fabe883d022",
+      "sql/03_generador_triggers.sql": "8f2c77f63603b8e6007d2fae923f1ef4f7a0cd2fb304e1adcf578c79c46e55a8",
+      "sql/04_prueba_generador.sql": "2b3d0fe760e16975f8ce83c467fbbe98d5aae50f5b5d5192b3af5eb204fcbe10",
+      "sql/05_consultas_historial.sql": "65019e4437e237f7e3d6cd487e0eca649e3ab1dd2119a80076d8c0e97cd2cefa",
+      "sql/06_seguridad.sql": "38e6e0e4e13dc3595fa1069cff1893e838fef52b797b7e5af34af821aebf1621",
+      "sql/07_pruebas_rendimiento.sql": "fb26712ef1031926f2ee1115703f0417aacde752a06ee185e73827f9bbf86ee5",
+      "sql/08_datos_demostracion.sql": "688d00077b93d8f3719a5b45a8af27e06c0be153b4781438798e5ccaa1baba81",
+      "sql/09_interfaz.sql": "d04af1b581486ecb24038d5adf85cf88719bb8024458698511a9057d3221d87e"
+    },
+    "contenedor": {
+      "NetworkMode": "none",
+      "Memory": 1073741824,
+      "NanoCpus": 2000000000,
+      "Tmpfs": {
+        "/var/lib/postgresql": "rw,size=768m"
+      }
+    },
+    "imagen": "autoaudit-test-ubuntu26:local sha256:a6c0d450232127999041286a670712748d56c15a7a01e6252b194b724b0f12e3",
+    "os_servidor": "PRETTY_NAME=\"Ubuntu 26.04.1 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"26.04\"\nVERSION=\"26.04.1 LTS (Resolute Raccoon)\"\nVERSION_CODENAME=resolute\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=resolute\nLOGO=ubuntu-logo",
+    "cliente_psql": "psql (PostgreSQL) 18.6 (Ubuntu 18.6-0ubuntu0.26.04.1)",
+    "paquetes_servidor": [
+      "postgresql-18\t18.6-0ubuntu0.26.04.1",
+      "postgresql-client-18\t18.6-0ubuntu0.26.04.1"
+    ],
+    "servidor": {
+      "version": "PostgreSQL 18.6 (Ubuntu 18.6-0ubuntu0.26.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, 64-bit",
+      "database": "autoaudit_test_20261026c",
+      "usuario": "postgres",
+      "timezone": "Etc/UTC",
+      "shared_buffers": "128MB",
+      "jit": "on",
+      "synchronous_commit": "on",
+      "max_connections": "100"
+    },
+    "snapshot_antes_suites": {
+      "aud_evento": 3,
+      "aud_tabla": 0,
+      "aud_columna": 0,
+      "aud_configuracion": 0,
+      "aud_usuario": 0,
+      "aud_estacion": 0,
+      "aud_bitacora": 0
+    },
+    "snapshot_despues_suites": {
+      "aud_evento": 3,
+      "aud_tabla": 0,
+      "aud_columna": 0,
+      "aud_configuracion": 0,
+      "aud_usuario": 0,
+      "aud_estacion": 0,
+      "aud_bitacora": 0
+    },
+    "limpieza": {
+      "objetos_fuente": 0,
+      "funciones_fixture": 0,
+      "roles_fixture": 0
+    },
+    "sha256_sql_despues": {
+      "sql/01_estructura_autoaudit.sql": "38ac857f8a02dbec3d7eaeb2e4603106c1c81b68240f4882dd1104bb2a2332a4",
+      "sql/02_consultas_diccionario.sql": "608c9a23dac2272732085bb8ca8d9735c6a62b6a1105e44eff3e2fabe883d022",
+      "sql/03_generador_triggers.sql": "8f2c77f63603b8e6007d2fae923f1ef4f7a0cd2fb304e1adcf578c79c46e55a8",
+      "sql/04_prueba_generador.sql": "2b3d0fe760e16975f8ce83c467fbbe98d5aae50f5b5d5192b3af5eb204fcbe10",
+      "sql/05_consultas_historial.sql": "65019e4437e237f7e3d6cd487e0eca649e3ab1dd2119a80076d8c0e97cd2cefa",
+      "sql/06_seguridad.sql": "38e6e0e4e13dc3595fa1069cff1893e838fef52b797b7e5af34af821aebf1621",
+      "sql/07_pruebas_rendimiento.sql": "fb26712ef1031926f2ee1115703f0417aacde752a06ee185e73827f9bbf86ee5",
+      "sql/08_datos_demostracion.sql": "688d00077b93d8f3719a5b45a8af27e06c0be153b4781438798e5ccaa1baba81",
+      "sql/09_interfaz.sql": "d04af1b581486ecb24038d5adf85cf88719bb8024458698511a9057d3221d87e"
+    }
+  },
+  "casos": [
+    {
+      "suite": "instalacion",
+      "id": "00_entorno",
+      "estado": "PASS",
+      "detalle": "Ver 00_entorno.log"
+    },
+    {
+      "suite": "instalacion",
+      "id": "01_estructura",
+      "estado": "PASS",
+      "detalle": "Ver 01_estructura.log"
+    },
+    {
+      "suite": "instalacion",
+      "id": "03_generador",
+      "estado": "PASS",
+      "detalle": "Ver 03_generador.log"
+    },
+    {
+      "suite": "instalacion",
+      "id": "05_historial",
+      "estado": "PASS",
+      "detalle": "Ver 05_historial.log"
+    },
+    {
+      "suite": "instalacion",
+      "id": "06_seguridad",
+      "estado": "PASS",
+      "detalle": "Ver 06_seguridad.log"
+    },
+    {
+      "suite": "instalacion",
+      "id": "07_solo_definicion",
+      "estado": "PASS",
+      "detalle": "Ver 07_solo_definicion.log"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "catalogo_eventos",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "columna_fk",
+      "estado": "PASS",
+      "detalle": "23503: insert or update on table \"aud_columna\" violates foreign key constraint \"aud_columna_id_tabla_fkey\""
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "config_desactivada",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "config_fk_columna",
+      "estado": "PASS",
+      "detalle": "23503: insert or update on table \"aud_configuracion\" violates foreign key constraint \"aud_configuracion_id_columna_fkey\""
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "config_fk_evento",
+      "estado": "PASS",
+      "detalle": "23503: insert or update on table \"aud_configuracion\" violates foreign key constraint \"aud_configuracion_id_evento_fkey\""
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "config_not_null",
+      "estado": "PASS",
+      "detalle": "23502: null value in column \"id_columna\" of relation \"aud_configuracion\" violates not-null constraint"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "config_unique",
+      "estado": "PASS",
+      "detalle": "23505: duplicate key value violates unique constraint \"aud_configuracion_id_columna_id_evento_key\""
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "consulta_columna",
+      "estado": "PASS",
+      "detalle": "Multiset exacto en ambas direcciones; fixtures"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "consulta_limites_temporales",
+      "estado": "PASS",
+      "detalle": "desde inclusivo; hasta exclusivo"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "consulta_objeto_invalido",
+      "estado": "PASS",
+      "detalle": "Filtro inexistente devuelve conjunto vacío"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "consulta_registro",
+      "estado": "PASS",
+      "detalle": "Multiset exacto en ambas direcciones; fixtures"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "consulta_usuario",
+      "estado": "PASS",
+      "detalle": "Multiset exacto en ambas direcciones; fixtures"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "dml_eliminado_consultable",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "dml_identidad_fecha",
+      "estado": "PASS",
+      "detalle": "Usuario dueño y fecha dentro de transacción"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "dml_multiset_exacto",
+      "estado": "PASS",
+      "detalle": "INSERT=2 UPDATE=1 DELETE=2; OLD/NEW/id/columna/evento exactos"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "dml_no_auditada",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "dml_null",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "dml_regeneracion_sin_duplicados",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "dml_update_sin_cambio",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "evento_check",
+      "estado": "PASS",
+      "detalle": "23514: new row for relation \"aud_evento\" violates check constraint \"aud_evento_nombre_check\""
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "evento_unique",
+      "estado": "PASS",
+      "detalle": "23505: duplicate key value violates unique constraint \"aud_evento_pkey\""
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "generador_columna_invalida",
+      "estado": "PASS",
+      "detalle": "P0001: Columnas inexistentes en public.aa_sentinel: aa_no_columna"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "generador_config_id_invalido",
+      "estado": "PASS",
+      "detalle": "P0001: La tabla con id -1 no está registrada en aud_tabla"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "generador_inyeccion",
+      "estado": "PASS",
+      "detalle": "Centinela conservado; falta revisión completa del código de 03"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "generador_inyeccion_rechazo",
+      "estado": "PASS",
+      "detalle": "P0001: La tabla public.aa_x\"; DROP TABLE public.aa_sentinel; -- no existe en la base de datos"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "generador_tabla_invalida",
+      "estado": "PASS",
+      "detalle": "P0001: La tabla aa_no_existe.x no existe en la base de datos"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "tabla_desactivada",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "tabla_unique",
+      "estado": "PASS",
+      "detalle": "23505: duplicate key value violates unique constraint \"aud_tabla_esquema_nombre_tabla_key\""
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "admin_config_delete_denegado",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_tabla"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "admin_config_insert",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "admin_config_update",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "admin_hereda_consulta",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_admin_delete",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_admin_historial_columna",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_admin_historial_registro",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_admin_historial_usuario",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_admin_insert",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_admin_lectura_directa",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_admin_truncate",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_admin_update",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_admin_vista",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_consulta_delete",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_consulta_historial_columna",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_consulta_historial_registro",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_consulta_historial_usuario",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_consulta_insert",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_consulta_lectura_directa",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_consulta_truncate",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_consulta_update",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_consulta_vista",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "bitacora_fixture_intacta",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "consulta_config_insert_denegado",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_tabla"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "consulta_config_update_denegado",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_tabla"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "eliminar_trigger_admin_operacion_real",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=00000 valor=NULL ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "eliminar_trigger_consulta_denegada",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=42501 valor=NULL permission denied for function eliminar_trigger"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "eliminar_trigger_execute_roles",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "eliminar_trigger_security_definer",
+      "estado": "PASS",
+      "detalle": "Revisar además propietario confiable y referencias calificadas"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "fixture_bitacora_existe",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "generar_trigger_admin_operacion_real",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=00000 valor=NULL ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "generar_trigger_consulta_denegada",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=42501 valor=NULL permission denied for function generar_trigger"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "generar_trigger_execute_roles",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "generar_trigger_security_definer",
+      "estado": "PASS",
+      "detalle": "Revisar además propietario confiable y referencias calificadas"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "limite_owner_desactiva_triggers",
+      "estado": "PASS",
+      "detalle": "Límite demostrado; DDL y UPDATE revertidos en subtransacción"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "limite_owner_puede_insertar",
+      "estado": "PASS",
+      "detalle": "postgres SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "owner_delete_bloqueado",
+      "estado": "PASS",
+      "detalle": "P0001: La bitácora es de solo escritura: no se permite DELETE sobre aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "owner_truncate_bloqueado",
+      "estado": "PASS",
+      "detalle": "P0001: La bitácora es de solo escritura: no se permite TRUNCATE sobre aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "owner_update_bloqueado",
+      "estado": "PASS",
+      "detalle": "P0001: La bitácora es de solo escritura: no se permite UPDATE sobre aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "public_execute_funciones_actuales",
+      "estado": "PASS",
+      "detalle": "Detecta función de bloqueo creada DESPUÉS de REVOKE ALL; sin USAGE no es acceso efectivo por sí solo"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "public_execute_funciones_futuras",
+      "estado": "PASS",
+      "detalle": "ALTER DEFAULT PRIVILEGES debe cubrir al propietario que crea las funciones"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "public_probe_historial_denegado",
+      "estado": "PASS",
+      "detalle": "aa_public_probe SQLSTATE=42501 valor=NULL permission denied for schema auditoria"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "public_probe_vista_denegado",
+      "estado": "PASS",
+      "detalle": "aa_public_probe SQLSTATE=42501 valor=NULL permission denied for schema auditoria"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "public_schema_sin_usage",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "public_tablas_sin_permisos",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "roles_sin_create_esquema",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "roles_sin_login",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_cardinalidad_10000_1",
+      "estado": "PASS",
+      "detalle": "exactamente tres filas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_cardinalidad_10000_2",
+      "estado": "PASS",
+      "detalle": "exactamente tres filas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_cardinalidad_10000_3",
+      "estado": "PASS",
+      "detalle": "exactamente tres filas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_cardinalidad_1000_1",
+      "estado": "PASS",
+      "detalle": "exactamente tres filas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_cardinalidad_1000_2",
+      "estado": "PASS",
+      "detalle": "exactamente tres filas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_cardinalidad_1000_3",
+      "estado": "PASS",
+      "detalle": "exactamente tres filas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_cardinalidad_100_1",
+      "estado": "PASS",
+      "detalle": "exactamente tres filas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_cardinalidad_100_2",
+      "estado": "PASS",
+      "detalle": "exactamente tres filas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_cardinalidad_100_3",
+      "estado": "PASS",
+      "detalle": "exactamente tres filas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_10000_1_DELETE",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_10000_1_INSERT",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_10000_1_UPDATE",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_10000_2_DELETE",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_10000_2_INSERT",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_10000_2_UPDATE",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_10000_3_DELETE",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_10000_3_INSERT",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_10000_3_UPDATE",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_1000_1_DELETE",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_1000_1_INSERT",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_1000_1_UPDATE",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_1000_2_DELETE",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_1000_2_INSERT",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_1000_2_UPDATE",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_1000_3_DELETE",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_1000_3_INSERT",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_1000_3_UPDATE",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_100_1_DELETE",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_100_1_INSERT",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_100_1_UPDATE",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_100_2_DELETE",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_100_2_INSERT",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_100_2_UPDATE",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_100_3_DELETE",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_100_3_INSERT",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_eventos_100_3_UPDATE",
+      "estado": "PASS",
+      "detalle": "eventos esperados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_10000_1_DELETE",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_10000_1_INSERT",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_10000_1_UPDATE",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_10000_2_DELETE",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_10000_2_INSERT",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_10000_2_UPDATE",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_10000_3_DELETE",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_10000_3_INSERT",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_10000_3_UPDATE",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_1000_1_DELETE",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_1000_1_INSERT",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_1000_1_UPDATE",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_1000_2_DELETE",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_1000_2_INSERT",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_1000_2_UPDATE",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_1000_3_DELETE",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_1000_3_INSERT",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_1000_3_UPDATE",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_100_1_DELETE",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_100_1_INSERT",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_100_1_UPDATE",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_100_2_DELETE",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_100_2_INSERT",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_100_2_UPDATE",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_100_3_DELETE",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_100_3_INSERT",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_filas_100_3_UPDATE",
+      "estado": "PASS",
+      "detalle": "filas reportadas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_limpieza_10000_1",
+      "estado": "PASS",
+      "detalle": "tablas temporales revertidas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_limpieza_10000_2",
+      "estado": "PASS",
+      "detalle": "tablas temporales revertidas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_limpieza_10000_3",
+      "estado": "PASS",
+      "detalle": "tablas temporales revertidas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_limpieza_1000_1",
+      "estado": "PASS",
+      "detalle": "tablas temporales revertidas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_limpieza_1000_2",
+      "estado": "PASS",
+      "detalle": "tablas temporales revertidas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_limpieza_1000_3",
+      "estado": "PASS",
+      "detalle": "tablas temporales revertidas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_limpieza_100_1",
+      "estado": "PASS",
+      "detalle": "tablas temporales revertidas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_limpieza_100_2",
+      "estado": "PASS",
+      "detalle": "tablas temporales revertidas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_limpieza_100_3",
+      "estado": "PASS",
+      "detalle": "tablas temporales revertidas"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_muestras_10000_DELETE",
+      "estado": "PASS",
+      "detalle": "Tres repeticiones completas por operación"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_muestras_10000_INSERT",
+      "estado": "PASS",
+      "detalle": "Tres repeticiones completas por operación"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_muestras_10000_UPDATE",
+      "estado": "PASS",
+      "detalle": "Tres repeticiones completas por operación"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_muestras_1000_DELETE",
+      "estado": "PASS",
+      "detalle": "Tres repeticiones completas por operación"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_muestras_1000_INSERT",
+      "estado": "PASS",
+      "detalle": "Tres repeticiones completas por operación"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_muestras_1000_UPDATE",
+      "estado": "PASS",
+      "detalle": "Tres repeticiones completas por operación"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_muestras_100_DELETE",
+      "estado": "PASS",
+      "detalle": "Tres repeticiones completas por operación"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_muestras_100_INSERT",
+      "estado": "PASS",
+      "detalle": "Tres repeticiones completas por operación"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_muestras_100_UPDATE",
+      "estado": "PASS",
+      "detalle": "Tres repeticiones completas por operación"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_operaciones_10000_1",
+      "estado": "PASS",
+      "detalle": "INSERT/UPDATE/DELETE sin duplicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_operaciones_10000_2",
+      "estado": "PASS",
+      "detalle": "INSERT/UPDATE/DELETE sin duplicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_operaciones_10000_3",
+      "estado": "PASS",
+      "detalle": "INSERT/UPDATE/DELETE sin duplicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_operaciones_1000_1",
+      "estado": "PASS",
+      "detalle": "INSERT/UPDATE/DELETE sin duplicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_operaciones_1000_2",
+      "estado": "PASS",
+      "detalle": "INSERT/UPDATE/DELETE sin duplicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_operaciones_1000_3",
+      "estado": "PASS",
+      "detalle": "INSERT/UPDATE/DELETE sin duplicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_operaciones_100_1",
+      "estado": "PASS",
+      "detalle": "INSERT/UPDATE/DELETE sin duplicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_operaciones_100_2",
+      "estado": "PASS",
+      "detalle": "INSERT/UPDATE/DELETE sin duplicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_operaciones_100_3",
+      "estado": "PASS",
+      "detalle": "INSERT/UPDATE/DELETE sin duplicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_10000_1_DELETE",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_10000_1_INSERT",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_10000_1_UPDATE",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_10000_2_DELETE",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_10000_2_INSERT",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_10000_2_UPDATE",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_10000_3_DELETE",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_10000_3_INSERT",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_10000_3_UPDATE",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_1000_1_DELETE",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_1000_1_INSERT",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_1000_1_UPDATE",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_1000_2_DELETE",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_1000_2_INSERT",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_1000_2_UPDATE",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_1000_3_DELETE",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_1000_3_INSERT",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_1000_3_UPDATE",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_100_1_DELETE",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_100_1_INSERT",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_100_1_UPDATE",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_100_2_DELETE",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_100_2_INSERT",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_100_2_UPDATE",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_100_3_DELETE",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_100_3_INSERT",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_pct_100_3_UPDATE",
+      "estado": "PASS",
+      "detalle": "Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_rechaza_-1",
+      "estado": "PASS",
+      "detalle": "P0001 esperado"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_rechaza_0",
+      "estado": "PASS",
+      "detalle": "P0001 esperado"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_rechaza_null",
+      "estado": "PASS",
+      "detalle": "P0001: p_filas debe ser un número mayor que 0"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_snapshot_10000_1",
+      "estado": "PASS",
+      "detalle": "conteos de las siete tablas sin residuos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_snapshot_10000_2",
+      "estado": "PASS",
+      "detalle": "conteos de las siete tablas sin residuos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_snapshot_10000_3",
+      "estado": "PASS",
+      "detalle": "conteos de las siete tablas sin residuos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_snapshot_1000_1",
+      "estado": "PASS",
+      "detalle": "conteos de las siete tablas sin residuos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_snapshot_1000_2",
+      "estado": "PASS",
+      "detalle": "conteos de las siete tablas sin residuos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_snapshot_1000_3",
+      "estado": "PASS",
+      "detalle": "conteos de las siete tablas sin residuos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_snapshot_100_1",
+      "estado": "PASS",
+      "detalle": "conteos de las siete tablas sin residuos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_snapshot_100_2",
+      "estado": "PASS",
+      "detalle": "conteos de las siete tablas sin residuos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_snapshot_100_3",
+      "estado": "PASS",
+      "detalle": "conteos de las siete tablas sin residuos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_10000_1_DELETE",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_10000_1_INSERT",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_10000_1_UPDATE",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_10000_2_DELETE",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_10000_2_INSERT",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_10000_2_UPDATE",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_10000_3_DELETE",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_10000_3_INSERT",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_10000_3_UPDATE",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_1000_1_DELETE",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_1000_1_INSERT",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_1000_1_UPDATE",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_1000_2_DELETE",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_1000_2_INSERT",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_1000_2_UPDATE",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_1000_3_DELETE",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_1000_3_INSERT",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_1000_3_UPDATE",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_100_1_DELETE",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_100_1_INSERT",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_100_1_UPDATE",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_100_2_DELETE",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_100_2_INSERT",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_100_2_UPDATE",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_100_3_DELETE",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_100_3_INSERT",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_tiempos_100_3_UPDATE",
+      "estado": "PASS",
+      "detalle": "tiempos no negativos"
+    },
+    {
+      "suite": "limpieza",
+      "id": "conteos_siete_tablas",
+      "estado": "PASS",
+      "detalle": "Comparación por tabla; secuencias pueden avanzar"
+    },
+    {
+      "suite": "limpieza",
+      "id": "objetos_fuente",
+      "estado": "PASS",
+      "detalle": "Sin tablas/índices/secuencias, funciones o roles de fixtures"
+    },
+    {
+      "suite": "integridad",
+      "id": "originales_sql_intactos",
+      "estado": "PASS",
+      "detalle": "SHA256 antes/después de todos los originales SQL"
+    }
+  ],
+  "benchmark": [
+    "NOTICE:  AA_BENCH_RAW|1|100|INSERT|0.4|7.9|1960.3|200",
+    "NOTICE:  AA_BENCH_RAW|1|100|UPDATE|0.3|4.7|1282.7|100",
+    "NOTICE:  AA_BENCH_RAW|1|100|DELETE|0.1|6.9|11945.6|200",
+    "NOTICE:  AA_BENCH_RAW|2|100|INSERT|0.4|6.9|1582.6|200",
+    "NOTICE:  AA_BENCH_RAW|2|100|UPDATE|0.4|5.0|1307.3|100",
+    "NOTICE:  AA_BENCH_RAW|2|100|DELETE|0.1|6.7|11621.1|200",
+    "NOTICE:  AA_BENCH_RAW|3|100|INSERT|0.4|7.5|1947.4|200",
+    "NOTICE:  AA_BENCH_RAW|3|100|UPDATE|0.4|4.5|1091.8|100",
+    "NOTICE:  AA_BENCH_RAW|3|100|DELETE|0.1|6.9|9320.5|200",
+    "NOTICE:  AA_BENCH_RAW|1|1000|INSERT|2.3|68.9|2921.8|2000",
+    "NOTICE:  AA_BENCH_RAW|1|1000|UPDATE|3.3|44.8|1265.5|1000",
+    "NOTICE:  AA_BENCH_RAW|1|1000|DELETE|0.4|66.4|18089.3|2000",
+    "NOTICE:  AA_BENCH_RAW|2|1000|INSERT|2.2|76.9|3358.1|2000",
+    "NOTICE:  AA_BENCH_RAW|2|1000|UPDATE|3.5|46.7|1227.5|1000",
+    "NOTICE:  AA_BENCH_RAW|2|1000|DELETE|0.4|72.3|16261.3|2000",
+    "NOTICE:  AA_BENCH_RAW|3|1000|INSERT|2.2|79.1|3463.5|2000",
+    "NOTICE:  AA_BENCH_RAW|3|1000|UPDATE|3.2|43.7|1256.1|1000",
+    "NOTICE:  AA_BENCH_RAW|3|1000|DELETE|0.5|64.1|13433.5|2000",
+    "NOTICE:  AA_BENCH_RAW|1|10000|INSERT|22.5|722.7|3106.9|20000",
+    "NOTICE:  AA_BENCH_RAW|1|10000|UPDATE|33.7|766.3|2175.9|10000",
+    "NOTICE:  AA_BENCH_RAW|1|10000|DELETE|3.3|889.2|27135.0|20000",
+    "NOTICE:  AA_BENCH_RAW|2|10000|INSERT|38.5|722.3|1776.7|20000",
+    "NOTICE:  AA_BENCH_RAW|2|10000|UPDATE|29.9|85.1|184.5|10000",
+    "NOTICE:  AA_BENCH_RAW|2|10000|DELETE|3.3|718.4|21480.0|20000",
+    "NOTICE:  AA_BENCH_RAW|3|10000|INSERT|25.3|785.5|2999.7|20000",
+    "NOTICE:  AA_BENCH_RAW|3|10000|UPDATE|31.5|459.1|1358.5|10000",
+    "NOTICE:  AA_BENCH_RAW|3|10000|DELETE|4.8|727.1|15136.1|20000",
+    "NOTICE:  AA_BENCH|100|DELETE|3|muestras=3; sin=0.1ms (min 0.1 max 0.1 sd 0.0 cv 0.0); con=6.8ms (min 6.7 max 6.9 sd 0.1 cv 1.7); sobrecosto=6733.3%; eventos_prom=200",
+    "NOTICE:  AA_BENCH|100|INSERT|3|muestras=3; sin=0.4ms (min 0.4 max 0.4 sd 0.0 cv 0.0); con=7.4ms (min 6.9 max 7.9 sd 0.5 cv 6.8); sobrecosto=1758.3%; eventos_prom=200",
+    "NOTICE:  AA_BENCH|100|UPDATE|3|muestras=3; sin=0.4ms (min 0.3 max 0.4 sd 0.1 cv 15.7); con=4.7ms (min 4.5 max 5.0 sd 0.3 cv 5.3); sobrecosto=1213.9%; eventos_prom=100",
+    "NOTICE:  AA_BENCH|1000|DELETE|3|muestras=3; sin=0.4ms (min 0.4 max 0.5 sd 0.1 cv 13.3); con=67.6ms (min 64.1 max 72.3 sd 4.2 cv 6.3); sobrecosto=15731.7%; eventos_prom=2000",
+    "NOTICE:  AA_BENCH|1000|INSERT|3|muestras=3; sin=2.2ms (min 2.2 max 2.3 sd 0.1 cv 2.6); con=75.0ms (min 68.9 max 79.1 sd 5.4 cv 7.2); sobrecosto=3262.2%; eventos_prom=2000",
+    "NOTICE:  AA_BENCH|1000|UPDATE|3|muestras=3; sin=3.3ms (min 3.2 max 3.5 sd 0.2 cv 4.6); con=45.1ms (min 43.7 max 46.7 sd 1.5 cv 3.4); sobrecosto=1252.5%; eventos_prom=1000",
+    "NOTICE:  AA_BENCH|10000|DELETE|3|muestras=3; sin=3.8ms (min 3.3 max 4.8 sd 0.9 cv 22.8); con=778.2ms (min 718.4 max 889.2 sd 96.2 cv 12.4); sobrecosto=21187.7%; eventos_prom=20000",
+    "NOTICE:  AA_BENCH|10000|INSERT|3|muestras=3; sin=28.8ms (min 22.5 max 38.5 sd 8.5 cv 29.7); con=743.5ms (min 722.3 max 785.5 sd 36.4 cv 4.9); sobrecosto=2630.9%; eventos_prom=20000",
+    "NOTICE:  AA_BENCH|10000|UPDATE|3|muestras=3; sin=31.7ms (min 29.9 max 33.7 sd 1.9 cv 6.0); con=436.8ms (min 85.1 max 766.3 sd 341.1 cv 78.1); sobrecosto=1238.7%; eventos_prom=10000"
+  ]
+}

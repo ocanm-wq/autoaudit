@@ -1,0 +1,9 @@
+--- a/sql/05_consultas_historial.sql
++++ b/sql/05_consultas_historial.sql
+@@ -49,6 +49,5 @@
+     p_hasta   TIMESTAMPTZ DEFAULT NULL
+ )
+-q   
+ RETURNS SETOF auditoria.v_historial
+ LANGUAGE sql
+     STABLE

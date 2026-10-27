@@ -1,0 +1,9 @@
+{
+  "paginas": 12,
+  "figuras": 15,
+  "revision_visual": "Se inspeccionaron las doce páginas renderizadas. Después de corregir el nombre del enlace se reexportó el PDF y se revisó de nuevo la página seis.",
+  "render": "Word COM oculto y Poppler bundled; render_docx.py no tuvo soffice.exe disponible",
+  "sha256_docx": "d3a89e2a46233e41d7ee74aa172636809a451849e63e23b28268bdd9aa079db1",
+  "sha256_pdf": "547231a02e5f8a0a7171d5db164d18bf72dc110aa5dd2212a92b8ab84646a0a5",
+  "capturas_sin_puntero": true
+}

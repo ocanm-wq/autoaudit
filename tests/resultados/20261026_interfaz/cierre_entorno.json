@@ -1,0 +1,10 @@
+{
+  "fecha_utc": "2026-10-26T23:27:09.5252704Z",
+  "puertos_propios_abiertos": [],
+  "sesiones_temporales_eliminadas": 29,
+  "estado_previo_contenedor": "exited",
+  "contenedores_restantes": [
+    "autoaudit-db"
+  ],
+  "nota": "Se eliminaron únicamente sesiones PHP temporales y el contenedor propio ya detenido. No se ejecutó SQL ni stop sobre autoaudit-db."
+}

@@ -1,0 +1,198 @@
+{
+  "fecha_utc": "2026-10-26T18:53:23.027337+00:00",
+  "url": "http://127.0.0.1:18087",
+  "database": "autoaudit_test_http",
+  "resumen": {
+    "PASS": 37,
+    "FAIL": 0,
+    "BLOCKED": 0
+  },
+  "casos": [
+    {
+      "id": "anonimo_login",
+      "estado": "PASS",
+      "detalle": "Redirección sin sesión"
+    },
+    {
+      "id": "password_incorrecto",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "ana_rechazo_rol",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "maria_admin_autenticada",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "maria_configura",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "csrf_config_sin_mutacion",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "luis_autenticado",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "luis_403_configuracion",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "historial_inicial",
+      "estado": "PASS",
+      "detalle": "baseline=21"
+    },
+    {
+      "id": "filtro_usuario",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "filtro_columna",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "filtros_combinados",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "registro_eliminado",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "inyeccion_filtro_no_amplia",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "columna_ajena_rechazada",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "json_objeto_rechazado",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "evento_rechazado",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "fecha_inexistente",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "rango_invertido",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "rango_local_valido",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "rango_vacio_rechazado",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "arrays_get_rechazados",
+      "estado": "PASS",
+      "detalle": "[True, True, True, True, True, True, True]"
+    },
+    {
+      "id": "csv_invalido_400",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "pagina_25",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "enlace_siguiente",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "pagina_2",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "pagina_50",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "pagina_100",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "xss_escapado",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "pagina_enorme_ajustada",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "csv_todas_las_paginas",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "csv_origen_campos",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "csv_formulas_neutralizadas",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "csv_null_y_vacio",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "csv_sin_html",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "logout_cierra_acceso",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "limpieza_fixture",
+      "estado": "PASS",
+      "detalle": ""
+    }
+  ],
+  "fuente_sha256": "81ef2f8cb78544388e09e2eda0595de542e0552ce8cf174c556c3cd8bf07f700"
+}

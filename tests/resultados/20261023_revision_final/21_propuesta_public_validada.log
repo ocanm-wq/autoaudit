@@ -1,0 +1,34 @@
+DO
+CREATE TABLE
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+BEGIN
+DO
+REVOKE
+ALTER DEFAULT PRIVILEGES
+ aa_check 
+----------
+ 
+(1 row)
+
+CREATE FUNCTION
+ aa_check 
+----------
+ 
+(1 row)
+
+NOTICE:  AA_RESULT|propuesta_funciones_actuales|PASS|
+NOTICE:  AA_RESULT|propuesta_funciones_futuras|PASS|
+NOTICE:  AA_SUMMARY|PASS=2|FAIL=0|BLOCKED=0
+              id              | estado | detalle 
+------------------------------+--------+---------
+ propuesta_funciones_actuales | PASS   | 
+ propuesta_funciones_futuras  | PASS   | 
+(2 rows)
+
+DO
+ROLLBACK

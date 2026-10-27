@@ -1,0 +1,155 @@
+[
+  {
+    "filas": 100,
+    "operacion": "INSERT",
+    "muestras": 3,
+    "media_sin_ms": 0.43333333333333335,
+    "sd_sin_ms": 0.15275252316519466,
+    "media_con_ms": 6.6,
+    "sd_con_ms": 0.4582575694955837,
+    "min_con_ms": 6.2,
+    "max_con_ms": 7.1,
+    "sobrecosto_promedio_pct": 1533.3333333333335,
+    "eventos_por_repeticion": [
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "filas": 100,
+    "operacion": "UPDATE",
+    "muestras": 3,
+    "media_sin_ms": 0.36666666666666664,
+    "sd_sin_ms": 0.11547005383792516,
+    "media_con_ms": 4.633333333333333,
+    "sd_con_ms": 1.011599393699568,
+    "min_con_ms": 4.0,
+    "max_con_ms": 5.8,
+    "sobrecosto_promedio_pct": 1266.6666666666667,
+    "eventos_por_repeticion": [
+      100,
+      100,
+      100
+    ]
+  },
+  {
+    "filas": 100,
+    "operacion": "DELETE",
+    "muestras": 3,
+    "media_sin_ms": 0.1,
+    "sd_sin_ms": 0.0,
+    "media_con_ms": 6.466666666666667,
+    "sd_con_ms": 0.9073771725877467,
+    "min_con_ms": 5.8,
+    "max_con_ms": 7.5,
+    "sobrecosto_promedio_pct": 6366.666666666667,
+    "eventos_por_repeticion": [
+      200,
+      200,
+      200
+    ]
+  },
+  {
+    "filas": 1000,
+    "operacion": "INSERT",
+    "muestras": 3,
+    "media_sin_ms": 2.3666666666666667,
+    "sd_sin_ms": 0.3214550253664319,
+    "media_con_ms": 70.86666666666666,
+    "sd_con_ms": 16.070573522227928,
+    "min_con_ms": 59.8,
+    "max_con_ms": 89.3,
+    "sobrecosto_promedio_pct": 2900.5384615384614,
+    "eventos_por_repeticion": [
+      2000,
+      2000,
+      2000
+    ]
+  },
+  {
+    "filas": 1000,
+    "operacion": "UPDATE",
+    "muestras": 3,
+    "media_sin_ms": 3.033333333333333,
+    "sd_sin_ms": 0.23094010767585024,
+    "media_con_ms": 40.300000000000004,
+    "sd_con_ms": 2.2649503305812253,
+    "min_con_ms": 38.2,
+    "max_con_ms": 42.7,
+    "sobrecosto_promedio_pct": 1236.433298502264,
+    "eventos_por_repeticion": [
+      1000,
+      1000,
+      1000
+    ]
+  },
+  {
+    "filas": 1000,
+    "operacion": "DELETE",
+    "muestras": 3,
+    "media_sin_ms": 0.3333333333333333,
+    "sd_sin_ms": 0.057735026918962595,
+    "media_con_ms": 62.766666666666666,
+    "sd_con_ms": 1.069267662156363,
+    "min_con_ms": 61.6,
+    "max_con_ms": 63.7,
+    "sobrecosto_promedio_pct": 19052.77777777778,
+    "eventos_por_repeticion": [
+      2000,
+      2000,
+      2000
+    ]
+  },
+  {
+    "filas": 10000,
+    "operacion": "INSERT",
+    "muestras": 3,
+    "media_sin_ms": 25.633333333333333,
+    "sd_sin_ms": 7.951310164578747,
+    "media_con_ms": 675.2666666666667,
+    "sd_con_ms": 14.727638416709368,
+    "min_con_ms": 659.4,
+    "max_con_ms": 688.5,
+    "sobrecosto_promedio_pct": 2685.73275321397,
+    "eventos_por_repeticion": [
+      20000,
+      20000,
+      20000
+    ]
+  },
+  {
+    "filas": 10000,
+    "operacion": "UPDATE",
+    "muestras": 3,
+    "media_sin_ms": 30.5,
+    "sd_sin_ms": 0.7549834435270751,
+    "media_con_ms": 426.43333333333334,
+    "sd_con_ms": 4.3096790290383975,
+    "min_con_ms": 423.1,
+    "max_con_ms": 431.3,
+    "sobrecosto_promedio_pct": 1298.5043369847292,
+    "eventos_por_repeticion": [
+      10000,
+      10000,
+      10000
+    ]
+  },
+  {
+    "filas": 10000,
+    "operacion": "DELETE",
+    "muestras": 3,
+    "media_sin_ms": 3.433333333333333,
+    "sd_sin_ms": 0.3511884584284245,
+    "media_con_ms": 636.6,
+    "sd_con_ms": 3.7643060449437376,
+    "min_con_ms": 633.9,
+    "max_con_ms": 640.9,
+    "sobrecosto_promedio_pct": 18564.592696161653,
+    "eventos_por_repeticion": [
+      20000,
+      20000,
+      20000
+    ]
+  }
+]

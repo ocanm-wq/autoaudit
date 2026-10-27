@@ -1,0 +1,376 @@
+SET
+DO
+CREATE TABLE
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+BEGIN
+
+DO
+CREATE TABLE
+DO
+DO
+rendimiento_cardinalidad_10000_1|PASS|exactamente tres filas
+rendimiento_cardinalidad_10000_2|PASS|exactamente tres filas
+rendimiento_cardinalidad_10000_3|PASS|exactamente tres filas
+rendimiento_cardinalidad_1000_1|PASS|exactamente tres filas
+rendimiento_cardinalidad_1000_2|PASS|exactamente tres filas
+rendimiento_cardinalidad_1000_3|PASS|exactamente tres filas
+rendimiento_cardinalidad_100_1|PASS|exactamente tres filas
+rendimiento_cardinalidad_100_2|PASS|exactamente tres filas
+rendimiento_cardinalidad_100_3|PASS|exactamente tres filas
+rendimiento_eventos_10000_1_DELETE|PASS|eventos esperados
+rendimiento_eventos_10000_1_INSERT|PASS|eventos esperados
+rendimiento_eventos_10000_1_UPDATE|PASS|eventos esperados
+rendimiento_eventos_10000_2_DELETE|PASS|eventos esperados
+rendimiento_eventos_10000_2_INSERT|PASS|eventos esperados
+rendimiento_eventos_10000_2_UPDATE|PASS|eventos esperados
+rendimiento_eventos_10000_3_DELETE|PASS|eventos esperados
+rendimiento_eventos_10000_3_INSERT|PASS|eventos esperados
+rendimiento_eventos_10000_3_UPDATE|PASS|eventos esperados
+rendimiento_eventos_1000_1_DELETE|PASS|eventos esperados
+rendimiento_eventos_1000_1_INSERT|PASS|eventos esperados
+rendimiento_eventos_1000_1_UPDATE|PASS|eventos esperados
+rendimiento_eventos_1000_2_DELETE|PASS|eventos esperados
+rendimiento_eventos_1000_2_INSERT|PASS|eventos esperados
+rendimiento_eventos_1000_2_UPDATE|PASS|eventos esperados
+rendimiento_eventos_1000_3_DELETE|PASS|eventos esperados
+rendimiento_eventos_1000_3_INSERT|PASS|eventos esperados
+rendimiento_eventos_1000_3_UPDATE|PASS|eventos esperados
+rendimiento_eventos_100_1_DELETE|PASS|eventos esperados
+rendimiento_eventos_100_1_INSERT|PASS|eventos esperados
+rendimiento_eventos_100_1_UPDATE|PASS|eventos esperados
+rendimiento_eventos_100_2_DELETE|PASS|eventos esperados
+rendimiento_eventos_100_2_INSERT|PASS|eventos esperados
+rendimiento_eventos_100_2_UPDATE|PASS|eventos esperados
+rendimiento_eventos_100_3_DELETE|PASS|eventos esperados
+rendimiento_eventos_100_3_INSERT|PASS|eventos esperados
+rendimiento_eventos_100_3_UPDATE|PASS|eventos esperados
+rendimiento_filas_10000_1_DELETE|PASS|filas reportadas
+rendimiento_filas_10000_1_INSERT|PASS|filas reportadas
+rendimiento_filas_10000_1_UPDATE|PASS|filas reportadas
+rendimiento_filas_10000_2_DELETE|PASS|filas reportadas
+rendimiento_filas_10000_2_INSERT|PASS|filas reportadas
+rendimiento_filas_10000_2_UPDATE|PASS|filas reportadas
+rendimiento_filas_10000_3_DELETE|PASS|filas reportadas
+rendimiento_filas_10000_3_INSERT|PASS|filas reportadas
+rendimiento_filas_10000_3_UPDATE|PASS|filas reportadas
+rendimiento_filas_1000_1_DELETE|PASS|filas reportadas
+rendimiento_filas_1000_1_INSERT|PASS|filas reportadas
+rendimiento_filas_1000_1_UPDATE|PASS|filas reportadas
+rendimiento_filas_1000_2_DELETE|PASS|filas reportadas
+rendimiento_filas_1000_2_INSERT|PASS|filas reportadas
+rendimiento_filas_1000_2_UPDATE|PASS|filas reportadas
+rendimiento_filas_1000_3_DELETE|PASS|filas reportadas
+rendimiento_filas_1000_3_INSERT|PASS|filas reportadas
+rendimiento_filas_1000_3_UPDATE|PASS|filas reportadas
+rendimiento_filas_100_1_DELETE|PASS|filas reportadas
+rendimiento_filas_100_1_INSERT|PASS|filas reportadas
+rendimiento_filas_100_1_UPDATE|PASS|filas reportadas
+rendimiento_filas_100_2_DELETE|PASS|filas reportadas
+rendimiento_filas_100_2_INSERT|PASS|filas reportadas
+rendimiento_filas_100_2_UPDATE|PASS|filas reportadas
+rendimiento_filas_100_3_DELETE|PASS|filas reportadas
+rendimiento_filas_100_3_INSERT|PASS|filas reportadas
+rendimiento_filas_100_3_UPDATE|PASS|filas reportadas
+rendimiento_limpieza_10000_1|PASS|tablas temporales revertidas
+rendimiento_limpieza_10000_2|PASS|tablas temporales revertidas
+rendimiento_limpieza_10000_3|PASS|tablas temporales revertidas
+rendimiento_limpieza_1000_1|PASS|tablas temporales revertidas
+rendimiento_limpieza_1000_2|PASS|tablas temporales revertidas
+rendimiento_limpieza_1000_3|PASS|tablas temporales revertidas
+rendimiento_limpieza_100_1|PASS|tablas temporales revertidas
+rendimiento_limpieza_100_2|PASS|tablas temporales revertidas
+rendimiento_limpieza_100_3|PASS|tablas temporales revertidas
+rendimiento_muestras_10000_DELETE|PASS|Tres repeticiones completas por operación
+rendimiento_muestras_10000_INSERT|PASS|Tres repeticiones completas por operación
+rendimiento_muestras_10000_UPDATE|PASS|Tres repeticiones completas por operación
+rendimiento_muestras_1000_DELETE|PASS|Tres repeticiones completas por operación
+rendimiento_muestras_1000_INSERT|PASS|Tres repeticiones completas por operación
+rendimiento_muestras_1000_UPDATE|PASS|Tres repeticiones completas por operación
+rendimiento_muestras_100_DELETE|PASS|Tres repeticiones completas por operación
+rendimiento_muestras_100_INSERT|PASS|Tres repeticiones completas por operación
+rendimiento_muestras_100_UPDATE|PASS|Tres repeticiones completas por operación
+rendimiento_operaciones_10000_1|PASS|INSERT/UPDATE/DELETE sin duplicados
+rendimiento_operaciones_10000_2|PASS|INSERT/UPDATE/DELETE sin duplicados
+rendimiento_operaciones_10000_3|PASS|INSERT/UPDATE/DELETE sin duplicados
+rendimiento_operaciones_1000_1|PASS|INSERT/UPDATE/DELETE sin duplicados
+rendimiento_operaciones_1000_2|PASS|INSERT/UPDATE/DELETE sin duplicados
+rendimiento_operaciones_1000_3|PASS|INSERT/UPDATE/DELETE sin duplicados
+rendimiento_operaciones_100_1|PASS|INSERT/UPDATE/DELETE sin duplicados
+rendimiento_operaciones_100_2|PASS|INSERT/UPDATE/DELETE sin duplicados
+rendimiento_operaciones_100_3|PASS|INSERT/UPDATE/DELETE sin duplicados
+rendimiento_pct_10000_1_DELETE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_10000_1_INSERT|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_10000_1_UPDATE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_10000_2_DELETE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_10000_2_INSERT|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_10000_2_UPDATE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_10000_3_DELETE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_10000_3_INSERT|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_10000_3_UPDATE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_1000_1_DELETE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_1000_1_INSERT|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_1000_1_UPDATE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_1000_2_DELETE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_1000_2_INSERT|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_1000_2_UPDATE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_1000_3_DELETE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_1000_3_INSERT|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_1000_3_UPDATE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_100_1_DELETE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_100_1_INSERT|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_100_1_UPDATE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_100_2_DELETE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_100_2_INSERT|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_100_2_UPDATE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_100_3_DELETE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_100_3_INSERT|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_pct_100_3_UPDATE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+rendimiento_rechaza_-1|PASS|P0001 esperado
+rendimiento_rechaza_0|PASS|P0001 esperado
+rendimiento_rechaza_null|PASS|P0001: p_filas debe ser un número mayor que 0
+rendimiento_snapshot_10000_1|PASS|conteos de las siete tablas sin residuos
+rendimiento_snapshot_10000_2|PASS|conteos de las siete tablas sin residuos
+rendimiento_snapshot_10000_3|PASS|conteos de las siete tablas sin residuos
+rendimiento_snapshot_1000_1|PASS|conteos de las siete tablas sin residuos
+rendimiento_snapshot_1000_2|PASS|conteos de las siete tablas sin residuos
+rendimiento_snapshot_1000_3|PASS|conteos de las siete tablas sin residuos
+rendimiento_snapshot_100_1|PASS|conteos de las siete tablas sin residuos
+rendimiento_snapshot_100_2|PASS|conteos de las siete tablas sin residuos
+rendimiento_snapshot_100_3|PASS|conteos de las siete tablas sin residuos
+rendimiento_tiempos_10000_1_DELETE|PASS|tiempos no negativos
+rendimiento_tiempos_10000_1_INSERT|PASS|tiempos no negativos
+rendimiento_tiempos_10000_1_UPDATE|PASS|tiempos no negativos
+rendimiento_tiempos_10000_2_DELETE|PASS|tiempos no negativos
+rendimiento_tiempos_10000_2_INSERT|PASS|tiempos no negativos
+rendimiento_tiempos_10000_2_UPDATE|PASS|tiempos no negativos
+rendimiento_tiempos_10000_3_DELETE|PASS|tiempos no negativos
+rendimiento_tiempos_10000_3_INSERT|PASS|tiempos no negativos
+rendimiento_tiempos_10000_3_UPDATE|PASS|tiempos no negativos
+rendimiento_tiempos_1000_1_DELETE|PASS|tiempos no negativos
+rendimiento_tiempos_1000_1_INSERT|PASS|tiempos no negativos
+rendimiento_tiempos_1000_1_UPDATE|PASS|tiempos no negativos
+rendimiento_tiempos_1000_2_DELETE|PASS|tiempos no negativos
+rendimiento_tiempos_1000_2_INSERT|PASS|tiempos no negativos
+rendimiento_tiempos_1000_2_UPDATE|PASS|tiempos no negativos
+rendimiento_tiempos_1000_3_DELETE|PASS|tiempos no negativos
+rendimiento_tiempos_1000_3_INSERT|PASS|tiempos no negativos
+rendimiento_tiempos_1000_3_UPDATE|PASS|tiempos no negativos
+rendimiento_tiempos_100_1_DELETE|PASS|tiempos no negativos
+rendimiento_tiempos_100_1_INSERT|PASS|tiempos no negativos
+rendimiento_tiempos_100_1_UPDATE|PASS|tiempos no negativos
+rendimiento_tiempos_100_2_DELETE|PASS|tiempos no negativos
+rendimiento_tiempos_100_2_INSERT|PASS|tiempos no negativos
+rendimiento_tiempos_100_2_UPDATE|PASS|tiempos no negativos
+rendimiento_tiempos_100_3_DELETE|PASS|tiempos no negativos
+rendimiento_tiempos_100_3_INSERT|PASS|tiempos no negativos
+rendimiento_tiempos_100_3_UPDATE|PASS|tiempos no negativos
+ROLLBACK
+
+NOTICE:  trigger "trg_aud_8" for relation "public.t_rend_con" does not exist, skipping
+NOTICE:  trigger "trg_aud_9" for relation "public.t_rend_con" does not exist, skipping
+NOTICE:  AA_BENCH_RAW|1|100|INSERT|0.4|7.9|1960.3|200
+NOTICE:  AA_BENCH_RAW|1|100|UPDATE|0.3|4.7|1282.7|100
+NOTICE:  AA_BENCH_RAW|1|100|DELETE|0.1|6.9|11945.6|200
+NOTICE:  trigger "trg_aud_10" for relation "public.t_rend_con" does not exist, skipping
+NOTICE:  AA_BENCH_RAW|2|100|INSERT|0.4|6.9|1582.6|200
+NOTICE:  AA_BENCH_RAW|2|100|UPDATE|0.4|5.0|1307.3|100
+NOTICE:  AA_BENCH_RAW|2|100|DELETE|0.1|6.7|11621.1|200
+NOTICE:  trigger "trg_aud_11" for relation "public.t_rend_con" does not exist, skipping
+NOTICE:  AA_BENCH_RAW|3|100|INSERT|0.4|7.5|1947.4|200
+NOTICE:  AA_BENCH_RAW|3|100|UPDATE|0.4|4.5|1091.8|100
+NOTICE:  AA_BENCH_RAW|3|100|DELETE|0.1|6.9|9320.5|200
+NOTICE:  trigger "trg_aud_12" for relation "public.t_rend_con" does not exist, skipping
+NOTICE:  AA_BENCH_RAW|1|1000|INSERT|2.3|68.9|2921.8|2000
+NOTICE:  AA_BENCH_RAW|1|1000|UPDATE|3.3|44.8|1265.5|1000
+NOTICE:  AA_BENCH_RAW|1|1000|DELETE|0.4|66.4|18089.3|2000
+NOTICE:  trigger "trg_aud_13" for relation "public.t_rend_con" does not exist, skipping
+NOTICE:  AA_BENCH_RAW|2|1000|INSERT|2.2|76.9|3358.1|2000
+NOTICE:  AA_BENCH_RAW|2|1000|UPDATE|3.5|46.7|1227.5|1000
+NOTICE:  AA_BENCH_RAW|2|1000|DELETE|0.4|72.3|16261.3|2000
+NOTICE:  trigger "trg_aud_14" for relation "public.t_rend_con" does not exist, skipping
+NOTICE:  AA_BENCH_RAW|3|1000|INSERT|2.2|79.1|3463.5|2000
+NOTICE:  AA_BENCH_RAW|3|1000|UPDATE|3.2|43.7|1256.1|1000
+NOTICE:  AA_BENCH_RAW|3|1000|DELETE|0.5|64.1|13433.5|2000
+NOTICE:  trigger "trg_aud_15" for relation "public.t_rend_con" does not exist, skipping
+NOTICE:  AA_BENCH_RAW|1|10000|INSERT|22.5|722.7|3106.9|20000
+NOTICE:  AA_BENCH_RAW|1|10000|UPDATE|33.7|766.3|2175.9|10000
+NOTICE:  AA_BENCH_RAW|1|10000|DELETE|3.3|889.2|27135.0|20000
+NOTICE:  trigger "trg_aud_16" for relation "public.t_rend_con" does not exist, skipping
+NOTICE:  AA_BENCH_RAW|2|10000|INSERT|38.5|722.3|1776.7|20000
+NOTICE:  AA_BENCH_RAW|2|10000|UPDATE|29.9|85.1|184.5|10000
+NOTICE:  AA_BENCH_RAW|2|10000|DELETE|3.3|718.4|21480.0|20000
+NOTICE:  trigger "trg_aud_17" for relation "public.t_rend_con" does not exist, skipping
+NOTICE:  AA_BENCH_RAW|3|10000|INSERT|25.3|785.5|2999.7|20000
+NOTICE:  AA_BENCH_RAW|3|10000|UPDATE|31.5|459.1|1358.5|10000
+NOTICE:  AA_BENCH_RAW|3|10000|DELETE|4.8|727.1|15136.1|20000
+NOTICE:  AA_BENCH|100|DELETE|3|muestras=3; sin=0.1ms (min 0.1 max 0.1 sd 0.0 cv 0.0); con=6.8ms (min 6.7 max 6.9 sd 0.1 cv 1.7); sobrecosto=6733.3%; eventos_prom=200
+NOTICE:  AA_BENCH|100|INSERT|3|muestras=3; sin=0.4ms (min 0.4 max 0.4 sd 0.0 cv 0.0); con=7.4ms (min 6.9 max 7.9 sd 0.5 cv 6.8); sobrecosto=1758.3%; eventos_prom=200
+NOTICE:  AA_BENCH|100|UPDATE|3|muestras=3; sin=0.4ms (min 0.3 max 0.4 sd 0.1 cv 15.7); con=4.7ms (min 4.5 max 5.0 sd 0.3 cv 5.3); sobrecosto=1213.9%; eventos_prom=100
+NOTICE:  AA_BENCH|1000|DELETE|3|muestras=3; sin=0.4ms (min 0.4 max 0.5 sd 0.1 cv 13.3); con=67.6ms (min 64.1 max 72.3 sd 4.2 cv 6.3); sobrecosto=15731.7%; eventos_prom=2000
+NOTICE:  AA_BENCH|1000|INSERT|3|muestras=3; sin=2.2ms (min 2.2 max 2.3 sd 0.1 cv 2.6); con=75.0ms (min 68.9 max 79.1 sd 5.4 cv 7.2); sobrecosto=3262.2%; eventos_prom=2000
+NOTICE:  AA_BENCH|1000|UPDATE|3|muestras=3; sin=3.3ms (min 3.2 max 3.5 sd 0.2 cv 4.6); con=45.1ms (min 43.7 max 46.7 sd 1.5 cv 3.4); sobrecosto=1252.5%; eventos_prom=1000
+NOTICE:  AA_BENCH|10000|DELETE|3|muestras=3; sin=3.8ms (min 3.3 max 4.8 sd 0.9 cv 22.8); con=778.2ms (min 718.4 max 889.2 sd 96.2 cv 12.4); sobrecosto=21187.7%; eventos_prom=20000
+NOTICE:  AA_BENCH|10000|INSERT|3|muestras=3; sin=28.8ms (min 22.5 max 38.5 sd 8.5 cv 29.7); con=743.5ms (min 722.3 max 785.5 sd 36.4 cv 4.9); sobrecosto=2630.9%; eventos_prom=20000
+NOTICE:  AA_BENCH|10000|UPDATE|3|muestras=3; sin=31.7ms (min 29.9 max 33.7 sd 1.9 cv 6.0); con=436.8ms (min 85.1 max 766.3 sd 341.1 cv 78.1); sobrecosto=1238.7%; eventos_prom=10000
+NOTICE:  AA_RESULT|rendimiento_cardinalidad_10000_1|PASS|exactamente tres filas
+NOTICE:  AA_RESULT|rendimiento_cardinalidad_10000_2|PASS|exactamente tres filas
+NOTICE:  AA_RESULT|rendimiento_cardinalidad_10000_3|PASS|exactamente tres filas
+NOTICE:  AA_RESULT|rendimiento_cardinalidad_1000_1|PASS|exactamente tres filas
+NOTICE:  AA_RESULT|rendimiento_cardinalidad_1000_2|PASS|exactamente tres filas
+NOTICE:  AA_RESULT|rendimiento_cardinalidad_1000_3|PASS|exactamente tres filas
+NOTICE:  AA_RESULT|rendimiento_cardinalidad_100_1|PASS|exactamente tres filas
+NOTICE:  AA_RESULT|rendimiento_cardinalidad_100_2|PASS|exactamente tres filas
+NOTICE:  AA_RESULT|rendimiento_cardinalidad_100_3|PASS|exactamente tres filas
+NOTICE:  AA_RESULT|rendimiento_eventos_10000_1_DELETE|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_10000_1_INSERT|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_10000_1_UPDATE|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_10000_2_DELETE|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_10000_2_INSERT|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_10000_2_UPDATE|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_10000_3_DELETE|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_10000_3_INSERT|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_10000_3_UPDATE|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_1000_1_DELETE|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_1000_1_INSERT|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_1000_1_UPDATE|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_1000_2_DELETE|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_1000_2_INSERT|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_1000_2_UPDATE|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_1000_3_DELETE|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_1000_3_INSERT|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_1000_3_UPDATE|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_100_1_DELETE|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_100_1_INSERT|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_100_1_UPDATE|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_100_2_DELETE|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_100_2_INSERT|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_100_2_UPDATE|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_100_3_DELETE|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_100_3_INSERT|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_eventos_100_3_UPDATE|PASS|eventos esperados
+NOTICE:  AA_RESULT|rendimiento_filas_10000_1_DELETE|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_10000_1_INSERT|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_10000_1_UPDATE|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_10000_2_DELETE|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_10000_2_INSERT|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_10000_2_UPDATE|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_10000_3_DELETE|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_10000_3_INSERT|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_10000_3_UPDATE|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_1000_1_DELETE|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_1000_1_INSERT|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_1000_1_UPDATE|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_1000_2_DELETE|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_1000_2_INSERT|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_1000_2_UPDATE|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_1000_3_DELETE|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_1000_3_INSERT|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_1000_3_UPDATE|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_100_1_DELETE|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_100_1_INSERT|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_100_1_UPDATE|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_100_2_DELETE|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_100_2_INSERT|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_100_2_UPDATE|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_100_3_DELETE|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_100_3_INSERT|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_filas_100_3_UPDATE|PASS|filas reportadas
+NOTICE:  AA_RESULT|rendimiento_limpieza_10000_1|PASS|tablas temporales revertidas
+NOTICE:  AA_RESULT|rendimiento_limpieza_10000_2|PASS|tablas temporales revertidas
+NOTICE:  AA_RESULT|rendimiento_limpieza_10000_3|PASS|tablas temporales revertidas
+NOTICE:  AA_RESULT|rendimiento_limpieza_1000_1|PASS|tablas temporales revertidas
+NOTICE:  AA_RESULT|rendimiento_limpieza_1000_2|PASS|tablas temporales revertidas
+NOTICE:  AA_RESULT|rendimiento_limpieza_1000_3|PASS|tablas temporales revertidas
+NOTICE:  AA_RESULT|rendimiento_limpieza_100_1|PASS|tablas temporales revertidas
+NOTICE:  AA_RESULT|rendimiento_limpieza_100_2|PASS|tablas temporales revertidas
+NOTICE:  AA_RESULT|rendimiento_limpieza_100_3|PASS|tablas temporales revertidas
+NOTICE:  AA_RESULT|rendimiento_muestras_10000_DELETE|PASS|Tres repeticiones completas por operación
+NOTICE:  AA_RESULT|rendimiento_muestras_10000_INSERT|PASS|Tres repeticiones completas por operación
+NOTICE:  AA_RESULT|rendimiento_muestras_10000_UPDATE|PASS|Tres repeticiones completas por operación
+NOTICE:  AA_RESULT|rendimiento_muestras_1000_DELETE|PASS|Tres repeticiones completas por operación
+NOTICE:  AA_RESULT|rendimiento_muestras_1000_INSERT|PASS|Tres repeticiones completas por operación
+NOTICE:  AA_RESULT|rendimiento_muestras_1000_UPDATE|PASS|Tres repeticiones completas por operación
+NOTICE:  AA_RESULT|rendimiento_muestras_100_DELETE|PASS|Tres repeticiones completas por operación
+NOTICE:  AA_RESULT|rendimiento_muestras_100_INSERT|PASS|Tres repeticiones completas por operación
+NOTICE:  AA_RESULT|rendimiento_muestras_100_UPDATE|PASS|Tres repeticiones completas por operación
+NOTICE:  AA_RESULT|rendimiento_operaciones_10000_1|PASS|INSERT/UPDATE/DELETE sin duplicados
+NOTICE:  AA_RESULT|rendimiento_operaciones_10000_2|PASS|INSERT/UPDATE/DELETE sin duplicados
+NOTICE:  AA_RESULT|rendimiento_operaciones_10000_3|PASS|INSERT/UPDATE/DELETE sin duplicados
+NOTICE:  AA_RESULT|rendimiento_operaciones_1000_1|PASS|INSERT/UPDATE/DELETE sin duplicados
+NOTICE:  AA_RESULT|rendimiento_operaciones_1000_2|PASS|INSERT/UPDATE/DELETE sin duplicados
+NOTICE:  AA_RESULT|rendimiento_operaciones_1000_3|PASS|INSERT/UPDATE/DELETE sin duplicados
+NOTICE:  AA_RESULT|rendimiento_operaciones_100_1|PASS|INSERT/UPDATE/DELETE sin duplicados
+NOTICE:  AA_RESULT|rendimiento_operaciones_100_2|PASS|INSERT/UPDATE/DELETE sin duplicados
+NOTICE:  AA_RESULT|rendimiento_operaciones_100_3|PASS|INSERT/UPDATE/DELETE sin duplicados
+NOTICE:  AA_RESULT|rendimiento_pct_10000_1_DELETE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_10000_1_INSERT|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_10000_1_UPDATE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_10000_2_DELETE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_10000_2_INSERT|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_10000_2_UPDATE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_10000_3_DELETE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_10000_3_INSERT|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_10000_3_UPDATE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_1000_1_DELETE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_1000_1_INSERT|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_1000_1_UPDATE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_1000_2_DELETE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_1000_2_INSERT|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_1000_2_UPDATE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_1000_3_DELETE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_1000_3_INSERT|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_1000_3_UPDATE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_100_1_DELETE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_100_1_INSERT|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_100_1_UPDATE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_100_2_DELETE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_100_2_INSERT|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_100_2_UPDATE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_100_3_DELETE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_100_3_INSERT|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_pct_100_3_UPDATE|PASS|Original usa tiempos internos sin redondear; resumen recalcula con los tiempos publicados
+NOTICE:  AA_RESULT|rendimiento_rechaza_-1|PASS|P0001 esperado
+NOTICE:  AA_RESULT|rendimiento_rechaza_0|PASS|P0001 esperado
+NOTICE:  AA_RESULT|rendimiento_rechaza_null|PASS|P0001: p_filas debe ser un número mayor que 0
+NOTICE:  AA_RESULT|rendimiento_snapshot_10000_1|PASS|conteos de las siete tablas sin residuos
+NOTICE:  AA_RESULT|rendimiento_snapshot_10000_2|PASS|conteos de las siete tablas sin residuos
+NOTICE:  AA_RESULT|rendimiento_snapshot_10000_3|PASS|conteos de las siete tablas sin residuos
+NOTICE:  AA_RESULT|rendimiento_snapshot_1000_1|PASS|conteos de las siete tablas sin residuos
+NOTICE:  AA_RESULT|rendimiento_snapshot_1000_2|PASS|conteos de las siete tablas sin residuos
+NOTICE:  AA_RESULT|rendimiento_snapshot_1000_3|PASS|conteos de las siete tablas sin residuos
+NOTICE:  AA_RESULT|rendimiento_snapshot_100_1|PASS|conteos de las siete tablas sin residuos
+NOTICE:  AA_RESULT|rendimiento_snapshot_100_2|PASS|conteos de las siete tablas sin residuos
+NOTICE:  AA_RESULT|rendimiento_snapshot_100_3|PASS|conteos de las siete tablas sin residuos
+NOTICE:  AA_RESULT|rendimiento_tiempos_10000_1_DELETE|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_10000_1_INSERT|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_10000_1_UPDATE|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_10000_2_DELETE|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_10000_2_INSERT|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_10000_2_UPDATE|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_10000_3_DELETE|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_10000_3_INSERT|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_10000_3_UPDATE|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_1000_1_DELETE|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_1000_1_INSERT|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_1000_1_UPDATE|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_1000_2_DELETE|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_1000_2_INSERT|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_1000_2_UPDATE|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_1000_3_DELETE|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_1000_3_INSERT|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_1000_3_UPDATE|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_100_1_DELETE|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_100_1_INSERT|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_100_1_UPDATE|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_100_2_DELETE|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_100_2_INSERT|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_100_2_UPDATE|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_100_3_DELETE|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_100_3_INSERT|PASS|tiempos no negativos
+NOTICE:  AA_RESULT|rendimiento_tiempos_100_3_UPDATE|PASS|tiempos no negativos
+NOTICE:  AA_SUMMARY|PASS=156|FAIL=0|BLOCKED=0

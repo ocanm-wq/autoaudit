@@ -140,13 +140,15 @@ REVOKE ALL ON FUNCTION auditoria.medir_rendimiento(INT) FROM PUBLIC;
 -- -----------------------------------------------------
 
 -- 1,000 filas (segundos)
-SELECT * FROM auditoria.medir_rendimiento(1000);
+-- SELECT * FROM auditoria.medir_rendimiento(1000);
 
 -- 10,000 filas (decenas de segundos como máximo)
-SELECT * FROM auditoria.medir_rendimiento(10000);
+-- SELECT * FROM auditoria.medir_rendimiento(10000);
 
 -- 100,000 filas (puede tardar de uno a varios minutos)
-SELECT * FROM auditoria.medir_rendimiento(100000);
+-- OPCIONAL: descomentar y ejecutar manualmente, nunca en una instalación automática.
+-- SELECT * FROM auditoria.medir_rendimiento(100000);
 
--- Comprobar que no quedó nada: debe seguir igual que antes de las pruebas (5 filas)
-SELECT count(*) FROM auditoria.aud_bitacora;
+-- El wrapper tests/performance/30_rendimiento.sql compara antes/después por tabla;
+-- no se presupone un conteo fijo de bitácora.
+-- SELECT count(*) FROM auditoria.aud_bitacora;

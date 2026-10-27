@@ -1,0 +1,2 @@
+ERROR:  Solo se permite una base aislada autoaudit_test o autoaudit_test_<sufijo>
+CONTEXT:  PL/pgSQL function inline_code_block line 3 at RAISE

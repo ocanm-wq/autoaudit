@@ -22,8 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!aa_token_valido($_POST['token'] ?? null)) {
         $error = 'La sesión expiró. Intente de nuevo.';
     } else {
-        $usuario  = trim($_POST['usuario'] ?? '');
-        $password = $_POST['password'] ?? '';
+        $usuario  = is_string($_POST['usuario'] ?? null) ? trim($_POST['usuario']) : '';
+        $password = is_string($_POST['password'] ?? null) ? $_POST['password'] : '';
 
         if ($usuario === '') {
             $error = 'Escriba su usuario de PostgreSQL.';
@@ -74,7 +74,7 @@ aa_encabezado_simple('Iniciar sesión');
                                 <span class="input-group-text"><i class="bx bx-user"></i></span>
                                 <input type="text" class="form-control" id="usuario" name="usuario"
                                        placeholder="usuario de PostgreSQL" required autofocus
-                                       value="<?= aa_esc($_POST['usuario'] ?? '') ?>">
+                                       value="<?= aa_esc(is_string($_POST['usuario'] ?? null) ? $_POST['usuario'] : '') ?>">
                             </div>
                         </div>
 

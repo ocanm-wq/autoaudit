@@ -1,0 +1,614 @@
+{
+  "resumen": {
+    "PASS": 62,
+    "FAIL": 4,
+    "BLOCKED": 23
+  },
+  "contexto": {
+    "fecha_utc": "2026-10-23T07:07:45.051826+00:00",
+    "sistema_ejecutor": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "cpu_ejecutor": 12,
+    "database": "autoaudit_test_final",
+    "docker_container": "autoaudit-test-20261023",
+    "correccion_historial_solo_prueba": true,
+    "seguridad_independiente": true,
+    "incluir_100000": false,
+    "sha256_sql": {
+      "sql/01_estructura_autoaudit.sql": "38ac857f8a02dbec3d7eaeb2e4603106c1c81b68240f4882dd1104bb2a2332a4",
+      "sql/02_consultas_diccionario.sql": "608c9a23dac2272732085bb8ca8d9735c6a62b6a1105e44eff3e2fabe883d022",
+      "sql/03_generador_triggers.sql": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sql/04_prueba_generador.sql": "2b3d0fe760e16975f8ce83c467fbbe98d5aae50f5b5d5192b3af5eb204fcbe10",
+      "sql/05_consultas_historial.sql": "f13214f2d40e97ab22c25dfe98d195830dfe3d0261c040aa4d7efb5ba9a6ab2b",
+      "sql/06_seguridad.sql": "6add72fa29d07e76686bf67a02b67d32197c91ec08e97185c65dfac528f22bf6",
+      "sql/07_pruebas_rendimiento.sql": "8807fe166f1035e8bec1e5bfb2c124fd2583e038ac25d2879566d1bd1f7a4245"
+    },
+    "contenedor": {
+      "NetworkMode": "none",
+      "Memory": 805306368,
+      "NanoCpus": 2000000000,
+      "Tmpfs": {
+        "/var/lib/postgresql": "rw,size=512m"
+      }
+    },
+    "imagen": "postgres:18-alpine sha256:d3e1620b530c944afa6e887d22eb899824da68e19c52024bf98f5220c88a65b2",
+    "servidor": {
+      "version": "PostgreSQL 18.6 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit",
+      "database": "autoaudit_test_final",
+      "usuario": "postgres",
+      "timezone": "UTC",
+      "shared_buffers": "128MB",
+      "jit": "on",
+      "synchronous_commit": "on",
+      "max_connections": "100"
+    },
+    "snapshot_antes_suites": {
+      "aud_evento": 3,
+      "aud_tabla": 0,
+      "aud_columna": 0,
+      "aud_configuracion": 0,
+      "aud_usuario": 0,
+      "aud_estacion": 0,
+      "aud_bitacora": 0
+    },
+    "snapshot_despues_suites": {
+      "aud_evento": 3,
+      "aud_tabla": 0,
+      "aud_columna": 0,
+      "aud_configuracion": 0,
+      "aud_usuario": 0,
+      "aud_estacion": 0,
+      "aud_bitacora": 0
+    },
+    "limpieza": {
+      "objetos_fuente": 0,
+      "funciones_fixture": 0,
+      "roles_fixture": 0
+    },
+    "sha256_sql_despues": {
+      "sql/01_estructura_autoaudit.sql": "38ac857f8a02dbec3d7eaeb2e4603106c1c81b68240f4882dd1104bb2a2332a4",
+      "sql/02_consultas_diccionario.sql": "608c9a23dac2272732085bb8ca8d9735c6a62b6a1105e44eff3e2fabe883d022",
+      "sql/03_generador_triggers.sql": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sql/04_prueba_generador.sql": "2b3d0fe760e16975f8ce83c467fbbe98d5aae50f5b5d5192b3af5eb204fcbe10",
+      "sql/05_consultas_historial.sql": "f13214f2d40e97ab22c25dfe98d195830dfe3d0261c040aa4d7efb5ba9a6ab2b",
+      "sql/06_seguridad.sql": "6add72fa29d07e76686bf67a02b67d32197c91ec08e97185c65dfac528f22bf6",
+      "sql/07_pruebas_rendimiento.sql": "8807fe166f1035e8bec1e5bfb2c124fd2583e038ac25d2879566d1bd1f7a4245"
+    }
+  },
+  "casos": [
+    {
+      "suite": "instalacion",
+      "id": "00_entorno",
+      "estado": "PASS",
+      "detalle": "Ver 00_entorno.log"
+    },
+    {
+      "suite": "instalacion",
+      "id": "01_estructura",
+      "estado": "PASS",
+      "detalle": "Ver 01_estructura.log"
+    },
+    {
+      "suite": "instalacion",
+      "id": "03_generador",
+      "estado": "BLOCKED",
+      "detalle": "Archivo vacío; no se implementa ni simula"
+    },
+    {
+      "suite": "instalacion",
+      "id": "05_historial_original",
+      "estado": "FAIL",
+      "detalle": "Ver 05_historial_original.log"
+    },
+    {
+      "suite": "instalacion",
+      "id": "05_historial_corregido_solo_prueba",
+      "estado": "PASS",
+      "detalle": "Ver 05_historial_corregido_solo_prueba.log"
+    },
+    {
+      "suite": "instalacion",
+      "id": "06_seguridad_completa",
+      "estado": "FAIL",
+      "detalle": "Ver 06_seguridad_completa.log"
+    },
+    {
+      "suite": "instalacion",
+      "id": "06_controles_independientes",
+      "estado": "PASS",
+      "detalle": "Ver 06_controles_independientes.log"
+    },
+    {
+      "suite": "instalacion",
+      "id": "07_solo_definicion",
+      "estado": "PASS",
+      "detalle": "Ver 07_solo_definicion.log"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "catalogo_eventos",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "columna_fk",
+      "estado": "PASS",
+      "detalle": "23503: insert or update on table \"aud_columna\" violates foreign key constraint \"aud_columna_id_tabla_fkey\""
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "config_desactivada",
+      "estado": "BLOCKED",
+      "detalle": "03 vacío: falta generador real"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "config_fk_columna",
+      "estado": "PASS",
+      "detalle": "23503: insert or update on table \"aud_configuracion\" violates foreign key constraint \"aud_configuracion_id_columna_fkey\""
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "config_fk_evento",
+      "estado": "PASS",
+      "detalle": "23503: insert or update on table \"aud_configuracion\" violates foreign key constraint \"aud_configuracion_id_evento_fkey\""
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "config_not_null",
+      "estado": "PASS",
+      "detalle": "23502: null value in column \"id_columna\" of relation \"aud_configuracion\" violates not-null constraint"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "config_unique",
+      "estado": "PASS",
+      "detalle": "23505: duplicate key value violates unique constraint \"aud_configuracion_id_columna_id_evento_key\""
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "consulta_columna",
+      "estado": "PASS",
+      "detalle": "Multiset exacto en ambas direcciones; fixtures"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "consulta_limites_temporales",
+      "estado": "PASS",
+      "detalle": "desde inclusivo; hasta exclusivo"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "consulta_objeto_invalido",
+      "estado": "PASS",
+      "detalle": "Filtro inexistente devuelve conjunto vacío"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "consulta_registro",
+      "estado": "PASS",
+      "detalle": "Multiset exacto en ambas direcciones; fixtures"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "consulta_usuario",
+      "estado": "PASS",
+      "detalle": "Multiset exacto en ambas direcciones; fixtures"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "dml_eliminado_consultable",
+      "estado": "BLOCKED",
+      "detalle": "03 vacío: falta generador real"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "dml_identidad_fecha",
+      "estado": "BLOCKED",
+      "detalle": "03 vacío: falta generador real"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "dml_multiset_exacto",
+      "estado": "BLOCKED",
+      "detalle": "03 vacío: falta generador real"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "dml_no_auditada",
+      "estado": "BLOCKED",
+      "detalle": "03 vacío: falta generador real"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "dml_null",
+      "estado": "BLOCKED",
+      "detalle": "03 vacío: falta generador real"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "dml_regeneracion_sin_duplicados",
+      "estado": "BLOCKED",
+      "detalle": "03 vacío: falta generador real"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "dml_update_sin_cambio",
+      "estado": "BLOCKED",
+      "detalle": "03 vacío: falta generador real"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "evento_check",
+      "estado": "PASS",
+      "detalle": "23514: new row for relation \"aud_evento\" violates check constraint \"aud_evento_nombre_check\""
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "evento_unique",
+      "estado": "PASS",
+      "detalle": "23505: duplicate key value violates unique constraint \"aud_evento_pkey\""
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "generador_columna_invalida",
+      "estado": "BLOCKED",
+      "detalle": "03 vacío: falta generador real"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "generador_config_id_invalido",
+      "estado": "BLOCKED",
+      "detalle": "03 vacío: falta generador real"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "generador_inyeccion",
+      "estado": "BLOCKED",
+      "detalle": "03 vacío: falta generador real"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "generador_tabla_invalida",
+      "estado": "BLOCKED",
+      "detalle": "03 vacío: falta generador real"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "tabla_desactivada",
+      "estado": "BLOCKED",
+      "detalle": "03 vacío: falta generador real"
+    },
+    {
+      "suite": "10_funcionales",
+      "id": "tabla_unique",
+      "estado": "PASS",
+      "detalle": "23505: duplicate key value violates unique constraint \"aud_tabla_esquema_nombre_tabla_key\""
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "admin_config_delete_denegado",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_tabla"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "admin_config_insert",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "admin_config_update",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "admin_hereda_consulta",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_admin_delete",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_admin_historial_columna",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_admin_historial_registro",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_admin_historial_usuario",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_admin_insert",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_admin_lectura_directa",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_admin_truncate",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_admin_update",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_admin_vista",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_consulta_delete",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_consulta_historial_columna",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_consulta_historial_registro",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_consulta_historial_usuario",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_consulta_insert",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_consulta_lectura_directa",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_consulta_truncate",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_consulta_update",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "aud_consulta_vista",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "bitacora_fixture_intacta",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "consulta_config_insert_denegado",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_tabla"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "consulta_config_update_denegado",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_tabla"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "eliminar_trigger_admin_operacion_real",
+      "estado": "BLOCKED",
+      "detalle": "03 vacío: función ausente"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "eliminar_trigger_execute_roles",
+      "estado": "BLOCKED",
+      "detalle": "03 vacío: función ausente"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "eliminar_trigger_security_definer",
+      "estado": "BLOCKED",
+      "detalle": "03 vacío: función ausente"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "fixture_bitacora_existe",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "generar_trigger_admin_operacion_real",
+      "estado": "BLOCKED",
+      "detalle": "03 vacío: función ausente"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "generar_trigger_execute_roles",
+      "estado": "BLOCKED",
+      "detalle": "03 vacío: función ausente"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "generar_trigger_security_definer",
+      "estado": "BLOCKED",
+      "detalle": "03 vacío: función ausente"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "limite_owner_desactiva_triggers",
+      "estado": "PASS",
+      "detalle": "Límite demostrado; DDL y UPDATE revertidos en subtransacción"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "limite_owner_puede_insertar",
+      "estado": "PASS",
+      "detalle": "postgres SQLSTATE=00000 valor=1 ejecución autorizada"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "owner_delete_bloqueado",
+      "estado": "PASS",
+      "detalle": "P0001: La bitácora es de solo escritura: no se permite DELETE sobre aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "owner_truncate_bloqueado",
+      "estado": "PASS",
+      "detalle": "P0001: La bitácora es de solo escritura: no se permite TRUNCATE sobre aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "owner_update_bloqueado",
+      "estado": "PASS",
+      "detalle": "P0001: La bitácora es de solo escritura: no se permite UPDATE sobre aud_bitacora"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "public_execute_funciones_actuales",
+      "estado": "FAIL",
+      "detalle": "Detecta función de bloqueo creada DESPUÉS de REVOKE ALL; sin USAGE no es acceso efectivo por sí solo"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "public_execute_funciones_futuras",
+      "estado": "FAIL",
+      "detalle": "ALTER DEFAULT PRIVILEGES debe cubrir al propietario que crea las funciones"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "public_probe_historial_denegado",
+      "estado": "PASS",
+      "detalle": "aa_public_probe SQLSTATE=42501 valor=NULL permission denied for schema auditoria"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "public_probe_vista_denegado",
+      "estado": "PASS",
+      "detalle": "aa_public_probe SQLSTATE=42501 valor=NULL permission denied for schema auditoria"
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "public_schema_sin_usage",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "public_tablas_sin_permisos",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "roles_sin_create_esquema",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "20_seguridad",
+      "id": "roles_sin_login",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_100",
+      "estado": "BLOCKED",
+      "detalle": "BLOCKED: falta auditoria.generar_trigger(integer)"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_1000",
+      "estado": "BLOCKED",
+      "detalle": "BLOCKED: falta auditoria.generar_trigger(integer)"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_10000",
+      "estado": "BLOCKED",
+      "detalle": "BLOCKED: falta auditoria.generar_trigger(integer)"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_rechaza_-1",
+      "estado": "PASS",
+      "detalle": "P0001 esperado"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_rechaza_0",
+      "estado": "PASS",
+      "detalle": "P0001 esperado"
+    },
+    {
+      "suite": "30_rendimiento",
+      "id": "rendimiento_rechaza_null",
+      "estado": "PASS",
+      "detalle": "P0001: p_filas debe ser un número mayor que 0"
+    },
+    {
+      "suite": "limpieza",
+      "id": "conteos_siete_tablas",
+      "estado": "PASS",
+      "detalle": "Comparación por tabla; secuencias pueden avanzar"
+    },
+    {
+      "suite": "limpieza",
+      "id": "objetos_fuente",
+      "estado": "PASS",
+      "detalle": "Sin tablas/índices/secuencias, funciones o roles de fixtures"
+    },
+    {
+      "suite": "integridad",
+      "id": "originales_sql_intactos",
+      "estado": "PASS",
+      "detalle": "SHA256 antes/después de todos los originales SQL"
+    }
+  ],
+  "benchmark": []
+}

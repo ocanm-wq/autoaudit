@@ -1,0 +1,10 @@
+{
+  "contenedor": "autoaudit-ui-20261026",
+  "database": "autoaudit_test_interfaz",
+  "url": "http://127.0.0.1:18086",
+  "postgres_puerto": "127.0.0.1:55426",
+  "php": "8.2.12 Windows",
+  "timezone": "America/Guatemala",
+  "semilla": "08 partes A/B,21 eventos",
+  "version_postgresql": "PostgreSQL 18.6 (Ubuntu 18.6-0ubuntu0.26.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, 64-bit\n"
+}

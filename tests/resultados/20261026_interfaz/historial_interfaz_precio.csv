@@ -1,0 +1,7 @@
+﻿id_bitacora,fecha_hora,usuario,ip_origen,nombre_host,esquema,tabla,columna,evento,id_registro,valor_anterior,valor_nuevo
+18,"2026-10-26 12:39:05.572194-06",demo_maria,"\N",Laptop-Admin,public,producto,precio,DELETE,2,80.00,"\N"
+14,"2026-10-26 12:39:05.570408-06",demo_maria,"\N",Laptop-Admin,public,producto,precio,UPDATE,3,1200.00,1100.00
+11,"2026-10-26 12:39:05.568699-06",demo_luis,"\N",Terminal-Soporte,public,producto,precio,UPDATE,1,150.00,135.00
+10,"2026-10-26 12:39:05.5684-06",demo_luis,"\N",Terminal-Soporte,public,producto,precio,INSERT,3,"\N",1200.00
+9,"2026-10-26 12:39:05.568045-06",demo_luis,"\N",Terminal-Soporte,public,producto,precio,INSERT,2,"\N",80.00
+8,"2026-10-26 12:39:05.567078-06",demo_luis,"\N",Terminal-Soporte,public,producto,precio,INSERT,1,"\N",150.00

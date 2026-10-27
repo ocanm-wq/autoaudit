@@ -1,0 +1,14 @@
+# Archivos de entorno y sesiones locales
+.env
+.env.*
+!.env.example
+app/sessions/
+app/sesiones/
+app/*.log
+app/*.pid
+__pycache__/
+*.py[cod]
+node_modules/
+~$*.docx
+Thumbs.db
+.DS_Store

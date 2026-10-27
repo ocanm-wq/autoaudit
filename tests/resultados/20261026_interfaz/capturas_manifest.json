@@ -1,0 +1,122 @@
+[
+  {
+    "archivo": "01_inicio_sesion.png",
+    "descripcion": "Inicio de sesión de la interfaz PHP Sneat",
+    "url": "http://127.0.0.1:18086/login.php",
+    "fecha_utc": "2026-10-26T18:59:10.130Z",
+    "sha256": "5084c021bb38406ae0547e03917cec96bcb1146a7229492bf5424a92a3b01765",
+    "metodo": "Captura real de Chrome del sitio local; sin puntero de ratón"
+  },
+  {
+    "archivo": "02_ana_bloqueada.png",
+    "descripcion": "Ana recibe el rechazo explícito por no pertenecer a los roles de auditoría",
+    "url": "http://127.0.0.1:18086/login.php",
+    "fecha_utc": "2026-10-26T18:59:10.564Z",
+    "sha256": "e6acb06b860f92b4441892b113d9620f7c596b569ff9a68b669114e5e2119b0d",
+    "metodo": "Captura real de Chrome del sitio local; sin puntero de ratón"
+  },
+  {
+    "archivo": "03_panel_administrador.png",
+    "descripcion": "Panel real con21 eventos, dos tablas y diez combinaciones activas",
+    "url": "http://127.0.0.1:18086/index.php",
+    "fecha_utc": "2026-10-26T18:59:11.049Z",
+    "sha256": "117333a05a4625f25a8e367765a3cb10c46de999c2c43e5ba547bd9d54ab0268",
+    "metodo": "Captura real de Chrome del sitio local; sin puntero de ratón"
+  },
+  {
+    "archivo": "04_tablas_configuracion.png",
+    "descripcion": "Lista de tablas cliente y producto con auditoría activa",
+    "url": "http://127.0.0.1:18086/configuracion.php",
+    "fecha_utc": "2026-10-26T18:59:11.261Z",
+    "sha256": "ab55e5896b3a2a47b5137dca6b657d57457deda258c0d55e39b754aa22e377f0",
+    "metodo": "Captura real de Chrome del sitio local; sin puntero de ratón"
+  },
+  {
+    "archivo": "05_configurar_columnas.png",
+    "descripcion": "Selección real de columnas y eventos de cliente",
+    "url": "http://127.0.0.1:18086/configuracion.php?esquema=public&tabla=cliente",
+    "fecha_utc": "2026-10-26T18:59:11.481Z",
+    "sha256": "ae111896970e1ce7529d178f1897911ceebfe64f18e64784a76100a50bc8a2a5",
+    "metodo": "Captura real de Chrome del sitio local; sin puntero de ratón"
+  },
+  {
+    "archivo": "06_configuracion_guardada.png",
+    "descripcion": "Confirmación real después de guardar y regenerar el trigger",
+    "url": "http://127.0.0.1:18086/configuracion.php?esquema=public&tabla=cliente",
+    "fecha_utc": "2026-10-26T18:59:11.792Z",
+    "sha256": "2fad2350043bb61d7b80445e6eec8d8cd6437a581124e351a1991457ce7f60bd",
+    "metodo": "Captura real de Chrome del sitio local; sin puntero de ratón"
+  },
+  {
+    "archivo": "07_historial_completo.png",
+    "descripcion": "Módulo de historial completado, con filtros y21 resultados",
+    "url": "http://127.0.0.1:18086/consulta.php",
+    "fecha_utc": "2026-10-26T18:59:12.781Z",
+    "sha256": "f602b2f3652f540f1f40cf51f9f2ea714d7899f2a47b7c2b07d0ccf86e36567b",
+    "metodo": "Captura real de Chrome del sitio local; sin puntero de ratón"
+  },
+  {
+    "archivo": "08_filtros_combinados.png",
+    "descripcion": "Consulta combinada por usuario, tabla, columna y evento, un resultado",
+    "url": "http://127.0.0.1:18086/consulta.php?usuario=demo_luis&tabla=%5B%22public%22%2C%22producto%22%5D&columna=precio&evento=UPDATE&id_registro=&desde=&hasta=&por_pagina=50",
+    "fecha_utc": "2026-10-26T18:59:13.161Z",
+    "sha256": "8cde686dae46fbb0394ef44b54f2baaacedb812e6ab2d3834c0a2401b2643270",
+    "metodo": "Captura real de Chrome del sitio local; sin puntero de ratón"
+  },
+  {
+    "archivo": "09_historial_registro_eliminado.png",
+    "descripcion": "Historial del cliente3, aunque ya fue eliminado de la tabla fuente",
+    "url": "http://127.0.0.1:18086/consulta.php?usuario=&tabla=%5B%22public%22%2C%22cliente%22%5D&columna=&evento=&id_registro=3&desde=&hasta=&por_pagina=50",
+    "fecha_utc": "2026-10-26T18:59:13.736Z",
+    "sha256": "025d663b7d786e7b26fd55eb9a0aa91077e26259c0a640296530f5c8c05ae16c",
+    "metodo": "Captura real de Chrome del sitio local; sin puntero de ratón"
+  },
+  {
+    "archivo": "10_fecha_y_columna.png",
+    "descripcion": "Rango de fechas en Guatemala aplicado a producto.precio",
+    "url": "http://127.0.0.1:18086/consulta.php?usuario=&tabla=%5B%22public%22%2C%22producto%22%5D&columna=precio&evento=&id_registro=&desde=2026-10-26T00%3A00&hasta=2026-10-27T00%3A00&por_pagina=50",
+    "fecha_utc": "2026-10-26T18:59:14.323Z",
+    "sha256": "794f81c27e1ecc640af3b888105eff7d7f90ab7c3acf63aa2c8050ee0e874ccf",
+    "metodo": "Captura real de Chrome del sitio local; sin puntero de ratón"
+  },
+  {
+    "archivo": "11_exportacion_csv.png",
+    "descripcion": "Filtros vigentes usados para descargar el CSV completo",
+    "url": "http://127.0.0.1:18086/consulta.php?usuario=&tabla=%5B%22public%22%2C%22producto%22%5D&columna=precio&evento=&id_registro=&desde=2026-10-26T00%3A00&hasta=2026-10-27T00%3A00&por_pagina=50",
+    "fecha_utc": "2026-10-26T18:59:14.690Z",
+    "sha256": "c8801c6cd6fabfd3246203e693692b99dcd83d36b191f9b9fbe0973eb65e5add",
+    "metodo": "Captura real de Chrome del sitio local; sin puntero de ratón"
+  },
+  {
+    "archivo": "12_sin_resultados.png",
+    "descripcion": "Estado vacío cuando el registro solicitado no tiene cambios",
+    "url": "http://127.0.0.1:18086/consulta.php?usuario=&tabla=&columna=&evento=&id_registro=registro-inexistente&desde=&hasta=&por_pagina=50",
+    "fecha_utc": "2026-10-26T18:59:15.136Z",
+    "sha256": "d8e76ca1e089ae544f011e695241a9351745ac7ad490157a5f7e075e6cc00287",
+    "metodo": "Captura real de Chrome del sitio local; sin puntero de ratón"
+  },
+  {
+    "archivo": "13_panel_consulta.png",
+    "descripcion": "Panel de Luis con rol de consulta y menú restringido",
+    "url": "http://127.0.0.1:18086/index.php",
+    "fecha_utc": "2026-10-26T18:59:15.571Z",
+    "sha256": "4dc222283835ea91298b78b3e85d6c7addcdd14ceb9451492d0a8f8c84244762",
+    "metodo": "Captura real de Chrome del sitio local; sin puntero de ratón"
+  },
+  {
+    "archivo": "14_configuracion_denegada.png",
+    "descripcion": "HTTP403 real al intentar abrir configuración con Luis",
+    "url": "http://127.0.0.1:18086/configuracion.php",
+    "fecha_utc": "2026-10-26T18:59:15.752Z",
+    "sha256": "43fbb715751f29ec72184fd83e537adc37e5c7f09e1d319729c1c3166bb5f586",
+    "metodo": "Captura real de Chrome del sitio local; sin puntero de ratón"
+  },
+  {
+    "archivo": "15_consulta_autorizada.png",
+    "descripcion": "Luis filtra los cinco cambios de María, conforme a los permisos de aud_consulta",
+    "url": "http://127.0.0.1:18086/consulta.php?usuario=demo_maria&tabla=&columna=&evento=&id_registro=&desde=&hasta=&por_pagina=50",
+    "fecha_utc": "2026-10-26T18:59:16.190Z",
+    "sha256": "22b84d7e2b33c15f571b03826d5a8a49c1feed00086d937441ce343d367fc0c1",
+    "metodo": "Captura real de Chrome del sitio local; sin puntero de ratón"
+  }
+]

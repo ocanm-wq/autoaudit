@@ -1,0 +1,65 @@
+{
+  "fecha": "2026-10-26",
+  "backend": {
+    "PASS": 240,
+    "FAIL": 0,
+    "BLOCKED": 0
+  },
+  "sql09": {
+    "PASS": 35,
+    "FAIL": 0,
+    "BLOCKED": 0
+  },
+  "http": {
+    "PASS": 38,
+    "FAIL": 0,
+    "BLOCKED": 0
+  },
+  "navegador": {
+    "PASS": 29,
+    "FAIL": 0,
+    "BLOCKED": 0
+  },
+  "capturas_verificadas": 15,
+  "php_lint": [
+    {
+      "archivo": "app/config.php",
+      "PASS": true
+    },
+    {
+      "archivo": "app/configuracion.php",
+      "PASS": true
+    },
+    {
+      "archivo": "app/consulta.php",
+      "PASS": true
+    },
+    {
+      "archivo": "app/index.php",
+      "PASS": true
+    },
+    {
+      "archivo": "app/lib/auth.php",
+      "PASS": true
+    },
+    {
+      "archivo": "app/lib/db.php",
+      "PASS": true
+    },
+    {
+      "archivo": "app/lib/layout.php",
+      "PASS": true
+    },
+    {
+      "archivo": "app/login.php",
+      "PASS": true
+    },
+    {
+      "archivo": "app/logout.php",
+      "PASS": true
+    }
+  ],
+  "rama": "main",
+  "HEAD": "561de0e77231ee4215decceab60457182216856b",
+  "index_vacio": true
+}

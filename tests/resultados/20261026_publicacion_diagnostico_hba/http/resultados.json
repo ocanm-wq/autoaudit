@@ -1,0 +1,188 @@
+{
+  "fecha_utc": "2026-10-27T02:24:12.618885+00:00",
+  "url": "http://127.0.0.1:18089",
+  "database": "autoaudit_test_publicacion",
+  "resumen": {
+    "PASS": 3,
+    "FAIL": 32,
+    "BLOCKED": 0
+  },
+  "casos": [
+    {
+      "id": "anonimo_login",
+      "estado": "PASS",
+      "detalle": "Redirección sin sesión"
+    },
+    {
+      "id": "password_incorrecto",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "ana_rechazo_rol",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "maria_admin_autenticada",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "maria_configura",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "enlace_ver_historial",
+      "estado": "FAIL",
+      "detalle": "cliente=13"
+    },
+    {
+      "id": "csrf_config_sin_mutacion",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "luis_autenticado",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "luis_403_configuracion",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "historial_inicial",
+      "estado": "FAIL",
+      "detalle": "baseline=21"
+    },
+    {
+      "id": "filtro_usuario",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "filtro_columna",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "filtros_combinados",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "registro_eliminado",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "inyeccion_filtro_no_amplia",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "columna_ajena_rechazada",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "json_objeto_rechazado",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "evento_rechazado",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "fecha_inexistente",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "rango_invertido",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "rango_local_valido",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "rango_vacio_rechazado",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "arrays_get_rechazados",
+      "estado": "FAIL",
+      "detalle": "[False, False, False, False, False, False, False]"
+    },
+    {
+      "id": "csv_invalido_400",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "pagina_25",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "enlace_siguiente",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "pagina_2",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "pagina_50",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "pagina_100",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "xss_escapado",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "pagina_enorme_ajustada",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "csv_todas_las_paginas",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "csv_origen_campos",
+      "estado": "FAIL",
+      "detalle": ""
+    },
+    {
+      "id": "ejecucion_completa",
+      "estado": "FAIL",
+      "detalle": "KeyError: 'id_registro'"
+    },
+    {
+      "id": "limpieza_fixture",
+      "estado": "PASS",
+      "detalle": ""
+    }
+  ],
+  "fuente_sha256": "81ef2f8cb78544388e09e2eda0595de542e0552ce8cf174c556c3cd8bf07f700"
+}

@@ -1,0 +1,33 @@
+DO
+CREATE TABLE
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+BEGIN
+DO
+REVOKE
+ALTER DEFAULT PRIVILEGES
+ aa_check 
+----------
+ 
+(1 row)
+
+CREATE FUNCTION
+ aa_check 
+----------
+ 
+(1 row)
+
+NOTICE:  AA_RESULT|propuesta_funciones_actuales|PASS|
+NOTICE:  AA_RESULT|propuesta_funciones_futuras|FAIL|
+              id              | estado | detalle 
+------------------------------+--------+---------
+ propuesta_funciones_actuales | PASS   | 
+ propuesta_funciones_futuras  | FAIL   | 
+(2 rows)
+
+ERROR:  La propuesta no superó las verificaciones
+CONTEXT:  PL/pgSQL function inline_code_block line 3 at RAISE

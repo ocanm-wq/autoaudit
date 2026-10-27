@@ -1,0 +1,159 @@
+{
+  "fecha_utc": "2026-10-26T18:59:16.333Z",
+  "base": "http://127.0.0.1:18086",
+  "viewport": "1680x1050",
+  "checks": [
+    {
+      "id": "login_real",
+      "estado": "PASS",
+      "detalle": "Formulario PHP servido por localhost"
+    },
+    {
+      "id": "ana_bloqueada",
+      "estado": "PASS",
+      "detalle": "Credenciales válidas, sin rol autorizado"
+    },
+    {
+      "id": "maria_panel",
+      "estado": "PASS",
+      "detalle": "Login de administradora y redirección al panel"
+    },
+    {
+      "id": "panel_21_eventos",
+      "estado": "PASS",
+      "detalle": "La semilla de demostración tiene21 eventos"
+    },
+    {
+      "id": "maria_configuracion",
+      "estado": "PASS",
+      "detalle": "Acceso administrativo"
+    },
+    {
+      "id": "formulario_configuracion",
+      "estado": "PASS",
+      "detalle": "Columnas de cliente con INSERT/UPDATE/DELETE"
+    },
+    {
+      "id": "guardar_regenera_trigger",
+      "estado": "PASS",
+      "detalle": "La transacción guardó la configuración y regeneró el trigger"
+    },
+    {
+      "id": "enlace_configuracion_historial",
+      "estado": "PASS",
+      "detalle": "El enlace Ver historial abre y filtra los trece cambios de cliente"
+    },
+    {
+      "id": "desactivar_desde_interfaz",
+      "estado": "PASS",
+      "detalle": "La configuración permite desactivar auditoría"
+    },
+    {
+      "id": "reactivar_desde_interfaz",
+      "estado": "PASS",
+      "detalle": "La tabla cliente recupera la auditoría activa"
+    },
+    {
+      "id": "historial_total_21",
+      "estado": "PASS",
+      "detalle": "Vista completa de la semilla,21 eventos"
+    },
+    {
+      "id": "historial_filas_21",
+      "estado": "PASS",
+      "detalle": "21 filas visibles por debajo de los filtros"
+    },
+    {
+      "id": "filtros_combinados_1",
+      "estado": "PASS",
+      "detalle": "demo_luis+producto+precio+UPDATE devuelve un cambio"
+    },
+    {
+      "id": "filtro_valores_reales",
+      "estado": "PASS",
+      "detalle": "Cambio de precio150 a135"
+    },
+    {
+      "id": "historial_borrado_4",
+      "estado": "PASS",
+      "detalle": "Registro3 eliminado conserva dos INSERT y dos DELETE"
+    },
+    {
+      "id": "historial_borrado_delete",
+      "estado": "PASS",
+      "detalle": "El historial conserva el evento DELETE"
+    },
+    {
+      "id": "filtro_fecha_valido",
+      "estado": "PASS",
+      "detalle": "Rango local con fin exclusivo devuelve6 eventos de precio"
+    },
+    {
+      "id": "csv_sin_html",
+      "estado": "PASS",
+      "detalle": "CSV real descargado por Chrome"
+    },
+    {
+      "id": "csv_null_explicito",
+      "estado": "PASS",
+      "detalle": "Los NULL se conservan como\\N"
+    },
+    {
+      "id": "csv_origen",
+      "estado": "PASS",
+      "detalle": "Incluye IP y aplicación de origen"
+    },
+    {
+      "id": "estado_vacio",
+      "estado": "PASS",
+      "detalle": "Búsqueda sin coincidencias"
+    },
+    {
+      "id": "luis_panel",
+      "estado": "PASS",
+      "detalle": "Login de consulta"
+    },
+    {
+      "id": "luis_menu_sin_config",
+      "estado": "PASS",
+      "detalle": "El menú no ofrece configurar para Luis"
+    },
+    {
+      "id": "luis_403",
+      "estado": "PASS",
+      "detalle": "La URL directa también está protegida"
+    },
+    {
+      "id": "luis_historial",
+      "estado": "PASS",
+      "detalle": "Luis consulta el mismo historial autorizado"
+    },
+    {
+      "id": "consulta_no_limitada_usuario",
+      "estado": "PASS",
+      "detalle": "El rol permite historial completo, incluido el de otra persona"
+    },
+    {
+      "id": "sin_sesion_redirige",
+      "estado": "PASS",
+      "detalle": "Después de cerrar sesión, la consulta exige autenticación"
+    },
+    {
+      "id": "assets_locales",
+      "estado": "PASS",
+      "detalle": "[]"
+    },
+    {
+      "id": "javascript_sin_errores",
+      "estado": "PASS",
+      "detalle": "[]"
+    }
+  ],
+  "resumen": {
+    "PASS": 29,
+    "FAIL": 0,
+    "BLOCKED": 0
+  },
+  "jsErrors": [],
+  "assetsErrors": []
+}

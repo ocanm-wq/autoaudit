@@ -1,0 +1,7 @@
+BEGIN
+CREATE VIEW
+CREATE FUNCTION
+
+ERROR:  syntax error at or near "q"
+LINE 8: q   
+        ^

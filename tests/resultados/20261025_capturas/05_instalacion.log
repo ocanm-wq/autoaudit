@@ -1,0 +1,25 @@
+CREATE VIEW
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+ nombre_usuario 
+----------------
+(0 rows)
+
+ id_bitacora | fecha_hora | usuario | ip_origen | nombre_host | esquema | tabla | columna | evento | id_registro | valor_anterior | valor_nuevo 
+-------------+------------+---------+-----------+-------------+---------+-------+---------+--------+-------------+----------------+-------------
+(0 rows)
+
+ id_bitacora | fecha_hora | usuario | ip_origen | nombre_host | esquema | tabla | columna | evento | id_registro | valor_anterior | valor_nuevo 
+-------------+------------+---------+-----------+-------------+---------+-------+---------+--------+-------------+----------------+-------------
+(0 rows)
+
+ id_bitacora | fecha_hora | usuario | ip_origen | nombre_host | esquema | tabla | columna | evento | id_registro | valor_anterior | valor_nuevo 
+-------------+------------+---------+-----------+-------------+---------+-------+---------+--------+-------------+----------------+-------------
+(0 rows)
+
+ id_bitacora | fecha_hora | usuario | ip_origen | nombre_host | esquema | tabla | columna | evento | id_registro | valor_anterior | valor_nuevo 
+-------------+------------+---------+-----------+-------------+---------+-------+---------+--------+-------------+----------------+-------------
+(0 rows)
+
+

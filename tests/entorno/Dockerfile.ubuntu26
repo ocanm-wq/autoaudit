@@ -1,0 +1,21 @@
+FROM ubuntu:26.04
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    LANG=C.UTF-8 \
+    LC_ALL=C.UTF-8 \
+    PGHOST=/tmp \
+    PGDATA=/var/lib/postgresql/autoaudit \
+    PATH=/usr/lib/postgresql/18/bin:$PATH
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+      postgresql-18 postgresql-client-18 ca-certificates locales \
+ && locale-gen C.UTF-8 \
+ && rm -rf /var/lib/apt/lists/* \
+ && mkdir -p /var/lib/postgresql/autoaudit \
+ && chown -R postgres:postgres /var/lib/postgresql
+
+USER root
+WORKDIR /var/lib/postgresql
+
+CMD ["bash", "-c", "set -eu; mkdir -p \"$PGDATA\"; chown -R postgres:postgres \"$PGDATA\"; if [ ! -s \"$PGDATA/PG_VERSION\" ]; then runuser -u postgres -- initdb -D \"$PGDATA\" --auth-local=trust --auth-host=reject --locale=C.UTF-8; fi; exec runuser -u postgres -- postgres -D \"$PGDATA\" -c listen_addresses='' -c unix_socket_directories=/tmp"]

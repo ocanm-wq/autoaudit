@@ -1,0 +1,27 @@
+BEGIN
+DO
+GRANT ROLE
+REVOKE
+REVOKE
+REVOKE
+REVOKE
+ALTER DEFAULT PRIVILEGES
+GRANT
+GRANT
+GRANT
+GRANT
+DO
+GRANT
+GRANT
+CREATE FUNCTION
+REVOKE
+DROP TRIGGER
+CREATE TRIGGER
+DROP TRIGGER
+CREATE TRIGGER
+COMMIT
+
+NOTICE:  PENDIENTE: falta auditoria.generar_trigger(integer). Instalar 03 y volver a ejecutar 06.
+NOTICE:  PENDIENTE: falta auditoria.eliminar_trigger(integer). Instalar 03 y volver a ejecutar 06.
+NOTICE:  trigger "trg_bitacora_inmutable" for relation "auditoria.aud_bitacora" does not exist, skipping
+NOTICE:  trigger "trg_bitacora_sin_truncate" for relation "auditoria.aud_bitacora" does not exist, skipping

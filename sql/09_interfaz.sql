@@ -178,7 +178,11 @@ $$;
 
 -- La interfaz se conecta a la base de datos autoaudit, así que los tres
 -- usuarios necesitan poder conectarse a ella.
-GRANT CONNECT ON DATABASE autoaudit TO demo_maria, demo_luis, demo_ana;
+DO $$
+BEGIN
+    EXECUTE format('GRANT CONNECT ON DATABASE %I TO demo_maria, demo_luis, demo_ana', current_database());
+END
+$$;
 
 
 -- =====================================================================

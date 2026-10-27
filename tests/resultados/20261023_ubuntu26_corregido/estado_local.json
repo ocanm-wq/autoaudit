@@ -1,0 +1,16 @@
+{
+  "rama": "main",
+  "head": "561de0e77231ee4215decceab60457182216856b",
+  "archivos_preexistentes_modificados": [
+    "README.md",
+    "sql/05_consultas_historial.sql",
+    "sql/06_seguridad.sql",
+    "sql/07_pruebas_rendimiento.sql"
+  ],
+  "staging": [],
+  "head_sin_commits_nuevos": true,
+  "generador_bytes": 0,
+  "generador_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "patch_coincide_con_cambios_locales": true,
+  "sin_mutacion_remota": "No se ejecutaron add commit push merge rebase ni creacion de PR"
+}

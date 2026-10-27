@@ -1,0 +1,54 @@
+{
+  "fecha_utc": "2026-10-26T18:58:45.172Z",
+  "base": "http://127.0.0.1:18086",
+  "viewport": "1680x1050",
+  "checks": [
+    {
+      "id": "login_real",
+      "estado": "PASS",
+      "detalle": "Formulario PHP servido por localhost"
+    },
+    {
+      "id": "ana_bloqueada",
+      "estado": "PASS",
+      "detalle": "Credenciales válidas, sin rol autorizado"
+    },
+    {
+      "id": "maria_panel",
+      "estado": "PASS",
+      "detalle": "Login de administradora y redirección al panel"
+    },
+    {
+      "id": "panel_21_eventos",
+      "estado": "PASS",
+      "detalle": "La semilla de demostración tiene21 eventos"
+    },
+    {
+      "id": "maria_configuracion",
+      "estado": "PASS",
+      "detalle": "Acceso administrativo"
+    },
+    {
+      "id": "formulario_configuracion",
+      "estado": "PASS",
+      "detalle": "Columnas de cliente con INSERT/UPDATE/DELETE"
+    },
+    {
+      "id": "guardar_regenera_trigger",
+      "estado": "PASS",
+      "detalle": "La transacción guardó la configuración y regeneró el trigger"
+    },
+    {
+      "id": "ejecucion_completa",
+      "estado": "FAIL",
+      "detalle": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Ver historial', exact: true })\u001b[22m\n"
+    }
+  ],
+  "resumen": {
+    "PASS": 7,
+    "FAIL": 1,
+    "BLOCKED": 0
+  },
+  "jsErrors": [],
+  "assetsErrors": []
+}

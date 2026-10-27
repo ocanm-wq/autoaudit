@@ -1,0 +1,29 @@
+{
+  "fecha": "2026-10-26",
+  "normalizacion": ["UTF-8 BOM eliminado", "CRLF convertido a LF"],
+  "sql_01_08": {
+    "01": "igual",
+    "02": "igual",
+    "03": "igual_semantico",
+    "04": "igual",
+    "05": "zip_contiene_q; local_corregido",
+    "06": "local_tiene_correcciones_de_seguridad",
+    "07": "local_comenta_ejecuciones_de_rendimiento; cuerpo_sin_cambio",
+    "08": "igual_semantico"
+  },
+  "interfaz": {
+    "consulta_php": "pendiente_de_desarrollar",
+    "sql_09": {
+      "grant_connect": "hardcodea_base_autoaudit_en_linea_181",
+      "funciones_diccionario": "grant_aud_consulta_con_herencia_asumida_para_aud_admin"
+    },
+    "auth": {
+      "password_en_session_servidor": true,
+      "cookie_secure_explicito": false
+    }
+  },
+  "acciones": {
+    "sql_ejecutado_en_bd_existente": false,
+    "git_commit_push_merge": false
+  }
+}

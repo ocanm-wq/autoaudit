@@ -1,0 +1,105 @@
+SET
+DO
+CREATE TABLE
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+BEGIN
+
+DO
+admin_config_delete_denegado|PASS|aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_tabla
+admin_config_insert|PASS|aud_admin SQLSTATE=00000 valor=1 ejecución autorizada
+admin_config_update|PASS|aud_admin SQLSTATE=00000 valor=1 ejecución autorizada
+admin_hereda_consulta|PASS|
+aud_admin_delete|PASS|aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora
+aud_admin_historial_columna|PASS|aud_admin SQLSTATE=00000 valor=1 ejecución autorizada
+aud_admin_historial_registro|PASS|aud_admin SQLSTATE=00000 valor=1 ejecución autorizada
+aud_admin_historial_usuario|PASS|aud_admin SQLSTATE=00000 valor=1 ejecución autorizada
+aud_admin_insert|PASS|aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora
+aud_admin_lectura_directa|PASS|aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora
+aud_admin_truncate|PASS|aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora
+aud_admin_update|PASS|aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora
+aud_admin_vista|PASS|aud_admin SQLSTATE=00000 valor=1 ejecución autorizada
+aud_consulta_delete|PASS|aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora
+aud_consulta_historial_columna|PASS|aud_consulta SQLSTATE=00000 valor=1 ejecución autorizada
+aud_consulta_historial_registro|PASS|aud_consulta SQLSTATE=00000 valor=1 ejecución autorizada
+aud_consulta_historial_usuario|PASS|aud_consulta SQLSTATE=00000 valor=1 ejecución autorizada
+aud_consulta_insert|PASS|aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora
+aud_consulta_lectura_directa|PASS|aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora
+aud_consulta_truncate|PASS|aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora
+aud_consulta_update|PASS|aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora
+aud_consulta_vista|PASS|aud_consulta SQLSTATE=00000 valor=1 ejecución autorizada
+bitacora_fixture_intacta|PASS|
+consulta_config_insert_denegado|PASS|aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_tabla
+consulta_config_update_denegado|PASS|aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_tabla
+eliminar_trigger_admin_operacion_real|BLOCKED|03 vacío: función ausente
+eliminar_trigger_execute_roles|BLOCKED|03 vacío: función ausente
+eliminar_trigger_security_definer|BLOCKED|03 vacío: función ausente
+fixture_bitacora_existe|PASS|
+generar_trigger_admin_operacion_real|BLOCKED|03 vacío: función ausente
+generar_trigger_execute_roles|BLOCKED|03 vacío: función ausente
+generar_trigger_security_definer|BLOCKED|03 vacío: función ausente
+limite_owner_desactiva_triggers|PASS|Límite demostrado; DDL y UPDATE revertidos en subtransacción
+limite_owner_puede_insertar|PASS|postgres SQLSTATE=00000 valor=1 ejecución autorizada
+owner_delete_bloqueado|PASS|P0001: La bitácora es de solo escritura: no se permite DELETE sobre aud_bitacora
+owner_truncate_bloqueado|PASS|P0001: La bitácora es de solo escritura: no se permite TRUNCATE sobre aud_bitacora
+owner_update_bloqueado|PASS|P0001: La bitácora es de solo escritura: no se permite UPDATE sobre aud_bitacora
+public_execute_funciones_actuales|PASS|Detecta función de bloqueo creada DESPUÉS de REVOKE ALL; sin USAGE no es acceso efectivo por sí solo
+public_execute_funciones_futuras|PASS|ALTER DEFAULT PRIVILEGES debe cubrir al propietario que crea las funciones
+public_probe_historial_denegado|PASS|aa_public_probe SQLSTATE=42501 valor=NULL permission denied for schema auditoria
+public_probe_vista_denegado|PASS|aa_public_probe SQLSTATE=42501 valor=NULL permission denied for schema auditoria
+public_schema_sin_usage|PASS|
+public_tablas_sin_permisos|PASS|
+roles_sin_create_esquema|PASS|
+roles_sin_login|PASS|
+ROLLBACK
+
+NOTICE:  AA_RESULT|admin_config_delete_denegado|PASS|aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_tabla
+NOTICE:  AA_RESULT|admin_config_insert|PASS|aud_admin SQLSTATE=00000 valor=1 ejecución autorizada
+NOTICE:  AA_RESULT|admin_config_update|PASS|aud_admin SQLSTATE=00000 valor=1 ejecución autorizada
+NOTICE:  AA_RESULT|admin_hereda_consulta|PASS|
+NOTICE:  AA_RESULT|aud_admin_delete|PASS|aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora
+NOTICE:  AA_RESULT|aud_admin_historial_columna|PASS|aud_admin SQLSTATE=00000 valor=1 ejecución autorizada
+NOTICE:  AA_RESULT|aud_admin_historial_registro|PASS|aud_admin SQLSTATE=00000 valor=1 ejecución autorizada
+NOTICE:  AA_RESULT|aud_admin_historial_usuario|PASS|aud_admin SQLSTATE=00000 valor=1 ejecución autorizada
+NOTICE:  AA_RESULT|aud_admin_insert|PASS|aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora
+NOTICE:  AA_RESULT|aud_admin_lectura_directa|PASS|aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora
+NOTICE:  AA_RESULT|aud_admin_truncate|PASS|aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora
+NOTICE:  AA_RESULT|aud_admin_update|PASS|aud_admin SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora
+NOTICE:  AA_RESULT|aud_admin_vista|PASS|aud_admin SQLSTATE=00000 valor=1 ejecución autorizada
+NOTICE:  AA_RESULT|aud_consulta_delete|PASS|aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora
+NOTICE:  AA_RESULT|aud_consulta_historial_columna|PASS|aud_consulta SQLSTATE=00000 valor=1 ejecución autorizada
+NOTICE:  AA_RESULT|aud_consulta_historial_registro|PASS|aud_consulta SQLSTATE=00000 valor=1 ejecución autorizada
+NOTICE:  AA_RESULT|aud_consulta_historial_usuario|PASS|aud_consulta SQLSTATE=00000 valor=1 ejecución autorizada
+NOTICE:  AA_RESULT|aud_consulta_insert|PASS|aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora
+NOTICE:  AA_RESULT|aud_consulta_lectura_directa|PASS|aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora
+NOTICE:  AA_RESULT|aud_consulta_truncate|PASS|aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora
+NOTICE:  AA_RESULT|aud_consulta_update|PASS|aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_bitacora
+NOTICE:  AA_RESULT|aud_consulta_vista|PASS|aud_consulta SQLSTATE=00000 valor=1 ejecución autorizada
+NOTICE:  AA_RESULT|bitacora_fixture_intacta|PASS|
+NOTICE:  AA_RESULT|consulta_config_insert_denegado|PASS|aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_tabla
+NOTICE:  AA_RESULT|consulta_config_update_denegado|PASS|aud_consulta SQLSTATE=42501 valor=NULL permission denied for table aud_tabla
+NOTICE:  AA_RESULT|eliminar_trigger_admin_operacion_real|BLOCKED|03 vacío: función ausente
+NOTICE:  AA_RESULT|eliminar_trigger_execute_roles|BLOCKED|03 vacío: función ausente
+NOTICE:  AA_RESULT|eliminar_trigger_security_definer|BLOCKED|03 vacío: función ausente
+NOTICE:  AA_RESULT|fixture_bitacora_existe|PASS|
+NOTICE:  AA_RESULT|generar_trigger_admin_operacion_real|BLOCKED|03 vacío: función ausente
+NOTICE:  AA_RESULT|generar_trigger_execute_roles|BLOCKED|03 vacío: función ausente
+NOTICE:  AA_RESULT|generar_trigger_security_definer|BLOCKED|03 vacío: función ausente
+NOTICE:  AA_RESULT|limite_owner_desactiva_triggers|PASS|Límite demostrado; DDL y UPDATE revertidos en subtransacción
+NOTICE:  AA_RESULT|limite_owner_puede_insertar|PASS|postgres SQLSTATE=00000 valor=1 ejecución autorizada
+NOTICE:  AA_RESULT|owner_delete_bloqueado|PASS|P0001: La bitácora es de solo escritura: no se permite DELETE sobre aud_bitacora
+NOTICE:  AA_RESULT|owner_truncate_bloqueado|PASS|P0001: La bitácora es de solo escritura: no se permite TRUNCATE sobre aud_bitacora
+NOTICE:  AA_RESULT|owner_update_bloqueado|PASS|P0001: La bitácora es de solo escritura: no se permite UPDATE sobre aud_bitacora
+NOTICE:  AA_RESULT|public_execute_funciones_actuales|PASS|Detecta función de bloqueo creada DESPUÉS de REVOKE ALL; sin USAGE no es acceso efectivo por sí solo
+NOTICE:  AA_RESULT|public_execute_funciones_futuras|PASS|ALTER DEFAULT PRIVILEGES debe cubrir al propietario que crea las funciones
+NOTICE:  AA_RESULT|public_probe_historial_denegado|PASS|aa_public_probe SQLSTATE=42501 valor=NULL permission denied for schema auditoria
+NOTICE:  AA_RESULT|public_probe_vista_denegado|PASS|aa_public_probe SQLSTATE=42501 valor=NULL permission denied for schema auditoria
+NOTICE:  AA_RESULT|public_schema_sin_usage|PASS|
+NOTICE:  AA_RESULT|public_tablas_sin_permisos|PASS|
+NOTICE:  AA_RESULT|roles_sin_create_esquema|PASS|
+NOTICE:  AA_RESULT|roles_sin_login|PASS|
+NOTICE:  AA_SUMMARY|PASS=39|FAIL=0|BLOCKED=6

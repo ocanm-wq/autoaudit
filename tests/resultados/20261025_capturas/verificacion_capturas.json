@@ -1,0 +1,14 @@
+{
+  "version": "PostgreSQL 18.6 (Ubuntu 18.6-0ubuntu0.26.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, 64-bit",
+  "database": "autoaudit_test_capturas",
+  "eventos_totales": 26,
+  "eventos_registro_5": 5,
+  "registro_5_existe": 0,
+  "eventos_luis": 6,
+  "eventos_precio": 6,
+  "ip_capturada": "172.17.0.1",
+  "aplicacion": "Adminer",
+  "csv_filas": 6,
+  "fecha_verificacion_utc": "2026-10-26T05:36:17.115527+00:00",
+  "alcance": "Demostración separada; estas comprobaciones no se suman a los 240 PASS de la suite integrada"
+}

@@ -1,0 +1,93 @@
+SET
+DO
+CREATE TABLE
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+BEGIN
+
+CREATE TABLE
+CREATE TABLE
+
+
+
+INSERT 0 1
+INSERT 0 2
+INSERT 0 6
+
+
+
+
+
+
+INSERT 0 2
+INSERT 0 1
+CREATE TABLE
+INSERT 0 5
+INSERT 0 5
+INSERT 0 1
+DO
+DO
+catalogo_eventos|PASS|
+columna_fk|PASS|23503: insert or update on table "aud_columna" violates foreign key constraint "aud_columna_id_tabla_fkey"
+config_desactivada|PASS|
+config_fk_columna|PASS|23503: insert or update on table "aud_configuracion" violates foreign key constraint "aud_configuracion_id_columna_fkey"
+config_fk_evento|PASS|23503: insert or update on table "aud_configuracion" violates foreign key constraint "aud_configuracion_id_evento_fkey"
+config_not_null|PASS|23502: null value in column "id_columna" of relation "aud_configuracion" violates not-null constraint
+config_unique|PASS|23505: duplicate key value violates unique constraint "aud_configuracion_id_columna_id_evento_key"
+consulta_columna|PASS|Multiset exacto en ambas direcciones; fixtures
+consulta_limites_temporales|PASS|desde inclusivo; hasta exclusivo
+consulta_objeto_invalido|PASS|Filtro inexistente devuelve conjunto vacío
+consulta_registro|PASS|Multiset exacto en ambas direcciones; fixtures
+consulta_usuario|PASS|Multiset exacto en ambas direcciones; fixtures
+dml_eliminado_consultable|PASS|
+dml_identidad_fecha|PASS|Usuario dueño y fecha dentro de transacción
+dml_multiset_exacto|PASS|INSERT=2 UPDATE=1 DELETE=2; OLD/NEW/id/columna/evento exactos
+dml_no_auditada|PASS|
+dml_null|PASS|
+dml_regeneracion_sin_duplicados|PASS|
+dml_update_sin_cambio|PASS|
+evento_check|PASS|23514: new row for relation "aud_evento" violates check constraint "aud_evento_nombre_check"
+evento_unique|PASS|23505: duplicate key value violates unique constraint "aud_evento_pkey"
+generador_columna_invalida|PASS|P0001: Columnas inexistentes en public.aa_sentinel: aa_no_columna
+generador_config_id_invalido|PASS|P0001: La tabla con id -1 no está registrada en aud_tabla
+generador_inyeccion|PASS|Centinela conservado; falta revisión completa del código de 03
+generador_inyeccion_rechazo|PASS|P0001: La tabla public.aa_x"; DROP TABLE public.aa_sentinel; -- no existe en la base de datos
+generador_tabla_invalida|PASS|P0001: La tabla aa_no_existe.x no existe en la base de datos
+tabla_desactivada|PASS|
+tabla_unique|PASS|23505: duplicate key value violates unique constraint "aud_tabla_esquema_nombre_tabla_key"
+ROLLBACK
+
+NOTICE:  trigger "trg_aud_1" for relation "public.aa_funcional" does not exist, skipping
+NOTICE:  AA_RESULT|catalogo_eventos|PASS|
+NOTICE:  AA_RESULT|columna_fk|PASS|23503: insert or update on table "aud_columna" violates foreign key constraint "aud_columna_id_tabla_fkey"
+NOTICE:  AA_RESULT|config_desactivada|PASS|
+NOTICE:  AA_RESULT|config_fk_columna|PASS|23503: insert or update on table "aud_configuracion" violates foreign key constraint "aud_configuracion_id_columna_fkey"
+NOTICE:  AA_RESULT|config_fk_evento|PASS|23503: insert or update on table "aud_configuracion" violates foreign key constraint "aud_configuracion_id_evento_fkey"
+NOTICE:  AA_RESULT|config_not_null|PASS|23502: null value in column "id_columna" of relation "aud_configuracion" violates not-null constraint
+NOTICE:  AA_RESULT|config_unique|PASS|23505: duplicate key value violates unique constraint "aud_configuracion_id_columna_id_evento_key"
+NOTICE:  AA_RESULT|consulta_columna|PASS|Multiset exacto en ambas direcciones; fixtures
+NOTICE:  AA_RESULT|consulta_limites_temporales|PASS|desde inclusivo; hasta exclusivo
+NOTICE:  AA_RESULT|consulta_objeto_invalido|PASS|Filtro inexistente devuelve conjunto vacío
+NOTICE:  AA_RESULT|consulta_registro|PASS|Multiset exacto en ambas direcciones; fixtures
+NOTICE:  AA_RESULT|consulta_usuario|PASS|Multiset exacto en ambas direcciones; fixtures
+NOTICE:  AA_RESULT|dml_eliminado_consultable|PASS|
+NOTICE:  AA_RESULT|dml_identidad_fecha|PASS|Usuario dueño y fecha dentro de transacción
+NOTICE:  AA_RESULT|dml_multiset_exacto|PASS|INSERT=2 UPDATE=1 DELETE=2; OLD/NEW/id/columna/evento exactos
+NOTICE:  AA_RESULT|dml_no_auditada|PASS|
+NOTICE:  AA_RESULT|dml_null|PASS|
+NOTICE:  AA_RESULT|dml_regeneracion_sin_duplicados|PASS|
+NOTICE:  AA_RESULT|dml_update_sin_cambio|PASS|
+NOTICE:  AA_RESULT|evento_check|PASS|23514: new row for relation "aud_evento" violates check constraint "aud_evento_nombre_check"
+NOTICE:  AA_RESULT|evento_unique|PASS|23505: duplicate key value violates unique constraint "aud_evento_pkey"
+NOTICE:  AA_RESULT|generador_columna_invalida|PASS|P0001: Columnas inexistentes en public.aa_sentinel: aa_no_columna
+NOTICE:  AA_RESULT|generador_config_id_invalido|PASS|P0001: La tabla con id -1 no está registrada en aud_tabla
+NOTICE:  AA_RESULT|generador_inyeccion|PASS|Centinela conservado; falta revisión completa del código de 03
+NOTICE:  AA_RESULT|generador_inyeccion_rechazo|PASS|P0001: La tabla public.aa_x"; DROP TABLE public.aa_sentinel; -- no existe en la base de datos
+NOTICE:  AA_RESULT|generador_tabla_invalida|PASS|P0001: La tabla aa_no_existe.x no existe en la base de datos
+NOTICE:  AA_RESULT|tabla_desactivada|PASS|
+NOTICE:  AA_RESULT|tabla_unique|PASS|23505: duplicate key value violates unique constraint "aud_tabla_esquema_nombre_tabla_key"
+NOTICE:  AA_SUMMARY|PASS=28|FAIL=0|BLOCKED=0

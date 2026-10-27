@@ -1,0 +1,69 @@
+{
+  "base_remota": "b978a33c1b0083d70839795d8f96c4cdf3074641",
+  "database": "autoaudit_test_publicacion",
+  "contenedor": "autoaudit-publicar-20261026",
+  "puerto_db": "127.0.0.1:55427",
+  "url": "http://127.0.0.1:18089",
+  "suites": {
+    "10_funcionales": {
+      "PASS": 28,
+      "FAIL": 0,
+      "BLOCKED": 0
+    },
+    "20_seguridad": {
+      "PASS": 47,
+      "FAIL": 0,
+      "BLOCKED": 0
+    },
+    "40_interfaz": {
+      "PASS": 35,
+      "FAIL": 0,
+      "BLOCKED": 0
+    },
+    "http": {
+      "PASS": 38,
+      "FAIL": 0,
+      "BLOCKED": 0
+    }
+  },
+  "php_lint": [
+    "app/config.php",
+    "app/configuracion.php",
+    "app/consulta.php",
+    "app/index.php",
+    "app/lib/auth.php",
+    "app/lib/db.php",
+    "app/lib/layout.php",
+    "app/login.php",
+    "app/logout.php"
+  ],
+  "semilla_antes_y_despues": 21,
+  "sha256_fuentes": {
+    "app/config.php": "0960cf7310bffb513651bd21b4cf9d69ba124003592f6f876e9005e2555e590a",
+    "app/configuracion.php": "a9eafdb546ae8d8791f45eb4eb2343a98ad09a7a20985737c5c37dbb1ec44c09",
+    "app/consulta.php": "81ef2f8cb78544388e09e2eda0595de542e0552ce8cf174c556c3cd8bf07f700",
+    "app/index.php": "f33e10dae393dd5c8897dab42892812d21b8b3dc6ae00ac399875e8918afee22",
+    "app/lib/auth.php": "c96a42014494eae6722ae0e7954b51f8d9ffdc4808fa6c4332f4345e8f47420e",
+    "app/lib/db.php": "1dbea38f958ed7f7ddce0f18995932fdab68069137b15dc7d530ae23777ebf0f",
+    "app/lib/layout.php": "ba25af45230d5800a9d0d6424cde9f8b6f1c3ccd87a2303d8d5fa61b57ea56ee",
+    "app/login.php": "add07ce7b4977ac2141ce50ad601d709d8e66c0472a2cbad904e683904efdedc",
+    "app/logout.php": "755ea23e1b5678057adfb38acad944bdf1acb5c8b4adba07728c21646b558660",
+    "sql/01_estructura_autoaudit.sql": "38ac857f8a02dbec3d7eaeb2e4603106c1c81b68240f4882dd1104bb2a2332a4",
+    "sql/02_consultas_diccionario.sql": "608c9a23dac2272732085bb8ca8d9735c6a62b6a1105e44eff3e2fabe883d022",
+    "sql/03_generador_triggers.sql": "8f2c77f63603b8e6007d2fae923f1ef4f7a0cd2fb304e1adcf578c79c46e55a8",
+    "sql/04_prueba_generador.sql": "2b3d0fe760e16975f8ce83c467fbbe98d5aae50f5b5d5192b3af5eb204fcbe10",
+    "sql/05_consultas_historial.sql": "c8c6834de305a8b3cbce64a4a12310d5431501d2b384f0626f66b9c232516ec7",
+    "sql/06_seguridad.sql": "38e6e0e4e13dc3595fa1069cff1893e838fef52b797b7e5af34af821aebf1621",
+    "sql/07_pruebas_rendimiento.sql": "fb26712ef1031926f2ee1115703f0417aacde752a06ee185e73827f9bbf86ee5",
+    "sql/08_datos_demostracion.sql": "688d00077b93d8f3719a5b45a8af27e06c0be153b4781438798e5ccaa1baba81",
+    "sql/09_interfaz.sql": "d04af1b581486ecb24038d5adf85cf88719bb8024458698511a9057d3221d87e"
+  },
+  "estado": "PASS",
+  "limpieza": "Contenedor y sesiones exclusivos retirados; autoaudit-db no se modificó",
+  "normalizacion_final_eof": {
+    "archivo": "app/consulta.php",
+    "cambio": "Únicamente una línea vacía al final del archivo; lógica sin cambios después del HTTP",
+    "sha256_probado": "81ef2f8cb78544388e09e2eda0595de542e0552ce8cf174c556c3cd8bf07f700",
+    "sha256_final": "95d4ae5d24400b3a9c2a0c22c9266714a3c9861b30b60b56f78774347c4353d9"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "fecha_utc": "2026-10-26T23:22:49.7273516Z",
+  "status": 200,
+  "url": "http://127.0.0.1:18088/login.php",
+  "pdo_pgsql_probe": "PASS",
+  "port_closed": true,
+  "alcance": "Formulario servido; no se prueba conexión DB sin login"
+}

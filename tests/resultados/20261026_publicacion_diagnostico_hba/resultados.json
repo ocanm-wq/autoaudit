@@ -1,0 +1,36 @@
+{
+  "base_remota": "b978a33c1b0083d70839795d8f96c4cdf3074641",
+  "database": "autoaudit_test_publicacion",
+  "contenedor": "autoaudit-publicar-20261026",
+  "puerto_db": "127.0.0.1:55427",
+  "url": "http://127.0.0.1:18089",
+  "suites": {
+    "10_funcionales": {
+      "PASS": 28,
+      "FAIL": 0,
+      "BLOCKED": 0
+    },
+    "20_seguridad": {
+      "PASS": 47,
+      "FAIL": 0,
+      "BLOCKED": 0
+    },
+    "40_interfaz": {
+      "PASS": 35,
+      "FAIL": 0,
+      "BLOCKED": 0
+    }
+  },
+  "php_lint": [
+    "app/config.php",
+    "app/configuracion.php",
+    "app/consulta.php",
+    "app/index.php",
+    "app/lib/auth.php",
+    "app/lib/db.php",
+    "app/lib/layout.php",
+    "app/login.php",
+    "app/logout.php"
+  ],
+  "limpieza": "Contenedor y sesiones exclusivos retirados; autoaudit-db no se modificó"
+}

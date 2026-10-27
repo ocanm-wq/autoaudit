@@ -1,0 +1,46 @@
+DO
+GRANT ROLE
+GRANT ROLE
+GRANT ROLE
+CREATE TABLE
+GRANT
+GRANT
+INSERT 0 2
+INSERT 0 4
+INSERT 0 10
+                                   generar_trigger                                    
+--------------------------------------------------------------------------------------
+ Trigger trg_aud_1 creado sobre public.cliente (eventos: INSERT OR UPDATE OR DELETE)
+ Trigger trg_aud_2 creado sobre public.producto (eventos: INSERT OR UPDATE OR DELETE)
+(2 rows)
+
+SET
+SET
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+UPDATE 1
+UPDATE 1
+SET
+SET
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+UPDATE 1
+UPDATE 1
+UPDATE 1
+SET
+SET
+UPDATE 1
+UPDATE 1
+DELETE 1
+DELETE 1
+SET
+SET
+INSERT 0 1
+UPDATE 1
+RESET
+RESET
+
+NOTICE:  trigger "trg_aud_1" for relation "public.cliente" does not exist, skipping
+NOTICE:  trigger "trg_aud_2" for relation "public.producto" does not exist, skipping

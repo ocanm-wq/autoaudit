@@ -1,0 +1,2 @@
+
+psql: error: connection to server on socket "/tmp/.s.PGSQL.5432" failed: FATAL:  database "autoaudit_test_20261026" does not exist

@@ -1,0 +1,12 @@
+{
+  "propuesta_public_exit": 0,
+  "guardia_sql_exit": 3,
+  "guardia_ejecutor_exit": 2,
+  "patch_05_check_exit": 0,
+  "esperados": {
+    "guardia_sql_exit": 3,
+    "patch_05_check_exit": 0,
+    "guardia_ejecutor_exit": 2,
+    "propuesta_public_exit": 0
+  }
+}

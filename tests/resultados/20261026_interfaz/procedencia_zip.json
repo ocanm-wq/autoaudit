@@ -1,0 +1,14 @@
+[
+  {
+    "archivo": "autoaudit-main (corregido).zip",
+    "sha256": "93e9dc534280479c8680b9da466ce378967fd3ac00a69ae65e06bc68279ee0ca",
+    "entradas": 13,
+    "extraido_en": "C:\\Users\\user\\Documents\\Codex\\2026-10-23\\files-pasted-by-the-user-https\\work\\integracion_interfaz_20261026\\proyecto"
+  },
+  {
+    "archivo": "autoaudit-interfaz.zip",
+    "sha256": "a23f94ec9872d9a62fbcf7998d82aec131783dd274b7edd3be478607951ebe32",
+    "entradas": 53,
+    "extraido_en": "C:\\Users\\user\\Documents\\Codex\\2026-10-23\\files-pasted-by-the-user-https\\work\\integracion_interfaz_20261026\\interfaz"
+  }
+]

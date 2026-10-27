@@ -1,0 +1,91 @@
+DO
+CREATE TABLE
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+BEGIN
+ aa_guard 
+----------
+ 
+(1 row)
+
+DO
+                     id                      | estado |                           detalle                           
+---------------------------------------------+--------+-------------------------------------------------------------
+ ana_sin_rol                                 | PASS   | 
+ aud_admin_listar_columnas                   | PASS   | aud_admin SQLSTATE=00000 valor=4 ejecución autorizada
+ aud_admin_listar_tablas                     | PASS   | aud_admin SQLSTATE=00000 valor=2 ejecución autorizada
+ aud_admin_listar_usuarios                   | PASS   | aud_admin SQLSTATE=00000 valor=NULL ejecución autorizada
+ aud_consulta_listar_columnas                | PASS   | aud_consulta SQLSTATE=00000 valor=4 ejecución autorizada
+ aud_consulta_listar_tablas                  | PASS   | aud_consulta SQLSTATE=00000 valor=2 ejecución autorizada
+ aud_consulta_listar_usuarios                | PASS   | aud_consulta SQLSTATE=00000 valor=NULL ejecución autorizada
+ aud_usuario_sigue                           | PASS   | 
+ columnas_cliente                            | PASS   | conteo=4
+ columnas_producto                           | PASS   | conteo=4
+ demo_ana_connect_actual                     | PASS   | 
+ demo_ana_login                              | PASS   | rol inexistente o sin LOGIN
+ demo_luis_connect_actual                    | PASS   | 
+ demo_luis_login                             | PASS   | rol inexistente o sin LOGIN
+ demo_maria_connect_actual                   | PASS   | 
+ demo_maria_login                            | PASS   | rol inexistente o sin LOGIN
+ entrada_quoted_segura                       | PASS   | conteo=0
+ entrada_schema_segura                       | PASS   | conteo=0
+ eventos_activos_cliente_producto            | PASS   | conteo=10
+ excluye_auditoria                           | PASS   | 
+ existe_listar_columnas                      | PASS   | 
+ existe_listar_tablas                        | PASS   | auditoria.listar_tablas()
+ existe_listar_usuarios                      | PASS   | auditoria.listar_usuarios()
+ luis_consulta                               | PASS   | 
+ maria_admin                                 | PASS   | 
+ metadato_cliente_pk                         | PASS   | 
+ metadato_producto_pk                        | PASS   | 
+ public_sin_execute_diccionario              | PASS   | 
+ search_path_listar_columnas_text,text)      | PASS   | auditoria.listar_columnas(text,text)
+ search_path_listar_tablas                   | PASS   | auditoria.listar_tablas()
+ search_path_listar_usuarios                 | PASS   | auditoria.listar_usuarios()
+ security_definer_listar_columnas_text,text) | PASS   | auditoria.listar_columnas(text,text)
+ security_definer_listar_tablas              | PASS   | auditoria.listar_tablas()
+ security_definer_listar_usuarios            | PASS   | auditoria.listar_usuarios()
+ tablas_cliente_producto                     | PASS   | conteo=2
+(35 rows)
+
+ROLLBACK
+NOTICE:  AA_RESULT|ana_sin_rol|PASS|
+NOTICE:  AA_RESULT|aud_admin_listar_columnas|PASS|aud_admin SQLSTATE=00000 valor=4 ejecución autorizada
+NOTICE:  AA_RESULT|aud_admin_listar_tablas|PASS|aud_admin SQLSTATE=00000 valor=2 ejecución autorizada
+NOTICE:  AA_RESULT|aud_admin_listar_usuarios|PASS|aud_admin SQLSTATE=00000 valor=NULL ejecución autorizada
+NOTICE:  AA_RESULT|aud_consulta_listar_columnas|PASS|aud_consulta SQLSTATE=00000 valor=4 ejecución autorizada
+NOTICE:  AA_RESULT|aud_consulta_listar_tablas|PASS|aud_consulta SQLSTATE=00000 valor=2 ejecución autorizada
+NOTICE:  AA_RESULT|aud_consulta_listar_usuarios|PASS|aud_consulta SQLSTATE=00000 valor=NULL ejecución autorizada
+NOTICE:  AA_RESULT|aud_usuario_sigue|PASS|
+NOTICE:  AA_RESULT|columnas_cliente|PASS|conteo=4
+NOTICE:  AA_RESULT|columnas_producto|PASS|conteo=4
+NOTICE:  AA_RESULT|demo_ana_connect_actual|PASS|
+NOTICE:  AA_RESULT|demo_ana_login|PASS|rol inexistente o sin LOGIN
+NOTICE:  AA_RESULT|demo_luis_connect_actual|PASS|
+NOTICE:  AA_RESULT|demo_luis_login|PASS|rol inexistente o sin LOGIN
+NOTICE:  AA_RESULT|demo_maria_connect_actual|PASS|
+NOTICE:  AA_RESULT|demo_maria_login|PASS|rol inexistente o sin LOGIN
+NOTICE:  AA_RESULT|entrada_quoted_segura|PASS|conteo=0
+NOTICE:  AA_RESULT|entrada_schema_segura|PASS|conteo=0
+NOTICE:  AA_RESULT|eventos_activos_cliente_producto|PASS|conteo=10
+NOTICE:  AA_RESULT|excluye_auditoria|PASS|
+NOTICE:  AA_RESULT|existe_listar_columnas|PASS|
+NOTICE:  AA_RESULT|existe_listar_tablas|PASS|auditoria.listar_tablas()
+NOTICE:  AA_RESULT|existe_listar_usuarios|PASS|auditoria.listar_usuarios()
+NOTICE:  AA_RESULT|luis_consulta|PASS|
+NOTICE:  AA_RESULT|maria_admin|PASS|
+NOTICE:  AA_RESULT|metadato_cliente_pk|PASS|
+NOTICE:  AA_RESULT|metadato_producto_pk|PASS|
+NOTICE:  AA_RESULT|public_sin_execute_diccionario|PASS|
+NOTICE:  AA_RESULT|search_path_listar_columnas_text,text)|PASS|auditoria.listar_columnas(text,text)
+NOTICE:  AA_RESULT|search_path_listar_tablas|PASS|auditoria.listar_tablas()
+NOTICE:  AA_RESULT|search_path_listar_usuarios|PASS|auditoria.listar_usuarios()
+NOTICE:  AA_RESULT|security_definer_listar_columnas_text,text)|PASS|auditoria.listar_columnas(text,text)
+NOTICE:  AA_RESULT|security_definer_listar_tablas|PASS|auditoria.listar_tablas()
+NOTICE:  AA_RESULT|security_definer_listar_usuarios|PASS|auditoria.listar_usuarios()
+NOTICE:  AA_RESULT|tablas_cliente_producto|PASS|conteo=2
+NOTICE:  AA_SUMMARY|PASS=35|FAIL=0|BLOCKED=0

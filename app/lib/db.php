@@ -43,6 +43,7 @@ function aa_conectar(string $usuario, string $password): PDO
     // La estación de trabajo que queda en la bitácora
     $stmt = $pdo->prepare('SELECT set_config(?, ?, false)');
     $stmt->execute(['application_name', $cfg['app_name']]);
+    $stmt->execute(['TimeZone', $cfg['timezone']]);
 
     return $pdo;
 }

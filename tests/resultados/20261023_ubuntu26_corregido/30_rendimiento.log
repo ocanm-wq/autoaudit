@@ -1,0 +1,30 @@
+SET
+DO
+CREATE TABLE
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+BEGIN
+
+DO
+CREATE TABLE
+DO
+DO
+rendimiento_100|BLOCKED|BLOCKED: falta auditoria.generar_trigger(integer)
+rendimiento_1000|BLOCKED|BLOCKED: falta auditoria.generar_trigger(integer)
+rendimiento_10000|BLOCKED|BLOCKED: falta auditoria.generar_trigger(integer)
+rendimiento_rechaza_-1|PASS|P0001 esperado
+rendimiento_rechaza_0|PASS|P0001 esperado
+rendimiento_rechaza_null|PASS|P0001: p_filas debe ser un número mayor que 0
+ROLLBACK
+
+NOTICE:  AA_RESULT|rendimiento_100|BLOCKED|BLOCKED: falta auditoria.generar_trigger(integer)
+NOTICE:  AA_RESULT|rendimiento_1000|BLOCKED|BLOCKED: falta auditoria.generar_trigger(integer)
+NOTICE:  AA_RESULT|rendimiento_10000|BLOCKED|BLOCKED: falta auditoria.generar_trigger(integer)
+NOTICE:  AA_RESULT|rendimiento_rechaza_-1|PASS|P0001 esperado
+NOTICE:  AA_RESULT|rendimiento_rechaza_0|PASS|P0001 esperado
+NOTICE:  AA_RESULT|rendimiento_rechaza_null|PASS|P0001: p_filas debe ser un número mayor que 0
+NOTICE:  AA_SUMMARY|PASS=3|FAIL=0|BLOCKED=3

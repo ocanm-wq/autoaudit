@@ -1,0 +1,12 @@
+{
+  "commit_remoto_revisado": "431451fede1b42e8ae56a3695878ab5f8a7f68ac",
+  "rama_local": "main",
+  "commit_local_sin_cambiar": "561de0e77231ee4215decceab60457182216856b",
+  "archivos_importados_sin_transformar": {
+    "sql/03_generador_triggers.sql": "8f2c77f63603b8e6007d2fae923f1ef4f7a0cd2fb304e1adcf578c79c46e55a8",
+    "sql/08_datos_demostracion.sql": "688d00077b93d8f3719a5b45a8af27e06c0be153b4781438798e5ccaa1baba81"
+  },
+  "metodo": "Copia exacta desde una instantánea remota separada; sin merge ni cambio de rama",
+  "interfaz_php_en_version_revisada": false,
+  "git": "Sin add, commit, push, merge, rebase ni pull request; índice sin preparar"
+}

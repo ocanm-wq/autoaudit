@@ -1,0 +1,8 @@
+{
+  "imagen_base_oficial": "ubuntu@sha256:c098726dd9b9733f3e885f8de0ef375206a311b0a317eadc40d347b1115fb944",
+  "Dockerfile": "tests/entorno/Dockerfile.ubuntu26",
+  "sha256_dockerfile": "fa38f870604a5ed6d634f326a819712cd39627285bc4a97bda9bfe47787bfa7e",
+  "repositorios": "APT oficial Ubuntu resolute, resolute-updates y resolute-security",
+  "paquetes": "postgresql-18 y postgresql-client-18: 18.6-0ubuntu0.26.04.1",
+  "alcance": "Ubuntu 26.04.1 userland en Docker; kernel compartido de WSL2"
+}

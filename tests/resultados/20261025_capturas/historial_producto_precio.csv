@@ -1,0 +1,7 @@
+﻿tabla,columna,evento,valor_anterior,valor_nuevo,usuario
+producto,precio,INSERT,"","150.00",demo_luis
+producto,precio,INSERT,"","80.00",demo_luis
+producto,precio,INSERT,"","1200.00",demo_luis
+producto,precio,UPDATE,"150.00","135.00",demo_luis
+producto,precio,UPDATE,"1200.00","1100.00",demo_maria
+producto,precio,DELETE,"80.00","",demo_maria

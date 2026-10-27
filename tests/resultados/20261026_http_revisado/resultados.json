@@ -1,0 +1,43 @@
+{
+  "fecha_utc": "2026-10-26T19:00:12.736079+00:00",
+  "url": "http://127.0.0.1:18087",
+  "database": "autoaudit_test_http",
+  "resumen": {
+    "PASS": 5,
+    "FAIL": 1,
+    "BLOCKED": 0
+  },
+  "casos": [
+    {
+      "id": "anonimo_login",
+      "estado": "PASS",
+      "detalle": "Redirección sin sesión"
+    },
+    {
+      "id": "password_incorrecto",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "ana_rechazo_rol",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "maria_admin_autenticada",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "maria_configura",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "ejecucion_completa",
+      "estado": "FAIL",
+      "detalle": "CalledProcessError: Command '['wsl.exe', '-d', 'Ubuntu-24.04', '--exec', 'docker', 'exec', '-i', 'autoaudit-ui-20261026', 'psql', '-X', '-h', '/tmp', '-U', 'postgres', '-d', 'autoaudit_test_http', '-v', 'ON_ERROR_STOP=1', '-A', '-t']' returned non-zero exit status 3."
+    }
+  ],
+  "fuente_sha256": "81ef2f8cb78544388e09e2eda0595de542e0552ce8cf174c556c3cd8bf07f700"
+}

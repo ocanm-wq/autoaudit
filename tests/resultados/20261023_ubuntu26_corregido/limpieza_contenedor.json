@@ -1,0 +1,13 @@
+{
+  "contenedor": "/autoaudit-test-ubuntu26 autoaudit-test-ubuntu26:local none",
+  "stop_exit": 0,
+  "rm_exit": 0,
+  "verificacion_exit": 0,
+  "restantes": [],
+  "retirado": true,
+  "datos": "tmpfs de 768MiB descartado; sin volumen de datos de prueba",
+  "imagen": "imagen local conservada para reproducir",
+  "proxy_temporal": "no hay proceso propio activo",
+  "configuracion_global_docker_modificada": false,
+  "contenedor_existente_del_proyecto_modificado": false
+}

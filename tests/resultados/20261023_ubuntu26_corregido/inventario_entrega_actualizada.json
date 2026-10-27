@@ -1,0 +1,327 @@
+[
+  {
+    "archivo": "docs/MATRIZ_DE_PRUEBAS.md",
+    "bytes": 3864,
+    "sha256": "3adffad96113d4eb071c52368f5e02be6b279075d78026f2f5e2a2e1ddd5c395"
+  },
+  {
+    "archivo": "docs/PRUEBAS_Y_RESULTADOS.md",
+    "bytes": 11550,
+    "sha256": "a7a6183e3d47455116c334bd68efe6f47c5f6551a496fcf24e0e88d13078e479"
+  },
+  {
+    "archivo": "docs/RENDIMIENTO_METODOLOGIA.md",
+    "bytes": 2904,
+    "sha256": "de06c820368e1d35fa7dc53fe6043f617eb5baf04e0288bf377fd2a55ef08a38"
+  },
+  {
+    "archivo": "docs/SEGURIDAD_Y_PRIVACIDAD.md",
+    "bytes": 6811,
+    "sha256": "cd3ae1cea7b35f7ced60eedd9e6984a883a70f83e76eac964d56b5ceeedca776"
+  },
+  {
+    "archivo": "docs/VALIDACION_ENTORNO.md",
+    "bytes": 2112,
+    "sha256": "b1a966e53b01cf17a01fca4073982e87656e2284acace4487314fa4b94f03658"
+  },
+  {
+    "archivo": "README.md",
+    "bytes": 7629,
+    "sha256": "2112c6685be506a01cbdfc0fc824a9ed875f6e4a021c0936f7e50f65266bd631"
+  },
+  {
+    "archivo": "sql/05_consultas_historial.sql",
+    "bytes": 3346,
+    "sha256": "65019e4437e237f7e3d6cd487e0eca649e3ab1dd2119a80076d8c0e97cd2cefa"
+  },
+  {
+    "archivo": "sql/06_seguridad.sql",
+    "bytes": 5640,
+    "sha256": "38e6e0e4e13dc3595fa1069cff1893e838fef52b797b7e5af34af821aebf1621"
+  },
+  {
+    "archivo": "sql/07_pruebas_rendimiento.sql",
+    "bytes": 6519,
+    "sha256": "fb26712ef1031926f2ee1115703f0417aacde752a06ee185e73827f9bbf86ee5"
+  },
+  {
+    "archivo": "tests/00_comun.sql",
+    "bytes": 3602,
+    "sha256": "02369020d392f30cbf0dcd93be9e653977bc8e8c613aa997a415fad87538daee"
+  },
+  {
+    "archivo": "tests/10_funcionales.sql",
+    "bytes": 13039,
+    "sha256": "e725a4427644ca62fc99ba512689924603d338538a2b7a6753ad0ec56e555298"
+  },
+  {
+    "archivo": "tests/20_seguridad.sql",
+    "bytes": 9963,
+    "sha256": "40d4c99cb71e3023d9eb353a66a3fffe2c05f896e7ee956fb4f7809892b20c67"
+  },
+  {
+    "archivo": "tests/entorno/Dockerfile.ubuntu26",
+    "bytes": 878,
+    "sha256": "fa38f870604a5ed6d634f326a819712cd39627285bc4a97bda9bfe47787bfa7e"
+  },
+  {
+    "archivo": "tests/entorno/README.md",
+    "bytes": 2243,
+    "sha256": "563948b2b4458a73056114d2e0621831552e00945ac819160d6a45272dbeeb3f"
+  },
+  {
+    "archivo": "tests/patches/05_quitar_q.patch",
+    "bytes": 204,
+    "sha256": "e93bc1277cb325f3a2729f2acadda70e9ef87d97abd1e552095d993a5850d9d2"
+  },
+  {
+    "archivo": "tests/patches/06_privilegios_propuestos.sql",
+    "bytes": 1953,
+    "sha256": "38d5c045d8389919cb47b2462c4c30b1b1b6e4d0eb37cc9387b77984ea7ef7f6"
+  },
+  {
+    "archivo": "tests/patches/README.md",
+    "bytes": 771,
+    "sha256": "613e87d6f806c1606475fe3ddf40a59234802592cc7b7aedcb19550b82f4b2c4"
+  },
+  {
+    "archivo": "tests/performance/30_rendimiento.sql",
+    "bytes": 7171,
+    "sha256": "b65f42771653beaa53159265f0669f89142c8dc8aae46da38a1260596b85c6dd"
+  },
+  {
+    "archivo": "tests/README.md",
+    "bytes": 6336,
+    "sha256": "d817a49bbac4c97d270669ec9c6ded22b0ee89f30e651c80326a20db51a94eea"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/00_entorno.log",
+    "bytes": 287,
+    "sha256": "d6a66262819b22dacdcacc23cf5bd10c8a5bee42402ca895b287aef57df2c29f"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/01_estructura.log",
+    "bytes": 186,
+    "sha256": "5d2a6bcc1fd60977f0930cd499ebcbfe8fbbc83665f7330060d2d9a29ad7ca51"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/05_historial_corregido_solo_prueba.log",
+    "bytes": 74,
+    "sha256": "cf5428dfbaac854ff75abf8bb21b2b8b22d68041507164a74ce3e3e1023f0202"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/05_historial_original.log",
+    "bytes": 94,
+    "sha256": "56b389ca404922312aa0f1b055dc247af08779ad31ccb34818e05b040988020a"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/05_solo_prueba.sql",
+    "bytes": 3253,
+    "sha256": "eb9d32c8ce4aad6af25d34aa4e4ed19e126ed175884c2cdda6f3e1807a368cbc"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/06_controles_independientes.log",
+    "bytes": 481,
+    "sha256": "fedec165401c8ba3dbfbb49afd28f282ad984c1817ede3b7ed28e8695f9a462c"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/06_seguridad_completa.log",
+    "bytes": 244,
+    "sha256": "27d29ce42328497d7e007336d3cfda235f88342270ae72e84b9c16e79b5545ec"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/06_solo_controles_independientes.sql",
+    "bytes": 4553,
+    "sha256": "b57f78077c926b5de7a80297e4eb3a74dc56c0bb9016a53f7fd10c88c3548032"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/07_solo_definicion.log",
+    "bytes": 37,
+    "sha256": "cae1c03bce01aab96031c5a228d0bd51b7f89eeb47ce1572e2e935ad0fdd2c97"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/07_solo_definicion.sql",
+    "bytes": 4524,
+    "sha256": "d4779ee3fa7d5739013f96d92417b43e6febd15f41ae82a3e42df640baf47d8d"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/10_funcionales.log",
+    "bytes": 5104,
+    "sha256": "7509a561d62c4eabc06e54ffcb1666c4946248e69f3c5e9159f9440674ae1215"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/20_seguridad.log",
+    "bytes": 8790,
+    "sha256": "1d23ca55294ee88241cdb3f9f348b43bffe3e0de0c31a7e968cc4bc643c07956"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/21_propuesta_public_validada.log",
+    "bytes": 626,
+    "sha256": "b42a8ae5b0016b570e7c42e850a90dda78ff0e5a82ccbf218fc3f8d4190746ed"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/21a_alternativa_por_esquema_descartada.log",
+    "bytes": 649,
+    "sha256": "3e632580feb177e87f48e3bd5174ebbe3a3acef38bad4492147b2527ba15b250"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/30_rendimiento.log",
+    "bytes": 1087,
+    "sha256": "1830c940d54bc405e129441c6b817296beb6e65f27ee10ad835b19e031bd790e"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/98_guardia_ejecutor.log",
+    "bytes": 412,
+    "sha256": "b81d8048191cdbf4fe089823c0b274154ac575dae251adeaab934c439ea8b6ac"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/98_guardia_sql.log",
+    "bytes": 146,
+    "sha256": "2f021b4e148f0d0fdd215cf9a1c3b839aba299bfd5bc21316309889ad34b6a50"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/99_limpieza.log",
+    "bytes": 70,
+    "sha256": "92c9ca17105cbafcf6737653555642bd06f9373df972bc2369175f8d1d1c77ba"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/estado_local.json",
+    "bytes": 256,
+    "sha256": "6a9118d2415cfc57e0b1d00a7c05c0597d5b39369ed77fe57708488c9ce9c858"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/inventario_entrega.json",
+    "bytes": 6975,
+    "sha256": "82a6872638337c3ef5ea399674d5edca6aaeb88ac27a95cf0f78af98dbb87cd6"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/limpieza_contenedor.json",
+    "bytes": 284,
+    "sha256": "5d5296e370b6157aeeb804de323b6490e3676f7a89548602b8c4b86e8e151952"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/resultados.json",
+    "bytes": 19013,
+    "sha256": "aaab46e77a86863df0d77a97cc9d50be7938fc7559cda2e62833418c8521acde"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/sha256_originales.json",
+    "bytes": 1270,
+    "sha256": "6280d1d056f19e83a757a4952bd454efca27187251b63f2f05d4e22e147db049"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/snapshot_0.log",
+    "bytes": 140,
+    "sha256": "202db3e6a483221f81d1ab44d6a09453e3d075dca102bc1b45b08757a922510c"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/snapshot_1.log",
+    "bytes": 140,
+    "sha256": "202db3e6a483221f81d1ab44d6a09453e3d075dca102bc1b45b08757a922510c"
+  },
+  {
+    "archivo": "tests/resultados/20261023_revision_final/validaciones_adicionales.json",
+    "bytes": 270,
+    "sha256": "61fe802d192203161c119765780e9ac6294789d47905038377489be44ec1da99"
+  },
+  {
+    "archivo": "tests/resultados/20261023_ubuntu26_corregido/00_entorno.log",
+    "bytes": 334,
+    "sha256": "4a7253b0686cf9c5c91a5c10221b0f48e5b7c4dc2dc8776fada41d7d4f1e4d87"
+  },
+  {
+    "archivo": "tests/resultados/20261023_ubuntu26_corregido/01_estructura.log",
+    "bytes": 186,
+    "sha256": "5d2a6bcc1fd60977f0930cd499ebcbfe8fbbc83665f7330060d2d9a29ad7ca51"
+  },
+  {
+    "archivo": "tests/resultados/20261023_ubuntu26_corregido/05_historial.log",
+    "bytes": 74,
+    "sha256": "cf5428dfbaac854ff75abf8bb21b2b8b22d68041507164a74ce3e3e1023f0202"
+  },
+  {
+    "archivo": "tests/resultados/20261023_ubuntu26_corregido/06_seguridad.log",
+    "bytes": 609,
+    "sha256": "b5d5d51c163252cd34174923f680ae2bf35579d4ffbca5b322e1d430827aca24"
+  },
+  {
+    "archivo": "tests/resultados/20261023_ubuntu26_corregido/07_solo_definicion.log",
+    "bytes": 37,
+    "sha256": "cae1c03bce01aab96031c5a228d0bd51b7f89eeb47ce1572e2e935ad0fdd2c97"
+  },
+  {
+    "archivo": "tests/resultados/20261023_ubuntu26_corregido/07_solo_definicion.sql",
+    "bytes": 4524,
+    "sha256": "d4779ee3fa7d5739013f96d92417b43e6febd15f41ae82a3e42df640baf47d8d"
+  },
+  {
+    "archivo": "tests/resultados/20261023_ubuntu26_corregido/10_funcionales.log",
+    "bytes": 5104,
+    "sha256": "7509a561d62c4eabc06e54ffcb1666c4946248e69f3c5e9159f9440674ae1215"
+  },
+  {
+    "archivo": "tests/resultados/20261023_ubuntu26_corregido/20_seguridad.log",
+    "bytes": 8790,
+    "sha256": "6592c22b52cd1dcdbcd684eb504de6e5f9bdd03e39f87063c4f8b41944e911c7"
+  },
+  {
+    "archivo": "tests/resultados/20261023_ubuntu26_corregido/30_rendimiento.log",
+    "bytes": 1087,
+    "sha256": "1830c940d54bc405e129441c6b817296beb6e65f27ee10ad835b19e031bd790e"
+  },
+  {
+    "archivo": "tests/resultados/20261023_ubuntu26_corregido/40_instalacion_07_completo.log",
+    "bytes": 176,
+    "sha256": "d666d8a9019b4495337904edfa0b9c52712a247c6ce3b0ae814fc2bdf3868614"
+  },
+  {
+    "archivo": "tests/resultados/20261023_ubuntu26_corregido/99_limpieza.log",
+    "bytes": 70,
+    "sha256": "92c9ca17105cbafcf6737653555642bd06f9373df972bc2369175f8d1d1c77ba"
+  },
+  {
+    "archivo": "tests/resultados/20261023_ubuntu26_corregido/cambios_fuentes.patch",
+    "bytes": 11000,
+    "sha256": "4a48e0da93b61c1ba234bbdb9e56e0d28920d256998aeddff256f78219777ffd"
+  },
+  {
+    "archivo": "tests/resultados/20261023_ubuntu26_corregido/estado_local.json",
+    "bytes": 562,
+    "sha256": "0ccb1eed0dca8fdf8e612b77ddf1243f57e842aeb7b327717816affc325a404d"
+  },
+  {
+    "archivo": "tests/resultados/20261023_ubuntu26_corregido/limpieza_contenedor.json",
+    "bytes": 482,
+    "sha256": "50458a89a03a547a7e1d57938cb82e812ed9d74cc28be7f68f9464864b34a071"
+  },
+  {
+    "archivo": "tests/resultados/20261023_ubuntu26_corregido/procedencia_entorno.json",
+    "bytes": 503,
+    "sha256": "4e8ae66003963d43b587062b64a57efd34f8e20263e7b7e0c994ee796086650d"
+  },
+  {
+    "archivo": "tests/resultados/20261023_ubuntu26_corregido/resultados.json",
+    "bytes": 19330,
+    "sha256": "634de218162b09751dcb03ee466b89211b0a97dc6828983edcb7c721cf3e5077"
+  },
+  {
+    "archivo": "tests/resultados/20261023_ubuntu26_corregido/snapshot_0.log",
+    "bytes": 140,
+    "sha256": "202db3e6a483221f81d1ab44d6a09453e3d075dca102bc1b45b08757a922510c"
+  },
+  {
+    "archivo": "tests/resultados/20261023_ubuntu26_corregido/snapshot_1.log",
+    "bytes": 140,
+    "sha256": "202db3e6a483221f81d1ab44d6a09453e3d075dca102bc1b45b08757a922510c"
+  },
+  {
+    "archivo": "tests/resultados/README.md",
+    "bytes": 1118,
+    "sha256": "04cda6b5e24e4f963ca6d50d7ed2334986910de7f646b1e2153507866521cee4"
+  },
+  {
+    "archivo": "tests/run_tests.py",
+    "bytes": 10651,
+    "sha256": "a30506850bf316dee4809325060d9af8847391291d93c6e6fdbc1ed6ed626a59"
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "base": "http://127.0.0.1:18087",
+  "generated_at": "2026-10-26T12:40:47-0600",
+  "checks": [
+    {
+      "name": "login_get_200",
+      "ok": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "login_csrf_present",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "csrf_rejected",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "maria_login",
+      "ok": false,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "luis_login",
+      "ok": false,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "ana_blocked",
+      "ok": true,
+      "detail": "HTTP 200"
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "passed": 4,
+    "failed": 2,
+    "duration_seconds": 0.26
+  }
+}

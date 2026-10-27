@@ -1,0 +1,13 @@
+{
+  "autoaudit-docs-20261025": {
+    "ausente": true
+  },
+  "autoaudit-capturas-20261025": {
+    "ausente": true
+  },
+  "servidor_php_temporal": "Detenido; puerto 18085 sin listener al verificar",
+  "postgres_capturas": "Contenedor eliminado; puerto 55425 sin listener al verificar",
+  "credencial_temporal": "Archivo eliminado; clúster desechado",
+  "datos_prueba": "Tmpfs desechado al retirar contenedores propios",
+  "contenedor_preexistente_autoaudit_db": "No se ejecutó ningún SQL ni cambios contra él"
+}

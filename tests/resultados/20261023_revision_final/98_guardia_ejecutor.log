@@ -1,0 +1,7 @@
+usage: run_tests.py [-h] [--database DATABASE]
+                    [--docker-container DOCKER_CONTAINER] [--psql PSQL]
+                    --confirmar-cluster-aislado
+                    [--corregir-historial-en-prueba]
+                    [--seguridad-independiente] [--incluir-100000]
+                    [--output OUTPUT]
+run_tests.py: error: Nombre permitido: autoaudit_test o autoaudit_test_<sufijo>

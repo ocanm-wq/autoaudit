@@ -25,6 +25,10 @@ REVOKE ALL ON SCHEMA auditoria FROM PUBLIC;
 REVOKE ALL ON ALL TABLES    IN SCHEMA auditoria FROM PUBLIC;
 REVOKE ALL ON ALL SEQUENCES IN SCHEMA auditoria FROM PUBLIC;
 REVOKE ALL ON ALL FUNCTIONS IN SCHEMA auditoria FROM PUBLIC;
+-- Funciones futuras del creador actual, en todos los esquemas de ESTA base.
+-- No usar IN SCHEMA: no revoca el EXECUTE global que PostgreSQL da por defecto.
+-- Repetir para cada propietario autorizado que cree funciones del proyecto.
+ALTER DEFAULT PRIVILEGES REVOKE EXECUTE ON FUNCTIONS FROM PUBLIC;
 
 -- 3. Permisos de aud_admin (configuración) y aud_consulta (lectura)
 GRANT USAGE ON SCHEMA auditoria TO aud_admin, aud_consulta;
@@ -41,13 +45,22 @@ GRANT USAGE, SELECT ON  auditoria.aud_tabla_id_tabla_seq,
 -- Generar y eliminar triggers: solo aud_admin
 -- (se ejecutan con los permisos del dueño, así el admin no necesita
 --  ser dueño de las tablas auditadas)
-ALTER FUNCTION auditoria.generar_trigger(INT)
-    SECURITY DEFINER SET search_path = auditoria, pg_temp;
-ALTER FUNCTION auditoria.eliminar_trigger(INT)
-    SECURITY DEFINER SET search_path = auditoria, pg_temp;
-
-GRANT EXECUTE ON FUNCTION   auditoria.generar_trigger(INT),
-                            auditoria.eliminar_trigger(INT) TO aud_admin;
+-- Permite instalar los controles independientes mientras se entrega 03.
+-- Reejecutar 06 después de instalar el generador; no se crean sustitutos.
+DO $$
+DECLARE firma TEXT;
+BEGIN
+    FOREACH firma IN ARRAY ARRAY['auditoria.generar_trigger(integer)',
+                                 'auditoria.eliminar_trigger(integer)'] LOOP
+        IF to_regprocedure(firma) IS NULL THEN
+            RAISE NOTICE 'PENDIENTE: falta %. Instalar 03 y volver a ejecutar 06.', firma;
+        ELSE
+            EXECUTE format('ALTER FUNCTION %s SECURITY DEFINER SET search_path = auditoria, pg_temp', firma);
+            EXECUTE format('GRANT EXECUTE ON FUNCTION %s TO aud_admin', firma);
+        END IF;
+    END LOOP;
+END
+$$;
 
 -- Consulta de historial: aud_consulta (y aud_admin, que la hereda)
 -- La vista se ejecuta con los permisos de su dueño, por eso
@@ -69,6 +82,7 @@ BEGIN
     RAISE EXCEPTION 'La bitácora es de solo escritura: no se permite % sobre aud_bitacora', TG_OP;
 END;
 $$;
+REVOKE ALL ON FUNCTION auditoria.bloquear_modificacion_bitacora() FROM PUBLIC;
 
 DROP TRIGGER IF EXISTS trg_bitacora_inmutable ON auditoria.aud_bitacora;
 CREATE TRIGGER trg_bitacora_inmutable

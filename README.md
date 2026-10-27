@@ -2,6 +2,14 @@
 
 Sistema de auditoría automatizado para bases de datos PostgreSQL. Permite elegir qué tablas y columnas auditar y qué eventos registrar (INSERT, UPDATE, DELETE); el sistema genera automáticamente los triggers que guardan cada cambio en una bitácora centralizada.
 
+**Estado de esta copia al 26/10/2026:** interfaz PHP Sneat integrada con historial, filtros, paginación y CSV. Las ejecuciones finales aprobaron 240 casos del backend, 35 del SQL de interfaz, 38 por HTTP y 29 del navegador. Guía principal: [Word](docs/AutoAudit_Guia_Interfaz_Final.docx), [PDF](docs/AutoAudit_Guia_Interfaz_Final.pdf) y [Markdown](docs/GUIA_INTERFAZ.md), con 15 capturas reales sin cursor. Evidencia y límites: [PRUEBAS_Y_RESULTADOS.md](docs/PRUEBAS_Y_RESULTADOS.md).
+
+## Integración con los cambios del equipo
+
+La rama `pruebas-documentacion-interfaz` parte del commit `b978a33` que incorporó la interfaz del compañero. Conserva sus recursos Sneat, el generador y la corrección de 05. Añade las consultas pendientes, los ajustes mínimos de seguridad y conexión, las pruebas y las guías.
+
+Sobre esta integración se repitieron 28 casos funcionales, 47 de seguridad, 35 de SQL09 y 38 por HTTP: **148 PASS, 0 FAIL, 0 BLOCKED**, además del lint de los nueve PHP. La corrida anterior del backend con benchmark (240/0/0) se mantiene como evidencia separada y no se presenta como una nueva medición de rendimiento. Detalles en [PUBLICACION_GITHUB.md](docs/PUBLICACION_GITHUB.md).
+
 ## Características
 
 - Configuración de auditoría por tabla, columna y evento.
@@ -17,8 +25,11 @@ Sistema de auditoría automatizado para bases de datos PostgreSQL. Permite elegi
 - PostgreSQL 18
 - Ubuntu 26.04 LTS (requisito del proyecto)
 - Un cliente SQL: DBeaver o `psql`
+- PHP 8.1 o posterior con `pdo_pgsql` para la interfaz
 
-Entorno donde se probó: _(completar: sistema operativo y versión de PostgreSQL)_
+Entorno y versiones realmente comprobados: [VALIDACION_ENTORNO.md](docs/VALIDACION_ENTORNO.md). Las limitaciones y dependencias pendientes se documentan con los resultados.
+
+Guía de instalación y uso de la interfaz: [GUIA_INTERFAZ.md](docs/GUIA_INTERFAZ.md). Para iniciar en Windows: `.\scripts\iniciar_interfaz.ps1 -DbName autoaudit -DbPort 5432 -Port 8080`. La guía anterior [GUIA_DE_USO.md](docs/GUIA_DE_USO.md) conserva las consultas SQL de la fase previa.
 
 ## Estructura del repositorio
 
@@ -46,7 +57,7 @@ Entorno donde se probó: _(completar: sistema operativo y versión de PostgreSQL
    CREATE SCHEMA IF NOT EXISTS public;
    ```
 
-3. Ejecutar los scripts **en orden**, del `01` al `07`, siempre conectado a `autoaudit`.
+3. Para pruebas, usar una base `autoaudit_test` de un clúster dedicado y seguir `tests/README.md`. La estructura se instala con `01`, el generador real con `03`, las consultas con `05`, los controles con `06` y la definición de medición con `07`. `02` son consultas de diccionario; `04` es una prueba manual opcional.
    - En DBeaver: abrir el archivo en un editor SQL de `autoaudit` y ejecutarlo con **Alt+X**.
    - En `psql`:
 
@@ -57,10 +68,13 @@ Entorno donde se probó: _(completar: sistema operativo y versión de PostgreSQL
 Notas:
 
 - `02` usa parámetros de DBeaver (`:esquema`, `:tabla`); en `psql` hay que reemplazarlos por valores.
-- `04` y `07` incluyen pruebas; ejecutar `04` por bloques, en orden.
-- `07` deja la función creada; las pruebas se ejecutan después, una por una.
+- `04` es una prueba manual dependiente del generador; la ejecución automatizada usa sus propios fixtures y no requiere ejecutarla aparte.
+- `07` deja la función creada; sus ejemplos están comentados para impedir cargas automáticas. El wrapper ejecuta 100, 1.000 y 10.000 cuando existe el generador. 100.000 requiere habilitación explícita.
+- `06` revoca el EXECUTE público por defecto para funciones futuras del creador actual en todos los esquemas de esta base. Usar un propietario dedicado y revisar ese alcance; no afecta automáticamente a otros creadores.
 
 ## Uso
+
+El ejemplo siguiente muestra la configuración de `public.cliente`; la ejecución integrada ya acredita captura automática con el generador real.
 
 Ejemplo con la tabla `public.cliente`: auditar `nombre` y `correo` en INSERT, UPDATE y DELETE.
 
@@ -104,13 +118,13 @@ Los resultados se pueden exportar desde DBeaver (clic derecho en los resultados,
 
 - `aud_admin`: configura la auditoría y consulta el historial.
 - `aud_consulta`: solo consulta el historial.
-- Ningún rol tiene permiso de escritura directa en la bitácora; solo la escriben los triggers.
+- `aud_admin` y `aud_consulta` no tienen permiso de escritura directa en la bitácora. El dueño y los superusuarios conservan capacidades administrativas; no es una protección inviolable frente a ellos.
 - Triggers que bloquean `UPDATE`, `DELETE` y `TRUNCATE` sobre la bitácora.
-- La IP de origen solo es visible mediante la vista y las funciones de historial.
+- Los dos roles pueden consultar la IP mediante la vista y las funciones de historial. La suite principal usó socket Unix, donde la IP puede ser `NULL`; una demostración TCP separada registró `172.17.0.1` desde Adminer en el clúster de capturas. El dueño, superusuarios y otros roles con permisos directos también pueden acceder.
 
 ## Pruebas de rendimiento
 
-Tiempos medidos en el equipo de desarrollo, con la función `auditoria.medir_rendimiento(N)` (columnas `nombre` y `correo` auditadas):
+La siguiente tabla se conserva del README original. No se verificó su entorno ni procedencia; no constituye una medición nueva ni evidencia del estado actual. Los resultados verificables de esta contribución están en `docs/PRUEBAS_Y_RESULTADOS.md`.
 
 | Filas | Operación | Sin auditoría (ms) | Con auditoría (ms) |
 |---|---|---|---|
@@ -124,7 +138,7 @@ Tiempos medidos en el equipo de desarrollo, con la función `auditoria.medir_ren
 | 100.000 | UPDATE | 1.213,4 | 20.156,7 |
 | 100.000 | DELETE | 79,1 | 30.407,9 |
 
-Conclusiones:
+Conclusiones heredadas de esa copia, no validadas en esta revisión:
 
 - El costo crece de forma lineal con el volumen: unos 0,2 a 0,3 ms por fila auditada, sin degradarse al crecer la bitácora.
 - En operaciones normales (una o pocas filas) el impacto es pequeño.
@@ -137,6 +151,7 @@ Conclusiones:
 - [x] Generador dinámico de triggers
 - [x] Consultas de historial
 - [x] Seguridad
-- [x] Pruebas funcionales y de rendimiento
-- [ ] Interfaz de configuración y consulta
-- [ ] Documentación técnica en PDF
+- [x] Suites automatizadas de estructura, consultas y seguridad disponibles
+- [x] Ejecución de DML y rendimiento con el generador real (100, 1.000 y 10.000 filas; tres repeticiones)
+- [x] Interfaz PHP Sneat de configuración y consulta integrada; evidencia HTTP y navegación en `tests/resultados/20261026_interfaz/`
+- [x] Archivo PDF técnico existente; guía de uso y validación actualizada con capturas, y documentos técnicos en `docs/`

@@ -14,4 +14,5 @@ return [
 
     // Nombre que la bitácora guarda como estación de trabajo (application_name)
     'app_name' => getenv('AUTOAUDIT_APP_NAME') ?: 'AutoAudit-Web',
+    'timezone' => getenv('AUTOAUDIT_TIMEZONE') ?: 'America/Guatemala',
 ];

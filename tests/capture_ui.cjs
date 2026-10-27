@@ -1,0 +1,135 @@
+const {chromium} = require('C:/Users/user/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const fs = require('node:fs/promises');
+const path = require('node:path');
+const crypto = require('node:crypto');
+const assert = require('node:assert/strict');
+const root='C:/Users/user/OneDrive/Documentos/GitHub/autoaudit';
+const caps=path.join(root,'docs/capturas_interfaz');
+const evidence=path.join(root,'tests/resultados/20261026_interfaz');
+const base='http://127.0.0.1:18086';
+
+(async()=>{
+ await fs.mkdir(caps,{recursive:true});
+ const source=await fs.readFile(path.join(root,'sql/09_interfaz.sql'),'utf8');
+ const creds=Object.fromEntries([...source.matchAll(/\('(demo_(?:maria|luis|ana))',\s*'([^']+)'\)/g)].map(m=>[m[1],m[2]]));
+ const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+ const context=await browser.newContext({viewport:{width:1680,height:1050},deviceScaleFactor:1,locale:'es-GT',timezoneId:'America/Guatemala',colorScheme:'light'});
+ const page=await context.newPage();
+ const images=[],checks=[],jsErrors=[],assetsErrors=[];
+ page.on('pageerror',e=>jsErrors.push(e.message));
+ page.on('response',r=>{if(r.url().includes('/assets/')&&r.status()>=400)assetsErrors.push({url:r.url(),status:r.status()});});
+ function check(id,ok,detail){checks.push({id,estado:ok?'PASS':'FAIL',detalle:detail});if(!ok)throw new Error(id+': '+detail);}
+ async function capture(name,description){
+  await page.evaluate(()=>document.fonts.ready);
+  const file=name+'.png';const buffer=await page.screenshot({fullPage:false,animations:'disabled'});
+  await fs.writeFile(path.join(caps,file),buffer);
+  images.push({archivo:file,descripcion:description,url:page.url(),fecha_utc:new Date().toISOString(),sha256:crypto.createHash('sha256').update(buffer).digest('hex'),metodo:'Captura real de Chrome del sitio local; sin puntero de ratón'});
+ }
+ async function login(user){
+  await page.goto(base+'/login.php');
+  await page.getByLabel('Usuario',{exact:true}).fill(user);
+  await page.getByLabel('Contraseña',{exact:true}).fill(creds[user]);
+  await page.getByRole('button',{name:'Entrar',exact:true}).click();
+ }
+ async function countRows(){return page.locator('tbody tr').count();}
+ try{
+  await page.goto(base+'/login.php');
+  check('login_real',await page.getByRole('button',{name:'Entrar',exact:true}).isVisible(),'Formulario PHP servido por localhost');
+  await capture('01_inicio_sesion','Inicio de sesión de la interfaz PHP Sneat');
+  await login('demo_ana');
+  check('ana_bloqueada',(await page.locator('body').innerText()).includes('no tiene acceso al sistema de auditoría'),'Credenciales válidas, sin rol autorizado');
+  await page.getByLabel('Contraseña',{exact:true}).fill('');
+  await capture('02_ana_bloqueada','Ana recibe el rechazo explícito por no pertenecer a los roles de auditoría');
+  await login('demo_maria');
+  check('maria_panel',page.url().endsWith('/index.php'),'Login de administradora y redirección al panel');
+  check('panel_21_eventos',(await page.locator('body').innerText()).includes('21'),'La semilla de demostración tiene21 eventos');
+  await capture('03_panel_administrador','Panel real con21 eventos, dos tablas y diez combinaciones activas');
+  await page.goto(base+'/configuracion.php');
+  check('maria_configuracion',await page.getByRole('heading',{name:/Configuración de auditoría/}).count()>0|| (await page.locator('body').innerText()).includes('Configuración'),'Acceso administrativo');
+  await capture('04_tablas_configuracion','Lista de tablas cliente y producto con auditoría activa');
+  await page.goto(base+'/configuracion.php?esquema=public&tabla=cliente');
+  check('formulario_configuracion',await page.locator('input[type=checkbox]').count()>=12,'Columnas de cliente con INSERT/UPDATE/DELETE');
+  await capture('05_configurar_columnas','Selección real de columnas y eventos de cliente');
+  await page.getByRole('button',{name:/Guardar y generar trigger/}).click();
+  check('guardar_regenera_trigger',(await page.locator('.alert-success').innerText()).includes('creado'),'La transacción guardó la configuración y regeneró el trigger');
+  await capture('06_configuracion_guardada','Confirmación real después de guardar y regenerar el trigger');
+  await page.getByRole('link',{name:/Ver historial/}).click();
+  check('enlace_configuracion_historial',JSON.parse(new URL(page.url()).searchParams.get('tabla')).join('.')==='public.cliente'&&await page.getByLabel('Tabla',{exact:true}).inputValue()==='["public","cliente"]'&&(await page.locator('body').innerText()).includes('13 resultado(s)'),'El enlace Ver historial abre y filtra los trece cambios de cliente');
+  await page.goto(base+'/configuracion.php?esquema=public&tabla=cliente');
+  await page.getByRole('button',{name:/Desactivar auditoría/}).click();
+  check('desactivar_desde_interfaz',await page.getByRole('button',{name:/Reactivar auditoría/}).count()===1,'La configuración permite desactivar auditoría');
+  await page.getByRole('button',{name:/Reactivar auditoría/}).click();
+  check('reactivar_desde_interfaz',await page.getByRole('button',{name:/Desactivar auditoría/}).count()===1,'La tabla cliente recupera la auditoría activa');
+  await page.goto(base+'/consulta.php');
+  check('historial_total_21',(await page.locator('body').innerText()).includes('21 resultado(s)'),'Vista completa de la semilla,21 eventos');
+  check('historial_filas_21',await countRows()===21,'21 filas visibles por debajo de los filtros');
+  await capture('07_historial_completo','Módulo de historial completado, con filtros y21 resultados');
+  await page.getByLabel('Usuario',{exact:true}).selectOption('demo_luis');
+  await page.getByLabel('Tabla',{exact:true}).selectOption({label:'public.producto'});
+  await page.getByLabel('Columna',{exact:true}).selectOption({label:'precio'});
+  await page.getByLabel('Evento',{exact:true}).selectOption('UPDATE');
+  await page.getByRole('button',{name:'Consultar',exact:true}).click();
+  check('filtros_combinados_1',(await page.locator('body').innerText()).includes('1 resultado(s)')&&await countRows()===1,'demo_luis+producto+precio+UPDATE devuelve un cambio');
+  check('filtro_valores_reales',(await page.locator('tbody').innerText()).includes('135.00'),'Cambio de precio150 a135');
+  await capture('08_filtros_combinados','Consulta combinada por usuario, tabla, columna y evento, un resultado');
+  await page.getByRole('link',{name:'Limpiar filtros',exact:true}).click();
+  await page.getByLabel('Tabla',{exact:true}).selectOption({label:'public.cliente'});
+  await page.getByLabel('Id de registro',{exact:true}).fill('3');
+  await page.getByRole('button',{name:'Consultar',exact:true}).click();
+  check('historial_borrado_4',(await page.locator('body').innerText()).includes('4 resultado(s)'),'Registro3 eliminado conserva dos INSERT y dos DELETE');
+  check('historial_borrado_delete',(await page.locator('tbody').innerText()).includes('DELETE'),'El historial conserva el evento DELETE');
+  await capture('09_historial_registro_eliminado','Historial del cliente3, aunque ya fue eliminado de la tabla fuente');
+  await page.getByRole('link',{name:'Limpiar filtros',exact:true}).click();
+  await page.getByLabel('Tabla',{exact:true}).selectOption({label:'public.producto'});
+  await page.getByLabel('Columna',{exact:true}).selectOption({label:'precio'});
+  await page.getByLabel('Desde (Guatemala)',{exact:true}).fill('2026-10-26T00:00');
+  await page.getByLabel('Hasta exclusivo (Guatemala)',{exact:true}).fill('2026-10-27T00:00');
+  await page.getByRole('button',{name:'Consultar',exact:true}).click();
+  check('filtro_fecha_valido',(await page.locator('body').innerText()).includes('6 resultado(s)'),'Rango local con fin exclusivo devuelve6 eventos de precio');
+  await capture('10_fecha_y_columna','Rango de fechas en Guatemala aplicado a producto.precio');
+  const downloadPromise=page.waitForEvent('download');
+  await page.getByRole('link',{name:'CSV completo',exact:true}).click();
+  const download=await downloadPromise;
+  await download.saveAs(path.join(evidence,'historial_interfaz_precio.csv'));
+  const csv=await fs.readFile(path.join(evidence,'historial_interfaz_precio.csv'),'utf8');
+  check('csv_sin_html',csv.startsWith('\uFEFFid_bitacora,')&&!csv.includes('<!DOCTYPE'),'CSV real descargado por Chrome');
+  check('csv_null_explicito',csv.includes('\\N'),'Los NULL se conservan como\\N');
+  check('csv_origen',csv.includes('ip_origen,nombre_host'),'Incluye IP y aplicación de origen');
+  await capture('11_exportacion_csv','Filtros vigentes usados para descargar el CSV completo');
+  await page.getByRole('link',{name:'Limpiar filtros',exact:true}).click();
+  await page.getByLabel('Id de registro',{exact:true}).fill('registro-inexistente');
+  await page.getByRole('button',{name:'Consultar',exact:true}).click();
+  check('estado_vacio',(await page.locator('body').innerText()).includes('No hay resultados para los filtros indicados.'),'Búsqueda sin coincidencias');
+  await capture('12_sin_resultados','Estado vacío cuando el registro solicitado no tiene cambios');
+  await page.goto(base+'/logout.php');
+  await login('demo_luis');
+  check('luis_panel',page.url().endsWith('/index.php'),'Login de consulta');
+  check('luis_menu_sin_config',await page.getByRole('link',{name:'Configuración',exact:true}).count()===0,'El menú no ofrece configurar para Luis');
+  await capture('13_panel_consulta','Panel de Luis con rol de consulta y menú restringido');
+  const forbidden=await page.goto(base+'/configuracion.php');
+  check('luis_403',forbidden.status()===403&&(await page.locator('body').innerText()).includes('Acceso denegado'),'La URL directa también está protegida');
+  await capture('14_configuracion_denegada','HTTP403 real al intentar abrir configuración con Luis');
+  await page.goto(base+'/consulta.php');
+  check('luis_historial',await countRows()===21,'Luis consulta el mismo historial autorizado');
+  await page.getByLabel('Usuario',{exact:true}).selectOption('demo_maria');
+  await page.getByRole('button',{name:'Consultar',exact:true}).click();
+  check('consulta_no_limitada_usuario',(await page.locator('body').innerText()).includes('5 resultado(s)'),'El rol permite historial completo, incluido el de otra persona');
+  await capture('15_consulta_autorizada','Luis filtra los cinco cambios de María, conforme a los permisos de aud_consulta');
+  await page.goto(base+'/logout.php');
+  const redirect=await page.goto(base+'/consulta.php');
+  check('sin_sesion_redirige',page.url().includes('/login.php'),'Después de cerrar sesión, la consulta exige autenticación');
+  check('assets_locales',assetsErrors.length===0,JSON.stringify(assetsErrors));
+  check('javascript_sin_errores',jsErrors.length===0,JSON.stringify(jsErrors));
+ }catch(e){
+  checks.push({id:'ejecucion_completa',estado:'FAIL',detalle:e.message});
+  await page.screenshot({path:path.join(evidence,'fallo_visual.png'),fullPage:true});
+  process.exitCode=1;
+ }finally{
+  await fs.writeFile(path.join(evidence,'capturas_manifest.json'),JSON.stringify(images,null,2));
+  const result={fecha_utc:new Date().toISOString(),base,viewport:'1680x1050',checks,resumen:{PASS:checks.filter(c=>c.estado==='PASS').length,FAIL:checks.filter(c=>c.estado==='FAIL').length,BLOCKED:0},jsErrors,assetsErrors};
+  await fs.writeFile(path.join(evidence,'resultados_navegador.json'),JSON.stringify(result,null,2));
+  console.log(JSON.stringify({capturas:images.length,...result.resumen}));
+  if(process.exitCode) console.log(checks.at(-1).detalle);
+  await browser.close();
+ }
+})();

@@ -1,0 +1,113 @@
+[
+  {
+    "archivo": "01_entorno.jpg",
+    "consulta": "SELECT current_database() AS base, current_user AS usuario,\n       current_setting('server_version') AS postgresql,\n       pg_has_role(current_user, 'aud_admin', 'USAGE') AS administrador;",
+    "descripcion": "Conexión real como demo_maria con PostgreSQL 18.6 Ubuntu",
+    "fecha_utc": "2026-10-26T05:30:45.359Z",
+    "texto": "PostgreSQL » 127.0.0.1:55425 » autoaudit_test_capturas » public » Comando SQL\n\nComando SQL\nSELECT current_database() AS base, current_user AS usuario,\n       current_setting('server_version') AS postgresql,\n       pg_has_role(current_user, 'aud_admin', 'USAGE') AS administrador\nbase\tusuario\tpostgresql\tadministrador\nautoaudit_test_capturas\tdemo_maria\t18.6 (Ubuntu 18.6-0ubuntu0.26.04.1)\tt\n\n1 registro (0.001 s) Modificar, Explain, Exportar\n\nSELECT current_database() AS base, current_user AS usuario,\n       current_setting('server_version') AS postgresql,\n       pg_has_role(current_user, 'aud_admin', 'USAGE') AS administrador;\n\n Límite de registros:  Parar en caso de error Mostrar solamente errores\n\nHistórico\nAdminer 6.2.0\nIdioma: \nEnglish\nBahasa Indonesia\nBahasa Melayu\nBosanski\nCatalà\nČeština\nDansk\nDeutsch\nEesti\nEspañol\nFrançais\nGalego\nHrvatski\nItaliano\nLatviešu\nLietuvių\nLimba Română\nMagyar\nNederlands\nNorsk\nOʻzbekcha\nPolski\nPortuguês\nPortuguês (Brazil)\nSlovenčina\nSlovenski\nSuomi\nSvenska\nTiếng Việt\nTürkçe\nБългарски\nΕλληνικά\nРусский\nСрпски\nУкраїнська\nעברית\nالعربية\nفارسی\nहिन्दी\nবাংলা\nத‌மிழ்\nภาษาไทย\nქართული\n日本語\n简体中文\n繁體中文\n한국어\n\nBD: \nautoaudit_test_capturas\npostgres\ntemplate1\n\nEsquema: \nauditoria\npublic\ninformation_schema\npg_catalog\npg_toast\n\nComando SQL Importar Exportar Crear tabla\n\nregistros cliente\nregistros producto\n\ndemo_maria ",
+    "sha256": "a98b55807abc5f0b12548260ee23223c69b7f05b602a125874b382a0a277564e",
+    "sin_cursor_visible": true
+  },
+  {
+    "archivo": "02_configuracion.jpg",
+    "consulta": "SELECT t.esquema, t.nombre_tabla AS tabla, t.activa,\n       count(*) FILTER (WHERE cf.activa) AS combinaciones_activas\nFROM auditoria.aud_tabla t\nJOIN auditoria.aud_columna c USING (id_tabla)\nJOIN auditoria.aud_configuracion cf USING (id_columna)\nGROUP BY t.id_tabla ORDER BY t.nombre_tabla;",
+    "descripcion": "Configuración real del script 08: cliente 6 y producto 4 combinaciones",
+    "fecha_utc": "2026-10-26T05:31:42.093Z",
+    "texto": "PostgreSQL » 127.0.0.1:55425 » autoaudit_test_capturas » public » Comando SQL\n\nComando SQL\nSELECT t.esquema, t.nombre_tabla AS tabla, t.activa,\n       count(*) FILTER (WHERE cf.activa) AS combinaciones_activas\nFROM auditoria.aud_tabla t\nJOIN auditoria.aud_columna c USING (id_tabla)\nJOIN auditoria.aud_configuracion cf USING (id_columna)\nGROUP BY t.id_tabla ORDER BY t.nombre_tabla\nesquema\ttabla\tactiva\tcombinaciones_activas\npublic\tcliente\tt\t6\npublic\tproducto\tt\t4\n\n2 registros (0.002 s) Modificar, Explain, Exportar\n\nSELECT t.esquema, t.nombre_tabla AS tabla, t.activa,\n       count(*) FILTER (WHERE cf.activa) AS combinaciones_activas\nFROM auditoria.aud_tabla t\nJOIN auditoria.aud_columna c USING (id_tabla)\nJOIN auditoria.aud_configuracion cf USING (id_columna)\nGROUP BY t.id_tabla ORDER BY t.nombre_tabla;\n\n Límite de registros:  Parar en caso de error Mostrar solamente errores\n\nHistórico\nAdminer 6.2.0\nIdioma: \nEnglish\nBahasa Indonesia\nBahasa Melayu\nBosanski\nCatalà\nČeština\nDansk\nDeutsch\nEesti\nEspañol\nFrançais\nGalego\nHrvatski\nItaliano\nLatviešu\nLietuvių\nLimba Română\nMagyar\nNederlands\nNorsk\nOʻzbekcha\nPolski\nPortuguês\nPortuguês (Brazil)\nSlovenčina\nSlovenski\nSuomi\nSvenska\nTiếng Việt\nTürkçe\nБългарски\nΕλληνικά\nРусский\nСрпски\nУкраїнська\nעברית\nالعربية\nفارسی\nहिन्दी\nবাংলা\nத‌மிழ்\nภาษาไทย\nქართული\n日本語\n简体中文\n繁體中文\n한국어\n\nBD: \nautoaudit_test_capturas\npostgres\ntemplate1\n\nEsquema: \nauditoria\npublic\ninformation_schema\npg_catalog\npg_toast\n\nComando SQL Importar Exportar Crear tabla\n\nregistros cliente\nregistros producto\n\ndemo_maria ",
+    "sha256": "c8f0e59eed1c6305ab451f7d2c6d330c1582885eccd60d70d8d8508120be28cf",
+    "sin_cursor_visible": true
+  },
+  {
+    "archivo": "03_triggers.jpg",
+    "consulta": "SELECT c.relname AS tabla, t.tgname AS trigger, t.tgenabled AS habilitado\nFROM pg_trigger t JOIN pg_class c ON c.oid = t.tgrelid\nJOIN pg_namespace n ON n.oid = c.relnamespace\nWHERE n.nspname = 'public' AND NOT t.tgisinternal\nORDER BY c.relname;",
+    "descripcion": "Dos triggers reales AFTER habilitados en las tablas de ejemplo",
+    "fecha_utc": "2026-10-26T05:31:51.183Z",
+    "texto": "PostgreSQL » 127.0.0.1:55425 » autoaudit_test_capturas » public » Comando SQL\n\nComando SQL\nSELECT c.relname AS tabla, t.tgname AS trigger, t.tgenabled AS habilitado\nFROM pg_trigger t JOIN pg_class c ON c.oid = t.tgrelid\nJOIN pg_namespace n ON n.oid = c.relnamespace\nWHERE n.nspname = 'public' AND NOT t.tgisinternal\nORDER BY c.relname\ntabla\ttrigger\thabilitado\ncliente\ttrg_aud_1\tO\nproducto\ttrg_aud_2\tO\n\n2 registros (0.001 s) Modificar, Explain, Exportar\n\nSELECT c.relname AS tabla, t.tgname AS trigger, t.tgenabled AS habilitado\nFROM pg_trigger t JOIN pg_class c ON c.oid = t.tgrelid\nJOIN pg_namespace n ON n.oid = c.relnamespace\nWHERE n.nspname = 'public' AND NOT t.tgisinternal\nORDER BY c.relname;\n\n Límite de registros:  Parar en caso de error Mostrar solamente errores\n\nHistórico\nAdminer 6.2.0\nIdioma: \nEnglish\nBahasa Indonesia\nBahasa Melayu\nBosanski\nCatalà\nČeština\nDansk\nDeutsch\nEesti\nEspañol\nFrançais\nGalego\nHrvatski\nItaliano\nLatviešu\nLietuvių\nLimba Română\nMagyar\nNederlands\nNorsk\nOʻzbekcha\nPolski\nPortuguês\nPortuguês (Brazil)\nSlovenčina\nSlovenski\nSuomi\nSvenska\nTiếng Việt\nTürkçe\nБългарски\nΕλληνικά\nРусский\nСрпски\nУкраїнська\nעברית\nالعربية\nفارسی\nहिन्दी\nবাংলা\nத‌மிழ்\nภาษาไทย\nქართული\n日本語\n简体中文\n繁體中文\n한국어\n\nBD: \nautoaudit_test_capturas\npostgres\ntemplate1\n\nEsquema: \nauditoria\npublic\ninformation_schema\npg_catalog\npg_toast\n\nComando SQL Importar Exportar Crear tabla\n\nregistros cliente\nregistros producto\n\ndemo_maria ",
+    "sha256": "ff9ffc50b7d386fefe3e1f0eee746496ea58e39d45a0290bb061fe8ff7560c4f",
+    "sin_cursor_visible": true
+  },
+  {
+    "archivo": "04_operaciones.jpg",
+    "consulta": "SELECT c.relname AS tabla, t.tgname AS trigger, t.tgenabled AS habilitado\nFROM pg_trigger t JOIN pg_class c ON c.oid = t.tgrelid\nJOIN pg_namespace n ON n.oid = c.relnamespace\nWHERE n.nspname = 'public' AND NOT t.tgisinternal\nORDER BY c.relname;",
+    "descripcion": "INSERT devuelve id 5 y UPDATE y DELETE afectan una fila cada uno",
+    "fecha_utc": "2026-10-26T05:31:54.167Z",
+    "texto": "PostgreSQL » 127.0.0.1:55425 » autoaudit_test_capturas » public » Comando SQL\n\nComando SQL\nINSERT INTO public.cliente (nombre, correo, telefono)\nVALUES ('Cliente Evidencia', 'evidencia@example.invalid', '0000')\nRETURNING id_cliente\nid_cliente\n5\n\n1 registro (0.007 s) Modificar, Exportar\n\nUPDATE public.cliente SET correo = 'actualizado@example.invalid'\nWHERE nombre = 'Cliente Evidencia'\n\nConsulta ejecutada, 1 registro afectado. (0.002 s) Modificar\n\nDELETE FROM public.cliente WHERE nombre = 'Cliente Evidencia'\n\nConsulta ejecutada, 1 registro afectado. (0.001 s) Modificar\n\nINSERT INTO public.cliente (nombre, correo, telefono)\nVALUES ('Cliente Evidencia', 'evidencia@example.invalid', '0000')\nRETURNING id_cliente;\nUPDATE public.cliente SET correo = 'actualizado@example.invalid'\nWHERE nombre = 'Cliente Evidencia';\nDELETE FROM public.cliente WHERE nombre = 'Cliente Evidencia';\n\n Límite de registros:  Parar en caso de error Mostrar solamente errores\n\nHistórico\nAdminer 6.2.0\nIdioma: \nEnglish\nBahasa Indonesia\nBahasa Melayu\nBosanski\nCatalà\nČeština\nDansk\nDeutsch\nEesti\nEspañol\nFrançais\nGalego\nHrvatski\nItaliano\nLatviešu\nLietuvių\nLimba Română\nMagyar\nNederlands\nNorsk\nOʻzbekcha\nPolski\nPortuguês\nPortuguês (Brazil)\nSlovenčina\nSlovenski\nSuomi\nSvenska\nTiếng Việt\nTürkçe\nБългарски\nΕλληνικά\nРусский\nСрпски\nУкраїнська\nעברית\nالعربية\nفارسی\nहिन्दी\nবাংলা\nத‌மிழ்\nภาษาไทย\nქართული\n日本語\n简体中文\n繁體中文\n한국어\n\nBD: \nautoaudit_test_capturas\npostgres\ntemplate1\n\nEsquema: \nauditoria\npublic\ninformation_schema\npg_catalog\npg_toast\n\nComando SQL Importar Exportar Crear tabla\n\nregistros cliente\nregistros producto\n\ndemo_maria ",
+    "sha256": "a91a2e2ce6b44b23d40dec6620a02411c4dd67489a748e7779a87538836ea142",
+    "sin_cursor_visible": true
+  },
+  {
+    "archivo": "05_historial_registro.jpg",
+    "consulta": "SELECT c.relname AS tabla, t.tgname AS trigger, t.tgenabled AS habilitado\nFROM pg_trigger t JOIN pg_class c ON c.oid = t.tgrelid\nJOIN pg_namespace n ON n.oid = c.relnamespace\nWHERE n.nspname = 'public' AND NOT t.tgisinternal\nORDER BY c.relname;",
+    "descripcion": "Cinco eventos capturados automáticamente, con valores anteriores y nuevos",
+    "fecha_utc": "2026-10-26T05:31:59.554Z",
+    "texto": "PostgreSQL » 127.0.0.1:55425 » autoaudit_test_capturas » public » Comando SQL\n\nComando SQL\nSELECT evento, columna, valor_anterior, valor_nuevo, usuario\nFROM auditoria.historial_por_registro('public', 'cliente', '5')\nORDER BY id_bitacora\nevento\tcolumna\tvalor_anterior\tvalor_nuevo\tusuario\nINSERT\tnombre\tNULL\tCliente Evidencia\tdemo_maria\nINSERT\tcorreo\tNULL\tevidencia@example.invalid\tdemo_maria\nUPDATE\tcorreo\tevidencia@example.invalid\tactualizado@example.invalid\tdemo_maria\nDELETE\tnombre\tCliente Evidencia\tNULL\tdemo_maria\nDELETE\tcorreo\tactualizado@example.invalid\tNULL\tdemo_maria\n\n5 registros (0.004 s) Modificar, Explain, Exportar\n\nSELECT evento, columna, valor_anterior, valor_nuevo, usuario\nFROM auditoria.historial_por_registro('public', 'cliente', '5')\nORDER BY id_bitacora;\n\n Límite de registros:  Parar en caso de error Mostrar solamente errores\n\nHistórico\nAdminer 6.2.0\nIdioma: \nEnglish\nBahasa Indonesia\nBahasa Melayu\nBosanski\nCatalà\nČeština\nDansk\nDeutsch\nEesti\nEspañol\nFrançais\nGalego\nHrvatski\nItaliano\nLatviešu\nLietuvių\nLimba Română\nMagyar\nNederlands\nNorsk\nOʻzbekcha\nPolski\nPortuguês\nPortuguês (Brazil)\nSlovenčina\nSlovenski\nSuomi\nSvenska\nTiếng Việt\nTürkçe\nБългарски\nΕλληνικά\nРусский\nСрпски\nУкраїнська\nעברית\nالعربية\nفارسی\nहिन्दी\nবাংলা\nத‌மிழ்\nภาษาไทย\nქართული\n日本語\n简体中文\n繁體中文\n한국어\n\nBD: \nautoaudit_test_capturas\npostgres\ntemplate1\n\nEsquema: \nauditoria\npublic\ninformation_schema\npg_catalog\npg_toast\n\nComando SQL Importar Exportar Crear tabla\n\nregistros cliente\nregistros producto\n\ndemo_maria ",
+    "sha256": "9d5573ef113a7bf34ec2a9420e6f8e29f10071f54ed405b871666e6e67812ea9",
+    "sin_cursor_visible": true
+  },
+  {
+    "archivo": "06_historial_usuario.jpg",
+    "consulta": "SELECT c.relname AS tabla, t.tgname AS trigger, t.tgenabled AS habilitado\nFROM pg_trigger t JOIN pg_class c ON c.oid = t.tgrelid\nJOIN pg_namespace n ON n.oid = c.relnamespace\nWHERE n.nspname = 'public' AND NOT t.tgisinternal\nORDER BY c.relname;",
+    "descripcion": "Consulta real por usuario devuelve seis eventos de demo_luis",
+    "fecha_utc": "2026-10-26T05:32:03.891Z",
+    "texto": "PostgreSQL » 127.0.0.1:55425 » autoaudit_test_capturas » public » Comando SQL\n\nComando SQL\nSELECT usuario, tabla, columna, evento, valor_anterior, valor_nuevo\nFROM auditoria.historial_por_usuario('demo_luis')\nORDER BY id_bitacora\nusuario\ttabla\tcolumna\tevento\tvalor_anterior\tvalor_nuevo\ndemo_luis\tproducto\tprecio\tINSERT\tNULL\t150.00\ndemo_luis\tproducto\tprecio\tINSERT\tNULL\t80.00\ndemo_luis\tproducto\tprecio\tINSERT\tNULL\t1200.00\ndemo_luis\tproducto\tprecio\tUPDATE\t150.00\t135.00\ndemo_luis\tproducto\tstock\tUPDATE\t40\t35\ndemo_luis\tproducto\tstock\tUPDATE\t10\t8\n\n6 registros (0.007 s) Modificar, Explain, Exportar\n\nSELECT usuario, tabla, columna, evento, valor_anterior, valor_nuevo\nFROM auditoria.historial_por_usuario('demo_luis')\nORDER BY id_bitacora;\n\n Límite de registros:  Parar en caso de error Mostrar solamente errores\n\nHistórico\nAdminer 6.2.0\nIdioma: \nEnglish\nBahasa Indonesia\nBahasa Melayu\nBosanski\nCatalà\nČeština\nDansk\nDeutsch\nEesti\nEspañol\nFrançais\nGalego\nHrvatski\nItaliano\nLatviešu\nLietuvių\nLimba Română\nMagyar\nNederlands\nNorsk\nOʻzbekcha\nPolski\nPortuguês\nPortuguês (Brazil)\nSlovenčina\nSlovenski\nSuomi\nSvenska\nTiếng Việt\nTürkçe\nБългарски\nΕλληνικά\nРусский\nСрпски\nУкраїнська\nעברית\nالعربية\nفارسی\nहिन्दी\nবাংলা\nத‌மிழ்\nภาษาไทย\nქართული\n日本語\n简体中文\n繁體中文\n한국어\n\nBD: \nautoaudit_test_capturas\npostgres\ntemplate1\n\nEsquema: \nauditoria\npublic\ninformation_schema\npg_catalog\npg_toast\n\nComando SQL Importar Exportar Crear tabla\n\nregistros cliente\nregistros producto\n\ndemo_maria ",
+    "sha256": "723c4c7943ad78fb38567fa7be23822ace28de478cee00ef40ef190d16e50bd4",
+    "sin_cursor_visible": true
+  },
+  {
+    "archivo": "07_historial_columna.jpg",
+    "consulta": "SELECT c.relname AS tabla, t.tgname AS trigger, t.tgenabled AS habilitado\nFROM pg_trigger t JOIN pg_class c ON c.oid = t.tgrelid\nJOIN pg_namespace n ON n.oid = c.relnamespace\nWHERE n.nspname = 'public' AND NOT t.tgisinternal\nORDER BY c.relname;",
+    "descripcion": "Consulta real de producto.precio con seis eventos y sus valores",
+    "fecha_utc": "2026-10-26T05:32:09.665Z",
+    "texto": "PostgreSQL » 127.0.0.1:55425 » autoaudit_test_capturas » public » Comando SQL\n\nComando SQL\nSELECT tabla, columna, evento, valor_anterior, valor_nuevo, usuario\nFROM auditoria.historial_por_columna('public', 'producto', 'precio')\nORDER BY id_bitacora\ntabla\tcolumna\tevento\tvalor_anterior\tvalor_nuevo\tusuario\nproducto\tprecio\tINSERT\tNULL\t150.00\tdemo_luis\nproducto\tprecio\tINSERT\tNULL\t80.00\tdemo_luis\nproducto\tprecio\tINSERT\tNULL\t1200.00\tdemo_luis\nproducto\tprecio\tUPDATE\t150.00\t135.00\tdemo_luis\nproducto\tprecio\tUPDATE\t1200.00\t1100.00\tdemo_maria\nproducto\tprecio\tDELETE\t80.00\tNULL\tdemo_maria\n\n6 registros (0.006 s) Modificar, Explain, Exportar\n\nSELECT tabla, columna, evento, valor_anterior, valor_nuevo, usuario\nFROM auditoria.historial_por_columna('public', 'producto', 'precio')\nORDER BY id_bitacora;\n\n Límite de registros:  Parar en caso de error Mostrar solamente errores\n\nHistórico\nAdminer 6.2.0\nIdioma: \nEnglish\nBahasa Indonesia\nBahasa Melayu\nBosanski\nCatalà\nČeština\nDansk\nDeutsch\nEesti\nEspañol\nFrançais\nGalego\nHrvatski\nItaliano\nLatviešu\nLietuvių\nLimba Română\nMagyar\nNederlands\nNorsk\nOʻzbekcha\nPolski\nPortuguês\nPortuguês (Brazil)\nSlovenčina\nSlovenski\nSuomi\nSvenska\nTiếng Việt\nTürkçe\nБългарски\nΕλληνικά\nРусский\nСрпски\nУкраїнська\nעברית\nالعربية\nفارسی\nहिन्दी\nবাংলা\nத‌மிழ்\nภาษาไทย\nქართული\n日本語\n简体中文\n繁體中文\n한국어\n\nBD: \nautoaudit_test_capturas\npostgres\ntemplate1\n\nEsquema: \nauditoria\npublic\ninformation_schema\npg_catalog\npg_toast\n\nComando SQL Importar Exportar Crear tabla\n\nregistros cliente\nregistros producto\n\ndemo_maria ",
+    "sha256": "fd6fb3589c3c9069571468dce114e37fc336ff605a51a6cb18bd8781f1b63d22",
+    "sin_cursor_visible": true
+  },
+  {
+    "archivo": "08_exportacion.jpg",
+    "consulta": "SELECT c.relname AS tabla, t.tgname AS trigger, t.tgenabled AS habilitado\nFROM pg_trigger t JOIN pg_class c ON c.oid = t.tgrelid\nJOIN pg_namespace n ON n.oid = c.relnamespace\nWHERE n.nspname = 'public' AND NOT t.tgisinternal\nORDER BY c.relname;",
+    "descripcion": "Exportación del resultado real mediante el cliente SQL, formato CSV",
+    "fecha_utc": "2026-10-26T05:32:18.297Z",
+    "texto": "PostgreSQL » 127.0.0.1:55425 » autoaudit_test_capturas » public » Comando SQL\n\nComando SQL\nSELECT tabla, columna, evento, valor_anterior, valor_nuevo, usuario\nFROM auditoria.historial_por_columna('public', 'producto', 'precio')\nORDER BY id_bitacora\ntabla\tcolumna\tevento\tvalor_anterior\tvalor_nuevo\tusuario\nproducto\tprecio\tINSERT\tNULL\t150.00\tdemo_luis\nproducto\tprecio\tINSERT\tNULL\t80.00\tdemo_luis\nproducto\tprecio\tINSERT\tNULL\t1200.00\tdemo_luis\nproducto\tprecio\tUPDATE\t150.00\t135.00\tdemo_luis\nproducto\tprecio\tUPDATE\t1200.00\t1100.00\tdemo_maria\nproducto\tprecio\tDELETE\t80.00\tNULL\tdemo_maria\n\n6 registros (0.006 s) Modificar, Explain, Exportar: \nabrir\nguardar\ngzip\n \nSQL\nCSV,\nCSV;\nTSV\n \n\nSELECT tabla, columna, evento, valor_anterior, valor_nuevo, usuario\nFROM auditoria.historial_por_columna('public', 'producto', 'precio')\nORDER BY id_bitacora;\n\n Límite de registros:  Parar en caso de error Mostrar solamente errores\n\nHistórico\nAdminer 6.2.0\nIdioma: \nEnglish\nBahasa Indonesia\nBahasa Melayu\nBosanski\nCatalà\nČeština\nDansk\nDeutsch\nEesti\nEspañol\nFrançais\nGalego\nHrvatski\nItaliano\nLatviešu\nLietuvių\nLimba Română\nMagyar\nNederlands\nNorsk\nOʻzbekcha\nPolski\nPortuguês\nPortuguês (Brazil)\nSlovenčina\nSlovenski\nSuomi\nSvenska\nTiếng Việt\nTürkçe\nБългарски\nΕλληνικά\nРусский\nСрпски\nУкраїнська\nעברית\nالعربية\nفارسی\nहिन्दी\nবাংলা\nத‌மிழ்\nภาษาไทย\nქართული\n日本語\n简体中文\n繁體中文\n한국어\n\nBD: \nautoaudit_test_capturas\npostgres\ntemplate1\n\nEsquema: \nauditoria\npublic\ninformation_schema\npg_catalog\npg_toast\n\nComando SQL Importar Exportar Crear tabla\n\nregistros cliente\nregistros producto\n\ndemo_maria ",
+    "sha256": "2a9fcbeb1cb2745f143828742a49a6a0f26f8dac84768a908529bae3756a65d7",
+    "sin_cursor_visible": true
+  },
+  {
+    "archivo": "09_origen.jpg",
+    "consulta": "SELECT c.relname AS tabla, t.tgname AS trigger, t.tgenabled AS habilitado\nFROM pg_trigger t JOIN pg_class c ON c.oid = t.tgrelid\nJOIN pg_namespace n ON n.oid = c.relnamespace\nWHERE n.nspname = 'public' AND NOT t.tgisinternal\nORDER BY c.relname;",
+    "descripcion": "Captura TCP real: usuario demo_maria, aplicación Adminer e IP del puente Docker",
+    "fecha_utc": "2026-10-26T05:32:51.244Z",
+    "texto": "PostgreSQL » 127.0.0.1:55425 » autoaudit_test_capturas » public » Comando SQL\n\nComando SQL\nSELECT usuario, ip_origen, nombre_host, fecha_hora\nFROM auditoria.historial_por_registro('public', 'cliente', '5')\nORDER BY id_bitacora LIMIT 1\nusuario\tip_origen\tnombre_host\tfecha_hora\ndemo_maria\t172.17.0.1\tAdminer\t2026-10-26 05:31:43.212353+00\n\n1 registro (0.004 s) Modificar, Explain, Exportar\n\nSELECT usuario, ip_origen, nombre_host, fecha_hora\nFROM auditoria.historial_por_registro('public', 'cliente', '5')\nORDER BY id_bitacora LIMIT 1;\n\n Límite de registros:  Parar en caso de error Mostrar solamente errores\n\nHistórico\nAdminer 6.2.0\nIdioma: \nEnglish\nBahasa Indonesia\nBahasa Melayu\nBosanski\nCatalà\nČeština\nDansk\nDeutsch\nEesti\nEspañol\nFrançais\nGalego\nHrvatski\nItaliano\nLatviešu\nLietuvių\nLimba Română\nMagyar\nNederlands\nNorsk\nOʻzbekcha\nPolski\nPortuguês\nPortuguês (Brazil)\nSlovenčina\nSlovenski\nSuomi\nSvenska\nTiếng Việt\nTürkçe\nБългарски\nΕλληνικά\nРусский\nСрпски\nУкраїнська\nעברית\nالعربية\nفارسی\nहिन्दी\nবাংলা\nத‌மிழ்\nภาษาไทย\nქართული\n日本語\n简体中文\n繁體中文\n한국어\n\nBD: \nautoaudit_test_capturas\npostgres\ntemplate1\n\nEsquema: \nauditoria\npublic\ninformation_schema\npg_catalog\npg_toast\n\nComando SQL Importar Exportar Crear tabla\n\nregistros cliente\nregistros producto\n\ndemo_maria ",
+    "sha256": "403267478773c4d752f532d28f5c764738ed576188a60044a03ce1af3cebc3af",
+    "sin_cursor_visible": true
+  },
+  {
+    "archivo": "10_seguridad.jpg",
+    "consulta": "SELECT c.relname AS tabla, t.tgname AS trigger, t.tgenabled AS habilitado\nFROM pg_trigger t JOIN pg_class c ON c.oid = t.tgrelid\nJOIN pg_namespace n ON n.oid = c.relnamespace\nWHERE n.nspname = 'public' AND NOT t.tgisinternal\nORDER BY c.relname;",
+    "descripcion": "demo_luis consulta seis eventos, pero no lee la bitácora ni genera triggers directamente",
+    "fecha_utc": "2026-10-26T05:33:21.513Z",
+    "texto": "PostgreSQL » 127.0.0.1:55425 » autoaudit_test_capturas » public » Comando SQL\n\nComando SQL\nSELECT current_user AS usuario, count(*) AS cambios_consultados\nFROM auditoria.historial_por_usuario('demo_luis')\nusuario\tcambios_consultados\ndemo_luis\t6\n\n1 registro (0.004 s) Modificar, Explain, Exportar\n\nSELECT * FROM auditoria.aud_bitacora LIMIT 1\n\nError al ejecutar consulta: ERROR: permission denied for table aud_bitacora\n\nSELECT auditoria.generar_trigger(1)\n\nError al ejecutar consulta: ERROR: permission denied for function generar_trigger\n\nError al ejecutar consulta: 2 3\n\nSELECT current_user AS usuario, count(*) AS cambios_consultados\nFROM auditoria.historial_por_usuario('demo_luis');\nSELECT * FROM auditoria.aud_bitacora LIMIT 1;\nSELECT auditoria.generar_trigger(1);\n\n Límite de registros:  Parar en caso de error Mostrar solamente errores\n\nHistórico\nAdminer 6.2.0\nIdioma: \nEnglish\nBahasa Indonesia\nBahasa Melayu\nBosanski\nCatalà\nČeština\nDansk\nDeutsch\nEesti\nEspañol\nFrançais\nGalego\nHrvatski\nItaliano\nLatviešu\nLietuvių\nLimba Română\nMagyar\nNederlands\nNorsk\nOʻzbekcha\nPolski\nPortuguês\nPortuguês (Brazil)\nSlovenčina\nSlovenski\nSuomi\nSvenska\nTiếng Việt\nTürkçe\nБългарски\nΕλληνικά\nРусский\nСрпски\nУкраїнська\nעברית\nالعربية\nفارسی\nहिन्दी\nবাংলা\nத‌மிழ்\nภาษาไทย\nქართული\n日本語\n简体中文\n繁體中文\n한국어\n\nBD: \nautoaudit_test_capturas\npostgres\ntemplate1\n\nEsquema: \nauditoria\npublic\ninformation_schema\npg_catalog\npg_toast\n\nComando SQL Importar Exportar Crear tabla\n\nregistros cliente\nregistros producto\n\ndemo_luis ",
+    "sha256": "c0707f92f6dd579264c8f4bd73154a87a354511751ce7f20971df6bf5f3fcfac",
+    "sin_cursor_visible": true
+  },
+  {
+    "archivo": "11_resultados_pruebas.jpg",
+    "descripcion": "Captura del JSON original del ejecutor integrado, servido sin modificar en localhost",
+    "origen": "tests/resultados/20261025_integrado/resultados.json",
+    "sha256": "acc1a50825a49f83872f09fe2f416a6a31f35102505e4763fad4c20a005f3ae0",
+    "sin_cursor_visible": true
+  },
+  {
+    "archivo": "12_interfaz_panel_aportada.png",
+    "descripcion": "Pantalla del panel aportada por el usuario; entorno del compañero, no ejecutado localmente",
+    "origen": "Imagen 1 del mensaje del usuario del 25/10/2026",
+    "sha256": "451accea137857ccd6f2aa6ec655f611144d2ec6acf29f4e3809411784699c91",
+    "sin_cursor_visible": true
+  },
+  {
+    "archivo": "13_interfaz_configuracion_aportada.png",
+    "descripcion": "Pantalla de configuración aportada por el usuario; entorno del compañero",
+    "origen": "Imagen 2 del mensaje del usuario del 25/10/2026",
+    "sha256": "17ff2ed293c7e7bf21ffdf299710b949040fc84f31bb5e7ec4160587fe389581",
+    "sin_cursor_visible": true
+  }
+]

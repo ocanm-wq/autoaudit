@@ -1,0 +1,3 @@
+# Los logs y parches históricos conservan sus espacios originales de evidencia.
+tests/resultados/**/*.log -whitespace
+tests/**/*.patch -whitespace

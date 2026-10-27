@@ -325,7 +325,7 @@ if ($tabla_sel !== null && $info_sel !== null):
                             </button>
                         <?php endif; ?>
 
-                        <a href="consulta.php?esquema=<?= urlencode($esquema_sel) ?>&tabla=<?= urlencode($tabla_sel) ?>"
+                        <a href="consulta.php?tabla=<?= urlencode(json_encode([$esquema_sel, $tabla_sel])) ?>"
                            class="btn btn-outline-secondary">
                             <i class="bx bx-history me-1"></i> Ver historial
                         </a>

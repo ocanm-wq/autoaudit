@@ -1,0 +1,184 @@
+{
+  "resumen": {
+    "PASS": 35,
+    "FAIL": 0,
+    "BLOCKED": 0
+  },
+  "casos": [
+    {
+      "id": "ana_sin_rol",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "aud_admin_listar_columnas",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=00000 valor=4 ejecución autorizada"
+    },
+    {
+      "id": "aud_admin_listar_tablas",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=00000 valor=2 ejecución autorizada"
+    },
+    {
+      "id": "aud_admin_listar_usuarios",
+      "estado": "PASS",
+      "detalle": "aud_admin SQLSTATE=00000 valor=NULL ejecución autorizada"
+    },
+    {
+      "id": "aud_consulta_listar_columnas",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=00000 valor=4 ejecución autorizada"
+    },
+    {
+      "id": "aud_consulta_listar_tablas",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=00000 valor=2 ejecución autorizada"
+    },
+    {
+      "id": "aud_consulta_listar_usuarios",
+      "estado": "PASS",
+      "detalle": "aud_consulta SQLSTATE=00000 valor=NULL ejecución autorizada"
+    },
+    {
+      "id": "aud_usuario_sigue",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "columnas_cliente",
+      "estado": "PASS",
+      "detalle": "conteo=4"
+    },
+    {
+      "id": "columnas_producto",
+      "estado": "PASS",
+      "detalle": "conteo=4"
+    },
+    {
+      "id": "demo_ana_connect_actual",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "demo_ana_login",
+      "estado": "PASS",
+      "detalle": "rol inexistente o sin LOGIN"
+    },
+    {
+      "id": "demo_luis_connect_actual",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "demo_luis_login",
+      "estado": "PASS",
+      "detalle": "rol inexistente o sin LOGIN"
+    },
+    {
+      "id": "demo_maria_connect_actual",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "demo_maria_login",
+      "estado": "PASS",
+      "detalle": "rol inexistente o sin LOGIN"
+    },
+    {
+      "id": "entrada_quoted_segura",
+      "estado": "PASS",
+      "detalle": "conteo=0"
+    },
+    {
+      "id": "entrada_schema_segura",
+      "estado": "PASS",
+      "detalle": "conteo=0"
+    },
+    {
+      "id": "eventos_activos_cliente_producto",
+      "estado": "PASS",
+      "detalle": "conteo=10"
+    },
+    {
+      "id": "excluye_auditoria",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "existe_listar_columnas",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "existe_listar_tablas",
+      "estado": "PASS",
+      "detalle": "auditoria.listar_tablas()"
+    },
+    {
+      "id": "existe_listar_usuarios",
+      "estado": "PASS",
+      "detalle": "auditoria.listar_usuarios()"
+    },
+    {
+      "id": "luis_consulta",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "maria_admin",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "metadato_cliente_pk",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "metadato_producto_pk",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "public_sin_execute_diccionario",
+      "estado": "PASS",
+      "detalle": ""
+    },
+    {
+      "id": "search_path_listar_columnas_text,text)",
+      "estado": "PASS",
+      "detalle": "auditoria.listar_columnas(text,text)"
+    },
+    {
+      "id": "search_path_listar_tablas",
+      "estado": "PASS",
+      "detalle": "auditoria.listar_tablas()"
+    },
+    {
+      "id": "search_path_listar_usuarios",
+      "estado": "PASS",
+      "detalle": "auditoria.listar_usuarios()"
+    },
+    {
+      "id": "security_definer_listar_columnas_text,text)",
+      "estado": "PASS",
+      "detalle": "auditoria.listar_columnas(text,text)"
+    },
+    {
+      "id": "security_definer_listar_tablas",
+      "estado": "PASS",
+      "detalle": "auditoria.listar_tablas()"
+    },
+    {
+      "id": "security_definer_listar_usuarios",
+      "estado": "PASS",
+      "detalle": "auditoria.listar_usuarios()"
+    },
+    {
+      "id": "tablas_cliente_producto",
+      "estado": "PASS",
+      "detalle": "conteo=2"
+    }
+  ]
+}

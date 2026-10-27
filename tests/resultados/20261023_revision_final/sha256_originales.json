@@ -1,0 +1,38 @@
+[
+  {
+    "archivo": "README.md",
+    "sha256": "81078b0c2027e8d659d3f7ad6879c180e7a0a8e0780af24d49fd493b08003a8f"
+  },
+  {
+    "archivo": "docs/AutoAudit_Documentacion_Tecnica.pdf",
+    "sha256": "2293d27b4d8e8599fb69066ff8f2f17823dcdd5adcff854d17fd80b7597760f4"
+  },
+  {
+    "archivo": "sql/01_estructura_autoaudit.sql",
+    "sha256": "38ac857f8a02dbec3d7eaeb2e4603106c1c81b68240f4882dd1104bb2a2332a4"
+  },
+  {
+    "archivo": "sql/02_consultas_diccionario.sql",
+    "sha256": "608c9a23dac2272732085bb8ca8d9735c6a62b6a1105e44eff3e2fabe883d022"
+  },
+  {
+    "archivo": "sql/03_generador_triggers.sql",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "archivo": "sql/04_prueba_generador.sql",
+    "sha256": "2b3d0fe760e16975f8ce83c467fbbe98d5aae50f5b5d5192b3af5eb204fcbe10"
+  },
+  {
+    "archivo": "sql/05_consultas_historial.sql",
+    "sha256": "f13214f2d40e97ab22c25dfe98d195830dfe3d0261c040aa4d7efb5ba9a6ab2b"
+  },
+  {
+    "archivo": "sql/06_seguridad.sql",
+    "sha256": "6add72fa29d07e76686bf67a02b67d32197c91ec08e97185c65dfac528f22bf6"
+  },
+  {
+    "archivo": "sql/07_pruebas_rendimiento.sql",
+    "sha256": "8807fe166f1035e8bec1e5bfb2c124fd2583e038ac25d2879566d1bd1f7a4245"
+  }
+]

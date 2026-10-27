@@ -1,0 +1,22 @@
+DO
+GRANT ROLE
+REVOKE
+REVOKE
+REVOKE
+REVOKE
+ALTER DEFAULT PRIVILEGES
+GRANT
+GRANT
+GRANT
+GRANT
+DO
+GRANT
+GRANT
+CREATE FUNCTION
+REVOKE
+DROP TRIGGER
+CREATE TRIGGER
+DROP TRIGGER
+CREATE TRIGGER
+NOTICE:  trigger "trg_bitacora_inmutable" for relation "auditoria.aud_bitacora" does not exist, skipping
+NOTICE:  trigger "trg_bitacora_sin_truncate" for relation "auditoria.aud_bitacora" does not exist, skipping

@@ -38,7 +38,7 @@ function aa_token(): string
     return $_SESSION['token'];
 }
 
-function aa_token_valido(?string $token): bool
+function aa_token_valido($token): bool
 {
     aa_sesion_iniciar();
     return !empty($_SESSION['token'])

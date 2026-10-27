@@ -1,0 +1,14 @@
+BEGIN
+DO
+GRANT ROLE
+REVOKE
+REVOKE
+REVOKE
+REVOKE
+GRANT
+GRANT
+GRANT
+GRANT
+
+NOTICE:  role "aud_admin" has already been granted membership in role "aud_consulta" by role "postgres"
+ERROR:  function auditoria.generar_trigger(integer) does not exist
