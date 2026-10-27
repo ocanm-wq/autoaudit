@@ -48,7 +48,6 @@ CREATE OR REPLACE FUNCTION auditoria.historial_por_columna(
     p_desde   TIMESTAMPTZ DEFAULT NULL,
     p_hasta   TIMESTAMPTZ DEFAULT NULL
 )
-q   
 RETURNS SETOF auditoria.v_historial
 LANGUAGE sql
     STABLE

@@ -1,0 +1,223 @@
+/*
+ * AutoAudit - Ajustes propios sobre la plantilla Sneat (Bootstrap 5)
+ *
+ * La base visual viene de Sneat (licencia MIT, ver assets/vendor/LICENSE-sneat.md).
+ * Aquí van la tipografía local, la marca de AutoAudit y los componentes
+ * propios del sistema (matriz de configuración, insignias de evento).
+ * El color de acento (azul petróleo #0e7490) ya está aplicado en
+ * vendor/css/core.css y theme-default.css.
+ */
+
+/* ---------- Tipografía local (sin depender de internet) ---------- */
+@font-face {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../vendor/fonts/public-sans/public-sans-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('../vendor/fonts/public-sans/public-sans-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../vendor/fonts/public-sans/public-sans-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../vendor/fonts/public-sans/public-sans-latin-700-normal.woff2') format('woff2');
+}
+
+/* ---------- Marca ---------- */
+.menu .app-brand.aa-brand {
+    height: 64px;
+    margin-top: 12px;
+}
+
+.aa-brand .app-brand-logo svg {
+    width: 26px;
+    height: 30px;
+}
+
+.aa-brand-text {
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    color: #384551;
+}
+
+.aa-brand-text span {
+    color: #0e7490;
+}
+
+.aa-brand-sub {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #a1acb8;
+    margin-top: -2px;
+}
+
+/* Barra lateral: un poco más de contraste en el ítem activo */
+.bg-menu-theme .menu-inner > .menu-item.active > .menu-link {
+    font-weight: 600;
+}
+
+/* Navbar con la ruta de la página */
+.aa-ruta {
+    font-size: 0.9375rem;
+    color: #697a8d;
+}
+
+.aa-ruta strong {
+    color: #384551;
+    font-weight: 600;
+}
+
+/* ---------- Código e identificadores ---------- */
+.aa-ident {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.8125rem;
+    color: #384551;
+    background: #f2f4f6;
+    border-radius: 4px;
+    padding: 0.1rem 0.4rem;
+}
+
+/* ---------- Insignias de evento ---------- */
+.aa-evento {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    min-width: 62px;
+    text-align: center;
+}
+
+/* ---------- Matriz de configuración ---------- */
+.aa-matriz th.aa-col-evento,
+.aa-matriz td.aa-col-evento {
+    width: 110px;
+    text-align: center;
+}
+
+.aa-matriz td.aa-col-evento .form-check-input {
+    float: none;
+    margin: 0;
+    width: 1.15rem;
+    height: 1.15rem;
+    cursor: pointer;
+}
+
+.aa-matriz tr.aa-fila-auditada td:first-child {
+    box-shadow: inset 3px 0 0 #0e7490;
+}
+
+.aa-matriz .aa-tipo {
+    font-size: 0.8125rem;
+    color: #8592a3;
+}
+
+/* Botones para marcar o desmarcar una columna de eventos completa */
+.aa-marcar-col {
+    font-size: 0.7rem;
+    color: #8592a3;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-top: 2px;
+}
+
+.aa-marcar-col:hover {
+    color: #0e7490;
+}
+
+/* ---------- Tarjetas de resumen ---------- */
+.aa-stat .avatar-initial {
+    font-size: 1.35rem;
+}
+
+.aa-stat .aa-stat-valor {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #384551;
+    line-height: 1.1;
+}
+
+/* ---------- Tabla de actividad ---------- */
+.aa-valor {
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.aa-valor-vacio {
+    color: #c7cdd4;
+}
+
+/* ---------- Login ---------- */
+.aa-login .card {
+    border-top: 3px solid #0e7490;
+}
+
+.aa-login .app-brand {
+    margin-bottom: 1.75rem;
+}
+
+
+/* ---------- Correcciones de la marca y del login ---------- */
+.aa-brand .app-brand-link {
+    align-items: center;
+}
+
+.aa-brand-textos {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+
+.aa-brand-sub {
+    margin-top: 2px;
+}
+
+/* Quitar las figuras decorativas de la plantilla en el login */
+.authentication-wrapper.authentication-basic .authentication-inner:before,
+.authentication-wrapper.authentication-basic .authentication-inner:after {
+    display: none !important;
+}
+
+/* Fondo propio del login: cuadrícula tenue, como papel de bitácora */
+body.aa-fondo-login {
+    background-color: #f4f6f8;
+    background-image:
+        linear-gradient(rgba(14, 116, 144, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(14, 116, 144, 0.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+
+.aa-login .card {
+    box-shadow: 0 10px 30px rgba(22, 32, 46, 0.08);
+}
+
+
+/* Valores de la tabla de actividad más compactos */
+.table .aa-valor {
+    max-width: 140px;
+}
