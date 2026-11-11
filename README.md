@@ -10,6 +10,18 @@ La rama `pruebas-documentacion-interfaz` parte del commit `b978a33` que incorpor
 
 Sobre esta integración se repitieron 28 casos funcionales, 47 de seguridad, 35 de SQL09 y 38 por HTTP: **148 PASS, 0 FAIL, 0 BLOCKED**, además del lint de los nueve PHP. La corrida anterior del backend con benchmark (240/0/0) se mantiene como evidencia separada y no se presenta como una nueva medición de rendimiento. Detalles en [PUBLICACION_GITHUB.md](docs/PUBLICACION_GITHUB.md).
 
+## Actualización de documentación del 10 de noviembre de 2026
+
+Se incorporó desde `main` la actualización de la portada del documento técnico con los datos del integrante confirmado. En esta rama siguen disponibles el historial web terminado, las pruebas y las guías; el código de esta integración aún requiere la revisión del equipo antes de unirse a `main`. Esta actualización solo cambia documentación y no representa una nueva ejecución de las pruebas de octubre.
+
+## Integrantes
+
+| Nombre confirmado | Carné |
+|---|---|
+| Pablo Andres Sanchez Pesquera | 0900-20-17740 |
+
+La [documentación técnica](docs/AutoAudit_Documentacion_Tecnica.pdf) conserva los demás campos editables para completar los nombres y carnés del equipo.
+
 ## Características
 
 - Configuración de auditoría por tabla, columna y evento.
