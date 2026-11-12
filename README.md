@@ -130,5 +130,5 @@ La IP puede ser `NULL` en conexiones por socket. `application_name` describe la 
 | Nombre confirmado | Carné |
 |---|---|
 | Pablo Andres Sanchez Pesquera | 0900-20-17740 |
+| David Efraín Valladares Vásquez | 090-20-25247 |
 
-La portada del PDF conserva los demás campos disponibles para que el equipo complete los nombres y carnés restantes.
